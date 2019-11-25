@@ -22,6 +22,11 @@ class SeriesViewController: UITableViewController {
     
     
     
+    
+    
+    
+    
+    
     //MARK - Tableview datasource methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -111,5 +116,29 @@ class SeriesViewController: UITableViewController {
     }
     
 
+}
+
+
+//MARK: - Search bar functions
+extension SeriesViewController : UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        let request : NSFetchRequest<Series> = Series.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "seriesName CONTAINS[cd] %@", searchBar.text!)
+        
+        let sortDescriptor = NSSortDescriptor(key: "seriesName", ascending: true)
+        request.sortDescriptors = [sortDescriptor]
+        
+        do{
+        seriesArray = try context.fetch(request)
+        } catch {
+            print("error sorting \(error)")
+        }
+        
+        tableView.reloadData()
+    }
+    
 }
 
