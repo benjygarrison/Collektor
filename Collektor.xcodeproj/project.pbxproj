@@ -67,7 +67,6 @@
 				AFC2C25A238B5C4C0014BEA2 /* View */,
 				AFC2C25B238B5C740014BEA2 /* Other */,
 				AFC2C250238B447E0014BEA2 /* Info.plist */,
-				AFC2C248238B447C0014BEA2 /* Collektor.xcdatamodeld */,
 			);
 			path = Collektor;
 			sourceTree = "<group>";
@@ -75,6 +74,7 @@
 		AFC2C258238B5B380014BEA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AFC2C248238B447C0014BEA2 /* Collektor.xcdatamodeld */,
 				AFC2C256238B5B330014BEA2 /* Series.swift */,
 			);
 			path = Model;

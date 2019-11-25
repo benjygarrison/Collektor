@@ -19,6 +19,8 @@ class SeriesViewController: UITableViewController {
         newSeries.seriesName = "Pokemon"
         seriesArray.append(newSeries)
         
+        //loadSeries()
+        
     }
     
     
@@ -66,6 +68,8 @@ class SeriesViewController: UITableViewController {
             //TODO: add code to check for empty string
             self.seriesArray.append(newSeries)
             
+            //self.saveSeries()
+            
             self.tableView.reloadData()
         }
         
@@ -80,6 +84,18 @@ class SeriesViewController: UITableViewController {
         
     }
     
+    //MARK - save items
+    
+    func saveSeries() {
+        //TODO
+    }
+    
+    
+    //MARK - load items
+    
+    func loadSeries() {
+        //TODO
+    }
     
 
 }
