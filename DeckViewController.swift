@@ -104,7 +104,19 @@ class DeckViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
-    func loadDeck(with request: NSFetchRequest<Deck> = Deck.fetchRequest()) {
+    
+    
+    //MARK: - load items
+    
+    func loadDeck(with request: NSFetchRequest<Deck> = Deck.fetchRequest(), predicate : NSPredicate? = nil) {
+        
+        let seriesPredicate = NSPredicate(format: "parentSeries.seriesName MATCHES %@", selectedSeries!.seriesName!)
+        
+        if let additionalPredicate = predicate {
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [seriesPredicate, additionalPredicate])
+        } else {
+            request.predicate = seriesPredicate
+        }
         
         do{
         deckArray = try context.fetch(request)
@@ -123,10 +135,12 @@ extension DeckViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         let request : NSFetchRequest<Deck> = Deck.fetchRequest()
-        request.predicate = NSPredicate(format: "deckName CONTAINS[cd] %@", searchBar.text!)
+        
+        let predicate = NSPredicate(format: "deckName CONTAINS[cd] %@", searchBar.text!)
+        
         request.sortDescriptors = [NSSortDescriptor(key: "deckName", ascending: true)]
         
-        loadDeck(with: request)
+        loadDeck(with: request, predicate: predicate)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
