@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Card" representedClassName=".Card" syncable="YES">
+        <attribute name="cardName" optional="YES" attributeType="String"/>
+        <attribute name="cardNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="parentDeck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="cards" inverseEntity="Deck"/>
+    </entity>
     <entity name="Deck" representedClassName=".Deck" syncable="YES">
         <attribute name="deckName" attributeType="String"/>
+        <relationship name="cards" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Card" inverseName="parentDeck" inverseEntity="Card"/>
         <relationship name="parentSeries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Series" inverseName="decks" inverseEntity="Series"/>
     </entity>
     <entity name="Series" representedClassName=".Series" syncable="YES">
@@ -9,7 +15,8 @@
         <relationship name="decks" toMany="YES" deletionRule="Cascade" destinationEntity="Deck" inverseName="parentSeries" inverseEntity="Deck"/>
     </entity>
     <elements>
+        <element name="Deck" positionX="129.07421875" positionY="115.97265625" width="128" height="88"/>
         <element name="Series" positionX="-108.59375" positionY="110.93359375" width="128" height="73"/>
-        <element name="Deck" positionX="129.07421875" positionY="115.97265625" width="128" height="73"/>
+        <element name="Card" positionX="40.046875" positionY="297.08984375" width="128" height="88"/>
     </elements>
 </model>

@@ -130,7 +130,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Cards" id="KPe-1P-JUo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="f8d-08-nqj"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="f8d-08-nqj">
+                            <connections>
+                                <action selector="addCards:" destination="47S-gU-Xud" id="hae-1y-sD6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0WV-NT-b4l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
