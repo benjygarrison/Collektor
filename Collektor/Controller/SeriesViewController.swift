@@ -22,12 +22,7 @@ class SeriesViewController: UITableViewController {
     
     
     
-    
-    
-    
-    
-    
-    //MARK - Tableview datasource methods
+    //MARK: - Tableview datasource methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -44,18 +39,28 @@ class SeriesViewController: UITableViewController {
         return cell
     }
     
-    //MARK - Tableview delegate methods
+    
+    
+    //MARK: - Tableview delegate methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //add checkmark methods?
+       performSegue(withIdentifier: "deckSegue", sender: self)
         
-        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let destinationVC = segue.destination as! DeckViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedSeries = seriesArray[indexPath.row]
+        }
     }
     
     
     
-    //MARK - Add new items
+    //MARK: - Add new items
     
     
     @IBAction func addSeries(_ sender: UIBarButtonItem) {
@@ -86,7 +91,7 @@ class SeriesViewController: UITableViewController {
         
     }
     
-    //MARK - save items
+    //MARK: - save items
     
     func saveSeries() {
         
@@ -102,7 +107,7 @@ class SeriesViewController: UITableViewController {
     }
     
     
-    //MARK - load items
+    //MARK: - load items
     
     func loadSeries(with request: NSFetchRequest<Series> = Series.fetchRequest()) {
         
@@ -128,6 +133,16 @@ extension SeriesViewController : UISearchBarDelegate {
         request.sortDescriptors = [NSSortDescriptor(key: "seriesName", ascending: true)]
         
         loadSeries(with: request)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadSeries()
+            
+            DispatchQueue.main.async {
+                 searchBar.resignFirstResponder()
+            }
+        }
     }
     
 }
