@@ -108,7 +108,7 @@ class DeckViewController: UITableViewController {
     
     //MARK: - load items
     
-    func loadDeck(with request: NSFetchRequest<Deck> = Deck.fetchRequest(), predicate : NSPredicate? = nil) {
+    func loadDeck(with request: NSFetchRequest<Deck> = Deck.fetchRequest(), predicate: NSPredicate? = nil) {
         
         let seriesPredicate = NSPredicate(format: "parentSeries.seriesName MATCHES %@", selectedSeries!.seriesName!)
         
