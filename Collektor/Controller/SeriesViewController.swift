@@ -104,18 +104,17 @@ class SeriesViewController: UITableViewController {
     
     //MARK - load items
     
-    func loadSeries() {
-        
-        let request : NSFetchRequest<Series> = Series.fetchRequest()
+    func loadSeries(with request: NSFetchRequest<Series> = Series.fetchRequest()) {
         
         do{
         seriesArray = try context.fetch(request)
         } catch {
             print("error fetching \(error)")
         }
+        
+        tableView.reloadData()
     }
     
-
 }
 
 
@@ -125,19 +124,10 @@ extension SeriesViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         let request : NSFetchRequest<Series> = Series.fetchRequest()
-        
         request.predicate = NSPredicate(format: "seriesName CONTAINS[cd] %@", searchBar.text!)
+        request.sortDescriptors = [NSSortDescriptor(key: "seriesName", ascending: true)]
         
-        let sortDescriptor = NSSortDescriptor(key: "seriesName", ascending: true)
-        request.sortDescriptors = [sortDescriptor]
-        
-        do{
-        seriesArray = try context.fetch(request)
-        } catch {
-            print("error sorting \(error)")
-        }
-        
-        tableView.reloadData()
+        loadSeries(with: request)
     }
     
 }
