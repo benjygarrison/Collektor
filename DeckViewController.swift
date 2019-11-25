@@ -53,10 +53,18 @@ class DeckViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "cardSegue", sender: self)
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let destinationVC = segue.destination as! CardViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedDeck = deckArray[indexPath.row]
+        }
+    }
     
     
     //MARK: - Add new items
