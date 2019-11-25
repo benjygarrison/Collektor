@@ -29,7 +29,13 @@
                             <outlet property="delegate" destination="4ge-CB-5Gv" id="VkO-sn-Acn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Series" id="qAS-05-xIm"/>
+                    <navigationItem key="navigationItem" title="Series" id="qAS-05-xIm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ffE-Is-wxF">
+                            <connections>
+                                <action selector="addSeries:" destination="4ge-CB-5Gv" id="8EY-8H-kl1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IhK-V3-yt0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

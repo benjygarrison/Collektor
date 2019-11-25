@@ -10,12 +10,14 @@ import UIKit
 
 class SeriesViewController: UITableViewController {
     
-    let seriesArray = ["Pokemon", "Yu-Gi-Oh"]
+     var seriesArray = ["Pokemon", "Yu-Gi-Oh"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    
     
     //MARK - Tableview datasource methods
     
@@ -36,7 +38,36 @@ class SeriesViewController: UITableViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
+    
+    
+    
+    //MARK - Add new items
+    
+    
+    @IBAction func addSeries(_ sender: UIBarButtonItem) {
+        
+        var textField = UITextField()
+        let alert = UIAlertController(title: "Add new series", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add it!", style: .default) { (action) in
+            //TODO: add code to check for empty string
+            self.seriesArray.append(textField.text!)
+            
+            self.tableView.reloadData()
+        }
+        
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Pokemon, etc."
+            textField = alertTextField
+            //print(alertTextField.text)
+        }
+    
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
 
 }
 
