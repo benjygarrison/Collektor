@@ -7,20 +7,17 @@
 //
 
 import UIKit
+import CoreData
 
 class SeriesViewController: UITableViewController {
     
      var seriesArray = [Series]()
-
+     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let newSeries = Series()
-        newSeries.seriesName = "Pokemon"
-        seriesArray.append(newSeries)
-        
-        //loadSeries()
-        
+        loadSeries()
     }
     
     
@@ -63,7 +60,7 @@ class SeriesViewController: UITableViewController {
         
         let action = UIAlertAction(title: "Add it!", style: .default) { (action) in
             
-            let newSeries = Series()
+            let newSeries = Series(context: self.context)
             newSeries.seriesName = textField.text!
             //TODO: add code to check for empty string
             self.seriesArray.append(newSeries)
@@ -87,14 +84,30 @@ class SeriesViewController: UITableViewController {
     //MARK - save items
     
     func saveSeries() {
-        //TODO
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+        do {
+            try context.save()
+        } catch {
+            print("error saving context \(error)")
+        }
+        
+        self.tableView.reloadData()
     }
     
     
     //MARK - load items
     
     func loadSeries() {
-        //TODO
+        
+        let request : NSFetchRequest<Series> = Series.fetchRequest()
+        
+        do{
+        seriesArray = try context.fetch(request)
+        } catch {
+            print("error fetching \(error)")
+        }
     }
     
 

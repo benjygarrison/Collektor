@@ -1,17 +1,16 @@
 //
-//  Series.swift
+//  Series+CoreDataClass.swift
 //  Collektor
 //
 //  Created by Benjamin Garrison on 11/24/19.
 //  Copyright © 2019 Benji Garrison. All rights reserved.
 //
+//
 
 import Foundation
+import CoreData
 
 
-class Series {
-    
-    var seriesName : String = ""
-    
-    
+public class Series: NSManagedObject {
+
 }

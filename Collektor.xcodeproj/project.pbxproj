@@ -14,7 +14,8 @@
 		AFC2C24A238B447C0014BEA2 /* Collektor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C248238B447C0014BEA2 /* Collektor.xcdatamodeld */; };
 		AFC2C24C238B447E0014BEA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC2C24B238B447E0014BEA2 /* Assets.xcassets */; };
 		AFC2C24F238B447E0014BEA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC2C24D238B447E0014BEA2 /* LaunchScreen.storyboard */; };
-		AFC2C257238B5B330014BEA2 /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C256238B5B330014BEA2 /* Series.swift */; };
+		AFC2C262238B6B1A0014BEA2 /* Series+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C260238B6B1A0014BEA2 /* Series+CoreDataClass.swift */; };
+		AFC2C263238B6B1A0014BEA2 /* Series+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C261238B6B1A0014BEA2 /* Series+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +28,8 @@
 		AFC2C24B238B447E0014BEA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFC2C24E238B447E0014BEA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFC2C250238B447E0014BEA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFC2C256238B5B330014BEA2 /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
+		AFC2C260238B6B1A0014BEA2 /* Series+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Series+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		AFC2C261238B6B1A0014BEA2 /* Series+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Series+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +76,9 @@
 		AFC2C258238B5B380014BEA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AFC2C260238B6B1A0014BEA2 /* Series+CoreDataClass.swift */,
+				AFC2C261238B6B1A0014BEA2 /* Series+CoreDataProperties.swift */,
 				AFC2C248238B447C0014BEA2 /* Collektor.xcdatamodeld */,
-				AFC2C256238B5B330014BEA2 /* Series.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,7 +183,8 @@
 				AFC2C24A238B447C0014BEA2 /* Collektor.xcdatamodeld in Sources */,
 				AFC2C240238B447C0014BEA2 /* AppDelegate.swift in Sources */,
 				AFC2C242238B447C0014BEA2 /* SceneDelegate.swift in Sources */,
-				AFC2C257238B5B330014BEA2 /* Series.swift in Sources */,
+				AFC2C262238B6B1A0014BEA2 /* Series+CoreDataClass.swift in Sources */,
+				AFC2C263238B6B1A0014BEA2 /* Series+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
