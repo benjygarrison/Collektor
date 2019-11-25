@@ -61,7 +61,31 @@ class CardViewController : UITableViewController {
     
     @IBAction func addCards(_ sender: UIBarButtonItem) {
         
-        //TODO
+       var textField = UITextField()
+            let alert = UIAlertController(title: "Add new card", message: "", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Add it!", style: .default) { (action) in
+                
+                let newCard = Card(context: self.context)
+                newCard.cardName = textField.text!
+                newCard.parentDeck = self.selectedDeck
+                //TODO: add code to check for empty string
+                self.cardArray.append(newCard)
+                
+                self.saveCard()
+                
+                self.tableView.reloadData()
+            }
+            
+            alert.addTextField { (alertTextField) in
+                alertTextField.placeholder = "Charizard, etc."
+                textField = alertTextField
+                //print(alertTextField.text)
+            }
+        
+            alert.addAction(action)
+            present(alert, animated: true, completion: nil)
+        
     }
     
     
