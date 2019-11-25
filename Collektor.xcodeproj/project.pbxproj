@@ -14,6 +14,7 @@
 		AFC2C24A238B447C0014BEA2 /* Collektor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C248238B447C0014BEA2 /* Collektor.xcdatamodeld */; };
 		AFC2C24C238B447E0014BEA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC2C24B238B447E0014BEA2 /* Assets.xcassets */; };
 		AFC2C24F238B447E0014BEA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC2C24D238B447E0014BEA2 /* LaunchScreen.storyboard */; };
+		AFC2C257238B5B330014BEA2 /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C256238B5B330014BEA2 /* Series.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		AFC2C24B238B447E0014BEA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFC2C24E238B447E0014BEA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFC2C250238B447E0014BEA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFC2C256238B5B330014BEA2 /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +62,47 @@
 			children = (
 				AFC2C23F238B447C0014BEA2 /* AppDelegate.swift */,
 				AFC2C241238B447C0014BEA2 /* SceneDelegate.swift */,
-				AFC2C243238B447C0014BEA2 /* SeriesViewController.swift */,
-				AFC2C245238B447C0014BEA2 /* Main.storyboard */,
-				AFC2C24B238B447E0014BEA2 /* Assets.xcassets */,
-				AFC2C24D238B447E0014BEA2 /* LaunchScreen.storyboard */,
+				AFC2C258238B5B380014BEA2 /* Model */,
+				AFC2C259238B5C300014BEA2 /* Controller */,
+				AFC2C25A238B5C4C0014BEA2 /* View */,
+				AFC2C25B238B5C740014BEA2 /* Other */,
 				AFC2C250238B447E0014BEA2 /* Info.plist */,
 				AFC2C248238B447C0014BEA2 /* Collektor.xcdatamodeld */,
 			);
 			path = Collektor;
+			sourceTree = "<group>";
+		};
+		AFC2C258238B5B380014BEA2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AFC2C256238B5B330014BEA2 /* Series.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AFC2C259238B5C300014BEA2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AFC2C243238B447C0014BEA2 /* SeriesViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AFC2C25A238B5C4C0014BEA2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AFC2C245238B447C0014BEA2 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AFC2C25B238B5C740014BEA2 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				AFC2C24B238B447E0014BEA2 /* Assets.xcassets */,
+				AFC2C24D238B447E0014BEA2 /* LaunchScreen.storyboard */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +180,7 @@
 				AFC2C24A238B447C0014BEA2 /* Collektor.xcdatamodeld in Sources */,
 				AFC2C240238B447C0014BEA2 /* AppDelegate.swift in Sources */,
 				AFC2C242238B447C0014BEA2 /* SceneDelegate.swift in Sources */,
+				AFC2C257238B5B330014BEA2 /* Series.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

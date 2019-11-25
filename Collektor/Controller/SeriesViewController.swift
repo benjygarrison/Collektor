@@ -10,11 +10,15 @@ import UIKit
 
 class SeriesViewController: UITableViewController {
     
-     var seriesArray = ["Pokemon", "Yu-Gi-Oh"]
+     var seriesArray = [Series]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let newSeries = Series()
+        newSeries.seriesName = "Pokemon"
+        seriesArray.append(newSeries)
+        
     }
     
     
@@ -22,19 +26,25 @@ class SeriesViewController: UITableViewController {
     //MARK - Tableview datasource methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return seriesArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+                
         let cell = tableView.dequeueReusableCell(withIdentifier: "seriesCell", for: indexPath)
-        cell.textLabel?.text = seriesArray[indexPath.row]
+        
+         let series = seriesArray[indexPath.row]
+        
+        cell.textLabel?.text = series.seriesName
         return cell
     }
     
     //MARK - Tableview delegate methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(seriesArray[indexPath.row])
+        
+        //add checkmark methods?
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -50,8 +60,11 @@ class SeriesViewController: UITableViewController {
         let alert = UIAlertController(title: "Add new series", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add it!", style: .default) { (action) in
+            
+            let newSeries = Series()
+            newSeries.seriesName = textField.text!
             //TODO: add code to check for empty string
-            self.seriesArray.append(textField.text!)
+            self.seriesArray.append(newSeries)
             
             self.tableView.reloadData()
         }
