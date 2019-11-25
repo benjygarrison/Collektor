@@ -19,6 +19,7 @@
 		AFC2C267238B9C780014BEA2 /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C266238B9C780014BEA2 /* DeckViewController.swift */; };
 		AFC2C26E238BA16C0014BEA2 /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C26C238BA16C0014BEA2 /* Deck+CoreDataClass.swift */; };
 		AFC2C26F238BA16C0014BEA2 /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C26D238BA16C0014BEA2 /* Deck+CoreDataProperties.swift */; };
+		AFC2C271238C80A40014BEA2 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C270238C80A40014BEA2 /* CardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		AFC2C266238B9C780014BEA2 /* DeckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = SOURCE_ROOT; };
 		AFC2C26C238BA16C0014BEA2 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		AFC2C26D238BA16C0014BEA2 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		AFC2C270238C80A40014BEA2 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardViewController.swift; path = Collektor/View/CardViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				AFC2C243238B447C0014BEA2 /* SeriesViewController.swift */,
 				AFC2C266238B9C780014BEA2 /* DeckViewController.swift */,
+				AFC2C270238C80A40014BEA2 /* CardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				AFC2C262238B6B1A0014BEA2 /* Series+CoreDataClass.swift in Sources */,
 				AFC2C26E238BA16C0014BEA2 /* Deck+CoreDataClass.swift in Sources */,
 				AFC2C26F238BA16C0014BEA2 /* Deck+CoreDataProperties.swift in Sources */,
+				AFC2C271238C80A40014BEA2 /* CardViewController.swift in Sources */,
 				AFC2C263238B6B1A0014BEA2 /* Series+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
