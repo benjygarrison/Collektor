@@ -41,7 +41,8 @@ class CardViewController : UITableViewController {
         
         let card = cardArray[indexPath.row]
         
-        cell.textLabel?.text = card.cardName
+        cell.textLabel?.text = String(card.cardNumber)
+        cell.detailTextLabel?.text = card.cardName
         return cell
     }
     
@@ -61,30 +62,39 @@ class CardViewController : UITableViewController {
     
     @IBAction func addCards(_ sender: UIBarButtonItem) {
         
-       var textField = UITextField()
-            let alert = UIAlertController(title: "Add new card", message: "", preferredStyle: .alert)
+        var textField1 = UITextField()
+        var textField2 = UITextField()
+        
+        let alert = UIAlertController(title: "Add new card", message: "", preferredStyle: .alert)
             
-            let action = UIAlertAction(title: "Add it!", style: .default) { (action) in
+        let action = UIAlertAction(title: "Add it!", style: .default) { (action) in
                 
-                let newCard = Card(context: self.context)
-                newCard.cardName = textField.text!
-                newCard.parentDeck = self.selectedDeck
-                //TODO: add code to check for empty string
-                self.cardArray.append(newCard)
+        let newCard = Card(context: self.context)
+        newCard.cardNumber = Int32(textField1.text!)!
+        newCard.cardName = textField2.text!
+        newCard.parentDeck = self.selectedDeck
+        //TODO: add code to check for empty string
+        self.cardArray.append(newCard)
                 
-                self.saveCard()
+        self.saveCard()
                 
-                self.tableView.reloadData()
-            }
-            
-            alert.addTextField { (alertTextField) in
-                alertTextField.placeholder = "Charizard, etc."
-                textField = alertTextField
-                //print(alertTextField.text)
+        self.tableView.reloadData()
+        }
+        
+        alert.addTextField { (alertTextField) in
+        alertTextField.placeholder = "123, etc."
+        alertTextField.keyboardType = UIKeyboardType.phonePad
+        textField1 = alertTextField
+        //print(alertTextField.text)
+        }
+        alert.addTextField { (alertTextField) in
+            alertTextField.placeholder = "Charizard, etc."
+            textField2 = alertTextField
+            //print(alertTextField.text)
             }
         
-            alert.addAction(action)
-            present(alert, animated: true, completion: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
         
     }
     
