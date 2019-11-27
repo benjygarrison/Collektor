@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF406966238E24E900CC1E18 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF406965238E24E900CC1E18 /* DetailViewController.swift */; };
 		AFC2C240238B447C0014BEA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C23F238B447C0014BEA2 /* AppDelegate.swift */; };
-		AFC2C242238B447C0014BEA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C241238B447C0014BEA2 /* SceneDelegate.swift */; };
 		AFC2C244238B447C0014BEA2 /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C243238B447C0014BEA2 /* SeriesViewController.swift */; };
 		AFC2C247238B447C0014BEA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC2C245238B447C0014BEA2 /* Main.storyboard */; };
 		AFC2C24A238B447C0014BEA2 /* Collektor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C248238B447C0014BEA2 /* Collektor.xcdatamodeld */; };
@@ -25,9 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF406965238E24E900CC1E18 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Collektor/View/DetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		AFC2C23C238B447C0014BEA2 /* Collektor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collektor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC2C23F238B447C0014BEA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AFC2C241238B447C0014BEA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AFC2C243238B447C0014BEA2 /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
 		AFC2C246238B447C0014BEA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AFC2C249238B447C0014BEA2 /* Collektor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Collektor.xcdatamodel; sourceTree = "<group>"; };
@@ -75,7 +75,6 @@
 			isa = PBXGroup;
 			children = (
 				AFC2C23F238B447C0014BEA2 /* AppDelegate.swift */,
-				AFC2C241238B447C0014BEA2 /* SceneDelegate.swift */,
 				AFC2C258238B5B380014BEA2 /* Model */,
 				AFC2C259238B5C300014BEA2 /* Controller */,
 				AFC2C25A238B5C4C0014BEA2 /* View */,
@@ -105,6 +104,7 @@
 				AFC2C243238B447C0014BEA2 /* SeriesViewController.swift */,
 				AFC2C266238B9C780014BEA2 /* DeckViewController.swift */,
 				AFC2C270238C80A40014BEA2 /* CardViewController.swift */,
+				AF406965238E24E900CC1E18 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,12 +197,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF406966238E24E900CC1E18 /* DetailViewController.swift in Sources */,
 				AFC2C244238B447C0014BEA2 /* SeriesViewController.swift in Sources */,
 				AFC2C24A238B447C0014BEA2 /* Collektor.xcdatamodeld in Sources */,
 				AFC2C274238C84DF0014BEA2 /* Card+CoreDataClass.swift in Sources */,
 				AFC2C267238B9C780014BEA2 /* DeckViewController.swift in Sources */,
 				AFC2C240238B447C0014BEA2 /* AppDelegate.swift in Sources */,
-				AFC2C242238B447C0014BEA2 /* SceneDelegate.swift in Sources */,
 				AFC2C262238B6B1A0014BEA2 /* Series+CoreDataClass.swift in Sources */,
 				AFC2C26E238BA16C0014BEA2 /* Deck+CoreDataClass.swift in Sources */,
 				AFC2C26F238BA16C0014BEA2 /* Deck+CoreDataProperties.swift in Sources */,
@@ -355,13 +355,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J8HRFYT9P7;
 				INFOPLIST_FILE = Collektor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.benjiGarrison.Collektor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -373,13 +374,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J8HRFYT9P7;
 				INFOPLIST_FILE = Collektor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.benjiGarrison.Collektor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
