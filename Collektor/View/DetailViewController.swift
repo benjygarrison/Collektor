@@ -13,13 +13,14 @@ class DetailViewController : UITableViewController {
     
     
     
-    let backgroundView = UIView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         
     }
+    
+
     
 
     
