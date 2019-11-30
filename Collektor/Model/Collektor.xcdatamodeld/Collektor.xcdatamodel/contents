@@ -3,6 +3,7 @@
     <entity name="Card" representedClassName=".Card" syncable="YES">
         <attribute name="cardName" optional="YES" attributeType="String"/>
         <attribute name="cardNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="detail" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Details" inverseName="parentCard" inverseEntity="Details"/>
         <relationship name="parentDeck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="cards" inverseEntity="Deck"/>
     </entity>
     <entity name="Deck" representedClassName=".Deck" syncable="YES">
@@ -10,13 +11,23 @@
         <relationship name="cards" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Card" inverseName="parentDeck" inverseEntity="Card"/>
         <relationship name="parentSeries" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Series" inverseName="decks" inverseEntity="Series"/>
     </entity>
+    <entity name="Details" representedClassName=".Details" syncable="YES">
+        <attribute name="condition" optional="YES" attributeType="String"/>
+        <attribute name="dupicates" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="graded" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="owned" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="photo" optional="YES" attributeType="Binary"/>
+        <attribute name="score" optional="YES" attributeType="String"/>
+        <relationship name="parentCard" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="detail" inverseEntity="Card"/>
+    </entity>
     <entity name="Series" representedClassName=".Series" syncable="YES">
         <attribute name="seriesName" attributeType="String"/>
         <relationship name="decks" toMany="YES" deletionRule="Cascade" destinationEntity="Deck" inverseName="parentSeries" inverseEntity="Deck"/>
     </entity>
     <elements>
-        <element name="Deck" positionX="129.07421875" positionY="115.97265625" width="128" height="88"/>
-        <element name="Series" positionX="-108.59375" positionY="110.93359375" width="128" height="73"/>
-        <element name="Card" positionX="40.046875" positionY="297.08984375" width="128" height="88"/>
+        <element name="Card" positionX="87.55078125" positionY="289.31640625" width="128" height="103"/>
+        <element name="Deck" positionX="-1.2421875" positionY="149.4453125" width="128" height="88"/>
+        <element name="Series" positionX="-175.578125" positionY="105.16796875" width="128" height="73"/>
+        <element name="Details" positionX="121.80078125" positionY="454.609375" width="128" height="148"/>
     </elements>
 </model>

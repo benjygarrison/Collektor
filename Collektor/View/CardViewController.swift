@@ -56,6 +56,15 @@ class CardViewController : UITableViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let destinationVC = segue.destination as! DetailViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedCard = cardArray[indexPath.row]
+        }
+    }
+    
     
     
     //MARK: - add cards
