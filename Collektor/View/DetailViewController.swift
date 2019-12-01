@@ -11,8 +11,9 @@ import CoreData
 
 class DetailViewController : UITableViewController {
     
-    var detailArray = [Details]()
+    @IBOutlet weak var cardName: UILabel!
     
+    var detailArray = [Details]()
     var selectedCard: Card? {
         
         didSet {
@@ -27,7 +28,8 @@ class DetailViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        cardName.text = selectedCard!.cardName!
+        
     }
     
     
@@ -46,7 +48,7 @@ class DetailViewController : UITableViewController {
             } catch {
                 print("error fetching \(error)")
             }
-            
+                    
             //tableView.reloadData()
         }
     
