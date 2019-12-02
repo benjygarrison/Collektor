@@ -28,6 +28,8 @@ class DetailViewController : UITableViewController {
     @IBOutlet weak var duplicateLabel: UILabel!
     @IBOutlet weak var duplicateSwitch: UISwitch!
     
+    
+    
     var detailArray = [Details]()
     
     var selectedCard: Card? {
@@ -59,6 +61,21 @@ class DetailViewController : UITableViewController {
         
     }
     
+    
+    
+    //MARK: - save details
+    func saveDetails() {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+        do {
+            try context.save()
+        } catch {
+            print("error saving context \(error)")
+        }
+        
+        self.tableView.reloadData()
+    }
     
     
     
@@ -174,6 +191,26 @@ class DetailViewController : UITableViewController {
     }
     
     @IBAction func duplicateSwitchMoved(_ sender: UISwitch) {
+    }
+    
+}
+
+
+extension DetailViewController {
+    
+    //MARK: - functions to persistently store data upon exit
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated);
+        if self.isMovingFromParent
+        {
+            print("button pressed")
+        }
+        if self.isBeingDismissed
+        {
+            //Dismissed
+        }
     }
     
 }
