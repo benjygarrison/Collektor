@@ -12,15 +12,24 @@ import CoreData
 class DetailViewController : UITableViewController {
     
     @IBOutlet weak var cardName: UILabel!
+    @IBOutlet weak var ownSwitch: UISwitch!
     
+    @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var conSlider: UISlider!
     @IBOutlet weak var conLabel: UILabel!
     
+    
+    @IBOutlet weak var gradedLabel: UILabel!
+    @IBOutlet weak var topScoreLabel: UILabel!
+    @IBOutlet weak var gradedSwitch: UISwitch!
     @IBOutlet weak var scoreSlider: UISlider!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var duplicateLabel: UILabel!
+    @IBOutlet weak var duplicateSwitch: UISwitch!
     
     var detailArray = [Details]()
+    
     var selectedCard: Card? {
         
         didSet {
@@ -36,6 +45,17 @@ class DetailViewController : UITableViewController {
         super.viewDidLoad()
         
         cardName.text = selectedCard!.cardName!
+        
+        gradedSwitch.isEnabled = false
+        conditionLabel.isEnabled = false
+        conSlider.isEnabled = false
+        conLabel.isEnabled = false
+        gradedLabel.isEnabled = false
+        topScoreLabel.isEnabled = false
+        scoreSlider.isEnabled = false
+        scoreLabel.isEnabled = false
+        duplicateLabel.isEnabled = false
+        duplicateSwitch.isEnabled = false
         
     }
     
@@ -70,8 +90,7 @@ class DetailViewController : UITableViewController {
         let roundedStep = round(conSlider.value / step) * step
         conSlider.value = roundedStep
         
-        
-            switch conSlider.value {
+        switch conSlider.value {
             case -5: conLabel.text = "Poor"
             case -4: conLabel.text = "Fair"
             case -3: conLabel.text = "Good"
@@ -86,9 +105,6 @@ class DetailViewController : UITableViewController {
             default:
                 conSlider.value = 0
             }
-        
-        
-        
     }
     
     @IBAction func scoreSlider(_ sender: UISlider) {
@@ -98,19 +114,66 @@ class DetailViewController : UITableViewController {
         scoreSlider.value = roundedStep
         
         switch scoreSlider.value {
-        case -4: scoreLabel.text = "1"
-        case -3: scoreLabel.text = "2"
-        case -2: scoreLabel.text = "3"
-        case -1: scoreLabel.text = "4"
-        case 0: scoreLabel.text = "5"
-        case 1: scoreLabel.text = "6"
-        case 2: scoreLabel.text = "7"
-        case 3: scoreLabel.text = "8"
-        case 4: scoreLabel.text = "9"
-        case 5: scoreLabel.text = "10"
-        default:
-            scoreSlider.value = 0
+            case -5: scoreLabel.text = "0"
+            case -4: scoreLabel.text = "1"
+            case -3: scoreLabel.text = "2"
+            case -2: scoreLabel.text = "3"
+            case -1: scoreLabel.text = "4"
+            case 0: scoreLabel.text = "5"
+            case 1: scoreLabel.text = "6"
+            case 2: scoreLabel.text = "7"
+            case 3: scoreLabel.text = "8"
+            case 4: scoreLabel.text = "9"
+            case 5: scoreLabel.text = "10"
+            default:
+                scoreSlider.value = 0
+            }
+    }
+    
+    
+    //MARK: - switch functions
+    
+    @IBAction func ownedSwitchChanged(_ sender: UISwitch) {
+        
+        if ownSwitch.isOn {
+            gradedSwitch.isEnabled = true
+            conditionLabel.isEnabled = true
+            conSlider.isEnabled = true
+            conLabel.isEnabled = true
+            gradedLabel.isEnabled = true
+            duplicateLabel.isEnabled = true
+            duplicateSwitch.isEnabled = true
+        } else if ownSwitch.isOn == false {
+            gradedSwitch.isEnabled = false
+            conditionLabel.isEnabled = false
+            conSlider.isEnabled = false
+            conLabel.isEnabled = false
+            gradedLabel.isEnabled = false
+            topScoreLabel.isEnabled = false
+            scoreSlider.isEnabled = false
+            scoreLabel.isEnabled = false
+            duplicateLabel.isEnabled = false
+            duplicateSwitch.isEnabled = false
         }
+        
+    }
+    
+    @IBAction func gradedSwitchMoved(_ sender: UISwitch) {
+        
+        if gradedSwitch.isOn {
+            topScoreLabel.isEnabled = true
+            scoreSlider.isEnabled = true
+            scoreLabel.isEnabled = true
+        } else if gradedSwitch.isOn == false {
+            topScoreLabel.isEnabled = false
+            scoreSlider.isEnabled = false
+            scoreLabel.isEnabled = false
+            
+        }
+        
+    }
+    
+    @IBAction func duplicateSwitchMoved(_ sender: UISwitch) {
     }
     
 }
