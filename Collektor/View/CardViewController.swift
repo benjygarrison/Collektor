@@ -91,7 +91,7 @@ class CardViewController : UITableViewController {
                 do {
                     try self.realm.write {
                     let newCard = Card()
-                        newCard.cardNumber = textField1.text!
+                    newCard.cardNumber = textField1.text!
                     newCard.cardName = textField2.text!
                     currentDeck.cards.append(newCard)
                         }
