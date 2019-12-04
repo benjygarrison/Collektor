@@ -7,11 +7,13 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class CardViewController : UITableViewController {
     
-    var cardArray = [Card]()
+    let realm = try! Realm()
+    
+    var cardArray: Results<Card>?
     
     var selectedDeck : Deck? {
         
@@ -19,7 +21,6 @@ class CardViewController : UITableViewController {
             loadCard()
         }
     }
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
     override func viewDidLoad() {
@@ -34,17 +35,22 @@ class CardViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return cardArray.count
+        return cardArray?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)
         
-        let card = cardArray[indexPath.row]
+        if let card = cardArray?[indexPath.row] {
+            cell.textLabel?.text = card.cardNumber
+            cell.detailTextLabel?.text = card.cardName
+        } else {
+            cell.textLabel?.text = ""
+            cell.detailTextLabel?.text = "No Cards Added Yet"
+        }
         
-        cell.textLabel?.text = String(card.cardNumber)
-        cell.detailTextLabel?.text = card.cardName
+       
         return cell
     }
     
@@ -63,7 +69,7 @@ class CardViewController : UITableViewController {
         let destinationVC = segue.destination as! DetailViewController
         
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.selectedCard = cardArray[indexPath.row]
+            destinationVC.selectedCard = cardArray?[indexPath.row]
         }
     }
     
@@ -79,15 +85,20 @@ class CardViewController : UITableViewController {
         let alert = UIAlertController(title: "Add new card", message: "", preferredStyle: .alert)
             
         let action = UIAlertAction(title: "Add it!", style: .default) { (action) in
-                
-        let newCard = Card(context: self.context)
-        newCard.cardNumber = Int32(textField1.text!)!
-        newCard.cardName = textField2.text!
-        newCard.parentDeck = self.selectedDeck
-        //TODO: add code to check for empty string
-        self.cardArray.append(newCard)
-                
-        self.saveCard()
+            
+            
+            if let currentDeck = self.selectedDeck {
+                do {
+                    try self.realm.write {
+                    let newCard = Card()
+                        newCard.cardNumber = textField1.text!
+                    newCard.cardName = textField2.text!
+                    currentDeck.cards.append(newCard)
+                        }
+                    } catch {
+                        print("error writing deck to realm \(error)")
+                        }
+            }
                 
         self.tableView.reloadData()
         }
@@ -127,22 +138,9 @@ class CardViewController : UITableViewController {
     
     
     
-    
-    func loadCard(with request: NSFetchRequest<Card> = Card.fetchRequest(), predicate: NSPredicate? = nil) {
+    func loadCard() {
             
-            let deckPredicate = NSPredicate(format: "parentDeck.deckName MATCHES %@", selectedDeck!.deckName!)
-            
-            if let additionalPredicate = predicate {
-                request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [deckPredicate, additionalPredicate])
-            } else {
-                request.predicate = deckPredicate
-            }
-            
-            do{
-            cardArray = try context.fetch(request)
-            } catch {
-                print("error fetching \(error)")
-            }
+        cardArray = selectedDeck?.cards.sorted(byKeyPath: "cardNumber", ascending: true)
             
             tableView.reloadData()
         }
@@ -152,27 +150,27 @@ class CardViewController : UITableViewController {
 
 
 //MARK: - Search bar functions
-extension CardViewController : UISearchBarDelegate {
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        let request : NSFetchRequest<Card> = Card.fetchRequest()
-        
-        let predicate = NSPredicate(format: "cardName CONTAINS[cd] %@", searchBar.text!)
-        
-        request.sortDescriptors = [NSSortDescriptor(key: "cardName", ascending: true)]
-        
-        loadCard(with: request, predicate: predicate)
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text?.count == 0 {
-            loadCard()
-            
-            DispatchQueue.main.async {
-                 searchBar.resignFirstResponder()
-            }
-        }
-    }
-    
-}
+//extension CardViewController : UISearchBarDelegate {
+//    
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        
+//        let request : NSFetchRequest<Card> = Card.fetchRequest()
+//        
+//        let predicate = NSPredicate(format: "cardName CONTAINS[cd] %@", searchBar.text!)
+//        
+//        request.sortDescriptors = [NSSortDescriptor(key: "cardName", ascending: true)]
+//        
+//        loadCard(with: request, predicate: predicate)
+//    }
+//    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        if searchBar.text?.count == 0 {
+//            loadCard()
+//            
+//            DispatchQueue.main.async {
+//                 searchBar.resignFirstResponder()
+//            }
+//        }
+//    }
+//    
+//}

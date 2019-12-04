@@ -7,12 +7,13 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class SeriesViewController: UITableViewController {
     
-     var seriesArray = [Series]()
-     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let realm = try! Realm()
+    
+    var seriesArray: Results<Series>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +27,16 @@ class SeriesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return seriesArray.count
+        return seriesArray?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 
         let cell = tableView.dequeueReusableCell(withIdentifier: "seriesCell", for: indexPath)
         
-         let series = seriesArray[indexPath.row]
+         let series = seriesArray?[indexPath.row]
         
-        cell.textLabel?.text = series.seriesName
+        cell.textLabel?.text = series?.seriesName ?? "No Series Added Yet."
         return cell
     }
     
@@ -54,7 +55,7 @@ class SeriesViewController: UITableViewController {
         let destinationVC = segue.destination as! DeckViewController
         
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.selectedSeries = seriesArray[indexPath.row]
+            destinationVC.selectedSeries = seriesArray?[indexPath.row]
         }
     }
     
@@ -70,12 +71,11 @@ class SeriesViewController: UITableViewController {
         
         let action = UIAlertAction(title: "Add it!", style: .default) { (action) in
             
-            let newSeries = Series(context: self.context)
+            let newSeries = Series()
             newSeries.seriesName = textField.text!
             //TODO: add code to check for empty string
-            self.seriesArray.append(newSeries)
             
-            //self.saveSeries()
+            self.save(series: newSeries)
             
             self.tableView.reloadData()
         }
@@ -93,12 +93,12 @@ class SeriesViewController: UITableViewController {
     
     //MARK: - save items
     
-    func saveSeries() {
-        
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    func save(series: Series) {
 
         do {
-            try context.save()
+            try realm.write {
+                realm.add(series)
+            }
         } catch {
             print("error saving context \(error)")
         }
@@ -109,41 +109,38 @@ class SeriesViewController: UITableViewController {
     
     //MARK: - load items
     
-    func loadSeries(with request: NSFetchRequest<Series> = Series.fetchRequest()) {
+    func loadSeries() {
         
-        do{
-        seriesArray = try context.fetch(request)
-        } catch {
-            print("error fetching \(error)")
-        }
+
+        seriesArray = realm.objects(Series.self)
         
         tableView.reloadData()
-    }
     
+    }
 }
 
 
 //MARK: - Search bar functions
-extension SeriesViewController : UISearchBarDelegate {
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        let request : NSFetchRequest<Series> = Series.fetchRequest()
-        request.predicate = NSPredicate(format: "seriesName CONTAINS[cd] %@", searchBar.text!)
-        request.sortDescriptors = [NSSortDescriptor(key: "seriesName", ascending: true)]
-        
-        loadSeries(with: request)
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text?.count == 0 {
-            loadSeries()
-            
-            DispatchQueue.main.async {
-                 searchBar.resignFirstResponder()
-            }
-        }
-    }
-    
-}
+//extension SeriesViewController : UISearchBarDelegate {
+//    
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        
+//        let request : NSFetchRequest<Series> = Series.fetchRequest()
+//        request.predicate = NSPredicate(format: "seriesName CONTAINS[cd] %@", searchBar.text!)
+//        request.sortDescriptors = [NSSortDescriptor(key: "seriesName", ascending: true)]
+//        
+//        loadSeries(with: request)
+//    }
+//    
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        if searchBar.text?.count == 0 {
+//            loadSeries()
+//            
+//            DispatchQueue.main.async {
+//                 searchBar.resignFirstResponder()
+//            }
+//        }
+//    }
+//    
+//}
 
