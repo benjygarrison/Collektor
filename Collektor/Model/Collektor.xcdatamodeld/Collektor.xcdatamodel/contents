@@ -16,7 +16,6 @@
         <attribute name="dupicates" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="graded" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="owned" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="photo" optional="YES" attributeType="Binary"/>
         <attribute name="score" optional="YES" attributeType="String"/>
         <relationship name="parentCard" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Card" inverseName="detail" inverseEntity="Card"/>
     </entity>
@@ -27,7 +26,7 @@
     <elements>
         <element name="Card" positionX="87.55078125" positionY="289.31640625" width="128" height="103"/>
         <element name="Deck" positionX="-1.2421875" positionY="149.4453125" width="128" height="88"/>
-        <element name="Details" positionX="121.80078125" positionY="454.609375" width="128" height="148"/>
+        <element name="Details" positionX="121.80078125" positionY="454.609375" width="128" height="133"/>
         <element name="Series" positionX="-175.578125" positionY="105.16796875" width="128" height="73"/>
     </elements>
 </model>

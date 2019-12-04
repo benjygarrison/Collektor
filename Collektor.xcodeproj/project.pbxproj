@@ -9,22 +9,17 @@
 /* Begin PBXBuildFile section */
 		7B24F33B43966B20FF2B88E6 /* Pods_Collektor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB2EDD8810681B7753047D9 /* Pods_Collektor.framework */; };
 		AF406966238E24E900CC1E18 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF406965238E24E900CC1E18 /* DetailViewController.swift */; };
-		AFA7A62023931F7A00EFE702 /* Details+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA7A61E23931F7A00EFE702 /* Details+CoreDataClass.swift */; };
-		AFA7A62123931F7A00EFE702 /* Details+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA7A61F23931F7A00EFE702 /* Details+CoreDataProperties.swift */; };
 		AFC2C240238B447C0014BEA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C23F238B447C0014BEA2 /* AppDelegate.swift */; };
 		AFC2C244238B447C0014BEA2 /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C243238B447C0014BEA2 /* SeriesViewController.swift */; };
 		AFC2C247238B447C0014BEA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC2C245238B447C0014BEA2 /* Main.storyboard */; };
-		AFC2C24A238B447C0014BEA2 /* Collektor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C248238B447C0014BEA2 /* Collektor.xcdatamodeld */; };
 		AFC2C24C238B447E0014BEA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFC2C24B238B447E0014BEA2 /* Assets.xcassets */; };
 		AFC2C24F238B447E0014BEA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC2C24D238B447E0014BEA2 /* LaunchScreen.storyboard */; };
-		AFC2C262238B6B1A0014BEA2 /* Series+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C260238B6B1A0014BEA2 /* Series+CoreDataClass.swift */; };
-		AFC2C263238B6B1A0014BEA2 /* Series+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C261238B6B1A0014BEA2 /* Series+CoreDataProperties.swift */; };
 		AFC2C267238B9C780014BEA2 /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C266238B9C780014BEA2 /* DeckViewController.swift */; };
-		AFC2C26E238BA16C0014BEA2 /* Deck+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C26C238BA16C0014BEA2 /* Deck+CoreDataClass.swift */; };
-		AFC2C26F238BA16C0014BEA2 /* Deck+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C26D238BA16C0014BEA2 /* Deck+CoreDataProperties.swift */; };
 		AFC2C271238C80A40014BEA2 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C270238C80A40014BEA2 /* CardViewController.swift */; };
-		AFC2C274238C84DF0014BEA2 /* Card+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C272238C84DF0014BEA2 /* Card+CoreDataClass.swift */; };
-		AFC2C275238C84DF0014BEA2 /* Card+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C273238C84DF0014BEA2 /* Card+CoreDataProperties.swift */; };
+		AFF359FB2397519C00A69B20 /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF359FA2397519C00A69B20 /* Series.swift */; };
+		AFF359FD239751B400A69B20 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF359FC239751B400A69B20 /* Deck.swift */; };
+		AFF359FF239751C400A69B20 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF359FE239751C400A69B20 /* Card.swift */; };
+		AFF35A01239751E000A69B20 /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF35A00239751E000A69B20 /* Details.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,24 +27,19 @@
 		605C39E8618D4E26012775DB /* Pods-Collektor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collektor.debug.xcconfig"; path = "Target Support Files/Pods-Collektor/Pods-Collektor.debug.xcconfig"; sourceTree = "<group>"; };
 		6DB2EDD8810681B7753047D9 /* Pods_Collektor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Collektor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF406965238E24E900CC1E18 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Collektor/View/DetailViewController.swift; sourceTree = SOURCE_ROOT; };
-		AFA7A61E23931F7A00EFE702 /* Details+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Details+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		AFA7A61F23931F7A00EFE702 /* Details+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Details+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		AFC2C23C238B447C0014BEA2 /* Collektor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collektor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC2C23F238B447C0014BEA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFC2C243238B447C0014BEA2 /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
 		AFC2C246238B447C0014BEA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AFC2C249238B447C0014BEA2 /* Collektor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Collektor.xcdatamodel; sourceTree = "<group>"; };
 		AFC2C24B238B447E0014BEA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AFC2C24E238B447E0014BEA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFC2C250238B447E0014BEA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AFC2C260238B6B1A0014BEA2 /* Series+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Series+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		AFC2C261238B6B1A0014BEA2 /* Series+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Series+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		AFC2C266238B9C780014BEA2 /* DeckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = SOURCE_ROOT; };
-		AFC2C26C238BA16C0014BEA2 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		AFC2C26D238BA16C0014BEA2 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		AFC2C270238C80A40014BEA2 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardViewController.swift; path = Collektor/View/CardViewController.swift; sourceTree = SOURCE_ROOT; };
-		AFC2C272238C84DF0014BEA2 /* Card+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		AFC2C273238C84DF0014BEA2 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		AFF359FA2397519C00A69B20 /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = SOURCE_ROOT; };
+		AFF359FC239751B400A69B20 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		AFF359FE239751C400A69B20 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		AFF35A00239751E000A69B20 /* Details.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,15 +105,10 @@
 		AFC2C258238B5B380014BEA2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AFA7A61E23931F7A00EFE702 /* Details+CoreDataClass.swift */,
-				AFA7A61F23931F7A00EFE702 /* Details+CoreDataProperties.swift */,
-				AFC2C272238C84DF0014BEA2 /* Card+CoreDataClass.swift */,
-				AFC2C273238C84DF0014BEA2 /* Card+CoreDataProperties.swift */,
-				AFC2C26C238BA16C0014BEA2 /* Deck+CoreDataClass.swift */,
-				AFC2C26D238BA16C0014BEA2 /* Deck+CoreDataProperties.swift */,
-				AFC2C260238B6B1A0014BEA2 /* Series+CoreDataClass.swift */,
-				AFC2C261238B6B1A0014BEA2 /* Series+CoreDataProperties.swift */,
-				AFC2C248238B447C0014BEA2 /* Collektor.xcdatamodeld */,
+				AFF359FA2397519C00A69B20 /* Series.swift */,
+				AFF359FC239751B400A69B20 /* Deck.swift */,
+				AFF359FE239751C400A69B20 /* Card.swift */,
+				AFF35A00239751E000A69B20 /* Details.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -274,18 +259,13 @@
 			files = (
 				AF406966238E24E900CC1E18 /* DetailViewController.swift in Sources */,
 				AFC2C244238B447C0014BEA2 /* SeriesViewController.swift in Sources */,
-				AFA7A62023931F7A00EFE702 /* Details+CoreDataClass.swift in Sources */,
-				AFC2C24A238B447C0014BEA2 /* Collektor.xcdatamodeld in Sources */,
-				AFC2C274238C84DF0014BEA2 /* Card+CoreDataClass.swift in Sources */,
 				AFC2C267238B9C780014BEA2 /* DeckViewController.swift in Sources */,
+				AFF359FF239751C400A69B20 /* Card.swift in Sources */,
 				AFC2C240238B447C0014BEA2 /* AppDelegate.swift in Sources */,
-				AFC2C262238B6B1A0014BEA2 /* Series+CoreDataClass.swift in Sources */,
-				AFA7A62123931F7A00EFE702 /* Details+CoreDataProperties.swift in Sources */,
-				AFC2C26E238BA16C0014BEA2 /* Deck+CoreDataClass.swift in Sources */,
-				AFC2C26F238BA16C0014BEA2 /* Deck+CoreDataProperties.swift in Sources */,
-				AFC2C275238C84DF0014BEA2 /* Card+CoreDataProperties.swift in Sources */,
+				AFF359FB2397519C00A69B20 /* Series.swift in Sources */,
+				AFF359FD239751B400A69B20 /* Deck.swift in Sources */,
+				AFF35A01239751E000A69B20 /* Details.swift in Sources */,
 				AFC2C271238C80A40014BEA2 /* CardViewController.swift in Sources */,
-				AFC2C263238B6B1A0014BEA2 /* Series+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,19 +467,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		AFC2C248238B447C0014BEA2 /* Collektor.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				AFC2C249238B447C0014BEA2 /* Collektor.xcdatamodel */,
-			);
-			currentVersion = AFC2C249238B447C0014BEA2 /* Collektor.xcdatamodel */;
-			path = Collektor.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = AFC2C234238B447C0014BEA2 /* Project object */;
 }
