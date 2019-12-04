@@ -11,6 +11,8 @@ import CoreData
 
 class DeckViewController: UITableViewController {
     
+    
+    
     var deckArray = [Deck]()
     
     var selectedSeries : Series? {

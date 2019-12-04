@@ -3,7 +3,7 @@
     <entity name="Card" representedClassName=".Card" syncable="YES">
         <attribute name="cardName" optional="YES" attributeType="String"/>
         <attribute name="cardNumber" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="detail" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Details" inverseName="parentCard" inverseEntity="Details"/>
+        <relationship name="detail" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Details" inverseName="parentCard" inverseEntity="Details"/>
         <relationship name="parentDeck" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deck" inverseName="cards" inverseEntity="Deck"/>
     </entity>
     <entity name="Deck" representedClassName=".Deck" syncable="YES">
@@ -27,7 +27,7 @@
     <elements>
         <element name="Card" positionX="87.55078125" positionY="289.31640625" width="128" height="103"/>
         <element name="Deck" positionX="-1.2421875" positionY="149.4453125" width="128" height="88"/>
-        <element name="Series" positionX="-175.578125" positionY="105.16796875" width="128" height="73"/>
         <element name="Details" positionX="121.80078125" positionY="454.609375" width="128" height="148"/>
+        <element name="Series" positionX="-175.578125" positionY="105.16796875" width="128" height="73"/>
     </elements>
 </model>

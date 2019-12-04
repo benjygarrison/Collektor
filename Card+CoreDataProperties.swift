@@ -2,7 +2,7 @@
 //  Card+CoreDataProperties.swift
 //  Collektor
 //
-//  Created by Benjamin Garrison on 11/25/19.
+//  Created by Benjamin Garrison on 12/2/19.
 //  Copyright © 2019 Benji Garrison. All rights reserved.
 //
 //
@@ -19,6 +19,7 @@ extension Card {
 
     @NSManaged public var cardName: String?
     @NSManaged public var cardNumber: Int32
+    @NSManaged public var detail: Details?
     @NSManaged public var parentDeck: Deck?
 
 }
