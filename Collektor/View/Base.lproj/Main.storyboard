@@ -321,10 +321,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Details" id="1um-7Q-gGU"/>
-                    <connections>
-                        <outlet property="cardName" destination="FcU-Nf-gdq" id="evf-Uo-9dm"/>
-                        <outlet property="conditionTextField" destination="i6u-gR-dQU" id="DLf-Do-Vh2"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93v-Cb-23L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

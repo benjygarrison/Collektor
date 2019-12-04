@@ -105,23 +105,6 @@ class DeckViewController: UITableViewController {
     
     
     
-    //MARK: - save items
-//    func save(deck: Deck) {
-//
-//
-//        do {
-//             try realm.write {
-//                    realm.add(deck)
-//            }
-//        } catch {
-//            print("error saving context \(error)")
-//        }
-//
-//        self.tableView.reloadData()
-//    }
-    
-    
-    
     //MARK: - load items
     
     func loadDeck() {

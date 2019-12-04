@@ -122,22 +122,6 @@ class CardViewController : UITableViewController {
     
     
     
-    //MARK: - save items
-    func saveCard() {
-        
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
-        do {
-            try context.save()
-        } catch {
-            print("error saving context \(error)")
-        }
-        
-        self.tableView.reloadData()
-    }
-    
-    
-    
     func loadCard() {
             
         cardArray = selectedDeck?.cards.sorted(byKeyPath: "cardNumber", ascending: true)
