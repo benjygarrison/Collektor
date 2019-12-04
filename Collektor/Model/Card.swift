@@ -14,7 +14,11 @@ class Card: Object {
     @objc dynamic var cardNumber: String = ""
     @objc dynamic var cardName: String = ""
     @objc dynamic var haveIt: Bool = false
+    @objc dynamic var owned: Bool = false
+    @objc dynamic var condition: String = ""
+    @objc dynamic var graded: Bool = false
+    @objc dynamic var score: Int = 0
+    
     var parentDeck = LinkingObjects(fromType: Deck.self, property: "cards")
-    var cardDetails = List<Details>()
     
 }
