@@ -48,18 +48,18 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         }
     
         switch scoreValueLabel.text {
-        case "0": scoreSlider.value = -5
-        case "1": scoreSlider.value = -4
-        case "2": scoreSlider.value = -3
-        case "3": scoreSlider.value = -2
-        case "4": scoreSlider.value = -1
-        case "5": scoreSlider.value = 0
-        case "6": scoreSlider.value = 1
-        case "7": scoreSlider.value = 2
-        case "8": scoreSlider.value = 3
-        case "9": scoreSlider.value = 4
-        case "10": scoreSlider.value = 5
-        default: scoreSlider.value = 0
+            case "0": scoreSlider.value = -5
+            case "1": scoreSlider.value = -4
+            case "2": scoreSlider.value = -3
+            case "3": scoreSlider.value = -2
+            case "4": scoreSlider.value = -1
+            case "5": scoreSlider.value = 0
+            case "6": scoreSlider.value = 1
+            case "7": scoreSlider.value = 2
+            case "8": scoreSlider.value = 3
+            case "9": scoreSlider.value = 4
+            case "10": scoreSlider.value = 5
+            default: scoreSlider.value = 0
         }
     
     
@@ -111,19 +111,19 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         switch row {
-        case 0: conditionPickerValue = ""
-        case 1: conditionPickerValue = "Gem Mint"
-        case 2: conditionPickerValue = "Mint"
-        case 3: conditionPickerValue = "Near Mint-Mint"
-        case 4: conditionPickerValue = "Near Mint"
-        case 5: conditionPickerValue = "Excellent-Mint"
-        case 6: conditionPickerValue = "Excellent"
-        case 7: conditionPickerValue = "Very Good-Excellent"
-        case 8: conditionPickerValue = "Very Good"
-        case 9: conditionPickerValue = "Good"
-        case 10: conditionPickerValue = "Fair"
-        case 11: conditionPickerValue = "poor"
-        default: conditionPickerValue = ""
+            case 0: conditionPickerValue = ""
+            case 1: conditionPickerValue = "Gem Mint"
+            case 2: conditionPickerValue = "Mint"
+            case 3: conditionPickerValue = "Near Mint-Mint"
+            case 4: conditionPickerValue = "Near Mint"
+            case 5: conditionPickerValue = "Excellent-Mint"
+            case 6: conditionPickerValue = "Excellent"
+            case 7: conditionPickerValue = "Very Good-Excellent"
+            case 8: conditionPickerValue = "Very Good"
+            case 9: conditionPickerValue = "Good"
+            case 10: conditionPickerValue = "Fair"
+            case 11: conditionPickerValue = "poor"
+            default: conditionPickerValue = ""
         }
         
     }
@@ -137,18 +137,18 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         sender.value = roundedValue
         
         switch roundedValue {
-        case -5: scoreValueLabel.text = "0"
-        case -4: scoreValueLabel.text = "1"
-        case -3: scoreValueLabel.text = "2"
-        case -2: scoreValueLabel.text = "3"
-        case -1: scoreValueLabel.text = "4"
-        case -0: scoreValueLabel.text = "5"
-        case 1: scoreValueLabel.text = "6"
-        case 2: scoreValueLabel.text = "7"
-        case 3: scoreValueLabel.text = "8"
-        case 4: scoreValueLabel.text = "9"
-        case 5: scoreValueLabel.text = "10"
-        default: scoreValueLabel.text = "5"
+            case -5: scoreValueLabel.text = "0"
+            case -4: scoreValueLabel.text = "1"
+            case -3: scoreValueLabel.text = "2"
+            case -2: scoreValueLabel.text = "3"
+            case -1: scoreValueLabel.text = "4"
+            case -0: scoreValueLabel.text = "5"
+            case 1: scoreValueLabel.text = "6"
+            case 2: scoreValueLabel.text = "7"
+            case 3: scoreValueLabel.text = "8"
+            case 4: scoreValueLabel.text = "9"
+            case 5: scoreValueLabel.text = "10"
+            default: scoreValueLabel.text = "5"
         }
     }
     
