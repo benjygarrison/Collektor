@@ -224,25 +224,36 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lo-HT-0oK">
-                                                    <rect key="frame" x="8" y="0.0" width="398" height="60"/>
+                                                    <rect key="frame" x="8" y="18" width="90" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i6u-gR-dQU" userLabel="conditionTextField">
-                                                    <rect key="frame" x="169" y="13" width="233" height="34"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aif-7h-Gpf">
+                                                    <rect key="frame" x="329" y="13" width="70" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <state key="normal" title="Add/Edit"/>
+                                                    <connections>
+                                                        <action selector="conditionButtonPressed:" destination="sLA-a4-FQJ" eventType="touchUpInside" id="SbL-Dd-xwS"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1f-Fy-YtL" userLabel="conditionValeLabel">
+                                                    <rect key="frame" x="106" y="18" width="48" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="1lo-HT-0oK" firstAttribute="leading" secondItem="ram-U0-7Ub" secondAttribute="leading" constant="8" id="Feh-Fy-N61"/>
-                                                <constraint firstItem="i6u-gR-dQU" firstAttribute="trailing" secondItem="ram-U0-7Ub" secondAttribute="trailingMargin" constant="8" id="SjM-7t-TM5"/>
-                                                <constraint firstAttribute="trailing" secondItem="1lo-HT-0oK" secondAttribute="trailing" constant="8" id="Z3D-2h-CSk"/>
-                                                <constraint firstItem="1lo-HT-0oK" firstAttribute="top" secondItem="ram-U0-7Ub" secondAttribute="top" id="auK-n0-4oA"/>
-                                                <constraint firstAttribute="bottom" secondItem="1lo-HT-0oK" secondAttribute="bottom" id="eoD-SC-Mhk"/>
-                                                <constraint firstItem="i6u-gR-dQU" firstAttribute="centerY" secondItem="ram-U0-7Ub" secondAttribute="centerY" id="isY-ZS-cEj"/>
-                                                <constraint firstItem="i6u-gR-dQU" firstAttribute="leading" secondItem="ram-U0-7Ub" secondAttribute="leadingMargin" constant="149" id="jLV-Yl-o6X"/>
+                                                <constraint firstItem="1lo-HT-0oK" firstAttribute="centerY" secondItem="ram-U0-7Ub" secondAttribute="centerY" id="FSw-nu-nNK"/>
+                                                <constraint firstItem="z1f-Fy-YtL" firstAttribute="leading" secondItem="1lo-HT-0oK" secondAttribute="trailing" constant="8" id="Gcd-Zi-PHL"/>
+                                                <constraint firstItem="aif-7h-Gpf" firstAttribute="leading" secondItem="z1f-Fy-YtL" secondAttribute="trailing" constant="175" id="K53-xV-Yto"/>
+                                                <constraint firstItem="1lo-HT-0oK" firstAttribute="leading" secondItem="ram-U0-7Ub" secondAttribute="leading" constant="8" id="TiX-3N-u2R"/>
+                                                <constraint firstAttribute="trailing" secondItem="aif-7h-Gpf" secondAttribute="trailing" constant="15" id="ZAJ-70-f8g"/>
+                                                <constraint firstItem="z1f-Fy-YtL" firstAttribute="centerY" secondItem="ram-U0-7Ub" secondAttribute="centerY" id="g4W-MJ-V4N"/>
+                                                <constraint firstItem="aif-7h-Gpf" firstAttribute="leading" secondItem="z1f-Fy-YtL" secondAttribute="trailing" constant="175" id="gy3-cr-dat"/>
+                                                <constraint firstItem="z1f-Fy-YtL" firstAttribute="leading" secondItem="1lo-HT-0oK" secondAttribute="trailing" constant="8" id="sdM-CH-2ay"/>
+                                                <constraint firstItem="aif-7h-Gpf" firstAttribute="centerY" secondItem="ram-U0-7Ub" secondAttribute="centerY" id="vaU-Y1-ZDh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -323,7 +334,9 @@
                     <navigationItem key="navigationItem" title="Details" id="1um-7Q-gGU"/>
                     <connections>
                         <outlet property="cardName" destination="FcU-Nf-gdq" id="vBn-Mv-A5r"/>
-                        <outlet property="conditionTextField" destination="i6u-gR-dQU" id="0lG-el-Z2e"/>
+                        <outlet property="conditionButton" destination="aif-7h-Gpf" id="h18-mT-zsp"/>
+                        <outlet property="conditionLabel" destination="1lo-HT-0oK" id="p8u-1O-3sQ"/>
+                        <outlet property="conditionValueLabel" destination="z1f-Fy-YtL" id="eLY-GX-Kb7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93v-Cb-23L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
