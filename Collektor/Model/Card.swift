@@ -17,7 +17,7 @@ class Card: Object {
     @objc dynamic var owned: Bool = false
     @objc dynamic var condition: String = ""
     @objc dynamic var graded: Bool = false
-    @objc dynamic var score: Int = 0
+    @objc dynamic var score: String = ""
     
     var parentDeck = LinkingObjects(fromType: Deck.self, property: "cards")
     

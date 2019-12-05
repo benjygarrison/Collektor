@@ -286,18 +286,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5F-9I-EZd">
-                                                    <rect key="frame" x="8" y="0.0" width="398" height="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5F-9I-EZd">
+                                                    <rect key="frame" x="8" y="8" width="56" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yw2-rs-jqs">
+                                                    <rect key="frame" x="72" y="8" width="13" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-5" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="W3d-3l-PIE">
+                                                    <rect key="frame" x="120" y="5" width="281" height="31"/>
+                                                    <connections>
+                                                        <action selector="sliderMoved:" destination="sLA-a4-FQJ" eventType="valueChanged" id="5rB-M8-UFp"/>
+                                                    </connections>
+                                                </slider>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="a5F-9I-EZd" secondAttribute="bottom" id="ZkL-mv-Lon"/>
-                                                <constraint firstItem="a5F-9I-EZd" firstAttribute="leading" secondItem="cup-nt-0VV" secondAttribute="leading" constant="8" id="b94-Js-4dj"/>
-                                                <constraint firstAttribute="trailing" secondItem="a5F-9I-EZd" secondAttribute="trailing" constant="8" id="lUI-Vz-XUn"/>
-                                                <constraint firstItem="a5F-9I-EZd" firstAttribute="top" secondItem="cup-nt-0VV" secondAttribute="top" id="mVF-cJ-AEy"/>
+                                                <constraint firstItem="W3d-3l-PIE" firstAttribute="leading" secondItem="yw2-rs-jqs" secondAttribute="trailing" constant="37" id="0Sz-PB-Vmq"/>
+                                                <constraint firstItem="a5F-9I-EZd" firstAttribute="leading" secondItem="cup-nt-0VV" secondAttribute="leading" constant="8" id="Mzj-Ar-E8p"/>
+                                                <constraint firstItem="yw2-rs-jqs" firstAttribute="centerY" secondItem="cup-nt-0VV" secondAttribute="centerY" id="NoN-zB-mGR"/>
+                                                <constraint firstItem="yw2-rs-jqs" firstAttribute="leading" secondItem="a5F-9I-EZd" secondAttribute="trailing" constant="8" id="Rra-Wc-jF8"/>
+                                                <constraint firstItem="a5F-9I-EZd" firstAttribute="centerY" secondItem="cup-nt-0VV" secondAttribute="centerY" id="Zd0-Un-4hV"/>
+                                                <constraint firstAttribute="trailing" secondItem="W3d-3l-PIE" secondAttribute="trailing" constant="15" id="eGi-mM-aYs"/>
+                                                <constraint firstItem="yw2-rs-jqs" firstAttribute="leading" secondItem="a5F-9I-EZd" secondAttribute="trailing" constant="8" id="glb-IM-8IW"/>
+                                                <constraint firstItem="W3d-3l-PIE" firstAttribute="leading" secondItem="yw2-rs-jqs" secondAttribute="trailing" constant="37" id="jC3-Iq-COA"/>
+                                                <constraint firstItem="W3d-3l-PIE" firstAttribute="centerY" secondItem="cup-nt-0VV" secondAttribute="centerY" id="tC6-eT-CtW"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -337,6 +354,8 @@
                         <outlet property="conditionButton" destination="aif-7h-Gpf" id="h18-mT-zsp"/>
                         <outlet property="conditionLabel" destination="1lo-HT-0oK" id="p8u-1O-3sQ"/>
                         <outlet property="conditionValueLabel" destination="z1f-Fy-YtL" id="eLY-GX-Kb7"/>
+                        <outlet property="scoreSlider" destination="W3d-3l-PIE" id="qwH-KA-pPw"/>
+                        <outlet property="scoreValueLabel" destination="yw2-rs-jqs" id="Kfc-Fs-zw6"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93v-Cb-23L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

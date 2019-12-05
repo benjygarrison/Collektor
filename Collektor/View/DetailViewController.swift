@@ -21,6 +21,9 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var conditionValueLabel: UILabel!
     @IBOutlet weak var conditionButton: UIButton!
+    @IBOutlet weak var scoreValueLabel: UILabel!
+    @IBOutlet weak var scoreSlider: UISlider!
+    
     
     
     
@@ -37,6 +40,29 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         } else {
             conditionValueLabel.text = ""
         }
+    
+        if selectedCard?.score != "" {
+            scoreValueLabel.text = selectedCard?.score
+        } else {
+            scoreValueLabel.text = "5"
+        }
+    
+        switch scoreValueLabel.text {
+        case "0": scoreSlider.value = -5
+        case "1": scoreSlider.value = -4
+        case "2": scoreSlider.value = -3
+        case "3": scoreSlider.value = -2
+        case "4": scoreSlider.value = -1
+        case "5": scoreSlider.value = 0
+        case "6": scoreSlider.value = 1
+        case "7": scoreSlider.value = 2
+        case "8": scoreSlider.value = 3
+        case "9": scoreSlider.value = 4
+        case "10": scoreSlider.value = 5
+        default: scoreSlider.value = 0
+        }
+    
+    
    }
     
     
@@ -102,6 +128,29 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         
     }
     
+    //MARK: - value slider function
+    
+    @IBAction func sliderMoved(_ sender: UISlider) {
+        
+        let step: Float = 1
+        let roundedValue = round(sender.value / step) * step
+        sender.value = roundedValue
+        
+        switch roundedValue {
+        case -5: scoreValueLabel.text = "0"
+        case -4: scoreValueLabel.text = "1"
+        case -3: scoreValueLabel.text = "2"
+        case -2: scoreValueLabel.text = "3"
+        case -1: scoreValueLabel.text = "4"
+        case -0: scoreValueLabel.text = "5"
+        case 1: scoreValueLabel.text = "6"
+        case 2: scoreValueLabel.text = "7"
+        case 3: scoreValueLabel.text = "8"
+        case 4: scoreValueLabel.text = "9"
+        case 5: scoreValueLabel.text = "10"
+        default: scoreValueLabel.text = "5"
+        }
+    }
     
     
 }
@@ -122,6 +171,7 @@ extension DetailViewController {
              do {
              try self.realm.write {
                 selectedCard?.condition = conditionValueLabel.text!
+                selectedCard?.score = scoreValueLabel.text!
                  }
              } catch {
                  print("error writing detail to realm \(error)")
