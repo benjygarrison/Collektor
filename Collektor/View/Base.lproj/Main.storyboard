@@ -207,12 +207,21 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IP4-Nt-zPz">
+                                                    <rect key="frame" x="345" y="19.5" width="43" height="31"/>
+                                                    <connections>
+                                                        <action selector="ownedSwitchActivated:" destination="sLA-a4-FQJ" eventType="valueChanged" id="av9-nd-nCf"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="MZm-Cg-EVo" firstAttribute="top" secondItem="3b5-XJ-gTd" secondAttribute="top" id="71k-RU-kaW"/>
                                                 <constraint firstAttribute="trailing" secondItem="MZm-Cg-EVo" secondAttribute="trailing" constant="8" id="ASN-z5-wd5"/>
+                                                <constraint firstItem="IP4-Nt-zPz" firstAttribute="centerY" secondItem="3b5-XJ-gTd" secondAttribute="centerY" id="Tdx-Tb-i2t"/>
+                                                <constraint firstItem="IP4-Nt-zPz" firstAttribute="leading" secondItem="3b5-XJ-gTd" secondAttribute="leadingMargin" constant="325" id="ZlN-lG-oQu"/>
                                                 <constraint firstItem="MZm-Cg-EVo" firstAttribute="leading" secondItem="3b5-XJ-gTd" secondAttribute="leading" constant="8" id="c3j-mh-0Ae"/>
                                                 <constraint firstAttribute="bottom" secondItem="MZm-Cg-EVo" secondAttribute="bottom" id="ccn-Ct-Vad"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="IP4-Nt-zPz" secondAttribute="trailing" constant="8" id="sSG-tP-kUo"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -354,6 +363,7 @@
                         <outlet property="conditionButton" destination="aif-7h-Gpf" id="h18-mT-zsp"/>
                         <outlet property="conditionLabel" destination="1lo-HT-0oK" id="p8u-1O-3sQ"/>
                         <outlet property="conditionValueLabel" destination="z1f-Fy-YtL" id="eLY-GX-Kb7"/>
+                        <outlet property="ownedSwitch" destination="IP4-Nt-zPz" id="4P4-AW-Eef"/>
                         <outlet property="scoreSlider" destination="W3d-3l-PIE" id="qwH-KA-pPw"/>
                         <outlet property="scoreValueLabel" destination="yw2-rs-jqs" id="Kfc-Fs-zw6"/>
                     </connections>

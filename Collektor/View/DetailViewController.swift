@@ -18,6 +18,7 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     let conditionPickerData = ["", "gem mint", "mint", "near mint-mint", "near mint", "excellent-mint", "excellent", "very good-excellent", "very good", "good", "fair", "poor"]
     
     @IBOutlet weak var cardName: UILabel!
+    @IBOutlet weak var ownedSwitch: UISwitch!
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var conditionValueLabel: UILabel!
     @IBOutlet weak var conditionButton: UIButton!
@@ -34,6 +35,10 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
        super.viewDidLoad()
 
         cardName.text = selectedCard?.cardName
+    
+        if selectedCard?.owned == true {
+            ownedSwitch.isOn = true
+        }
         
         if selectedCard?.condition != "" {
             conditionValueLabel.text = selectedCard?.condition
@@ -65,10 +70,17 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     
    }
     
+
+    
+    //MARK: - owned switch function
+    
+    @IBAction func ownedSwitchActivated(_ sender: UISwitch) {
+            
+    }
+    
     
     
     //MARK: - condition button function
-    
     
     @IBAction func conditionButtonPressed(_ sender: UIButton) {
        let alert = UIAlertController(title: "Condition", message: "\n\n\n\n\n\n", preferredStyle: .alert)
@@ -176,6 +188,26 @@ extension DetailViewController {
              } catch {
                  print("error writing detail to realm \(error)")
                  }
+            
+            if ownedSwitch.isOn == true {
+                do {
+                try self.realm.write {
+                   selectedCard?.owned = true
+                    }
+                } catch {
+                    print("error writing detail to realm \(error)")
+                    }
+            }
+            
+            if ownedSwitch.isOn != true {
+                do {
+                try self.realm.write {
+                   selectedCard?.owned = false
+                    }
+                } catch {
+                    print("error writing detail to realm \(error)")
+                    }
+            }
         }
       
 
