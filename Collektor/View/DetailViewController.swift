@@ -22,14 +22,16 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var conditionValueLabel: UILabel!
     @IBOutlet weak var conditionButton: UIButton!
+    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var gradedLabel: UILabel!
     @IBOutlet weak var scoreValueLabel: UILabel!
     @IBOutlet weak var scoreSlider: UISlider!
-    
-    
-    
+    @IBOutlet weak var duplicatesLabel: UILabel!
     
     var selectedCard: Card?
     
+    
+    //MARK: - viewDidLoad
     
    override func viewDidLoad() {
        super.viewDidLoad()
@@ -67,7 +69,6 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             default: scoreSlider.value = 0
         }
     
-    
    }
     
 
@@ -75,6 +76,27 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     //MARK: - owned switch function
     
     @IBAction func ownedSwitchActivated(_ sender: UISwitch) {
+        
+        if ownedSwitch.isOn != true {
+            conditionLabel.isEnabled = false
+            conditionValueLabel.isEnabled = false
+            conditionButton.isEnabled = false
+            scoreLabel.isEnabled = false
+            scoreValueLabel.isEnabled = false
+            scoreSlider.isEnabled = false
+            gradedLabel.isEnabled = false
+            duplicatesLabel.isEnabled = false
+        } else {
+            conditionLabel.isEnabled = true
+            conditionValueLabel.isEnabled = true
+            conditionButton.isEnabled = true
+            scoreLabel.isEnabled = true
+            scoreValueLabel.isEnabled = true
+            scoreSlider.isEnabled = true
+            gradedLabel.isEnabled = true
+            duplicatesLabel.isEnabled = true
+            
+        }
             
     }
     
@@ -212,6 +234,5 @@ extension DetailViewController {
       
 
     }
-    
 }
 

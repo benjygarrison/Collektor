@@ -209,6 +209,8 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IP4-Nt-zPz">
                                                     <rect key="frame" x="345" y="19.5" width="43" height="31"/>
+                                                    <color key="onTintColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="thumbTintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="ownedSwitchActivated:" destination="sLA-a4-FQJ" eventType="valueChanged" id="av9-nd-nCf"/>
                                                     </connections>
@@ -363,7 +365,10 @@
                         <outlet property="conditionButton" destination="aif-7h-Gpf" id="h18-mT-zsp"/>
                         <outlet property="conditionLabel" destination="1lo-HT-0oK" id="p8u-1O-3sQ"/>
                         <outlet property="conditionValueLabel" destination="z1f-Fy-YtL" id="eLY-GX-Kb7"/>
+                        <outlet property="duplicatesLabel" destination="m23-YA-y77" id="0qB-e1-2aY"/>
+                        <outlet property="gradedLabel" destination="74t-mi-26n" id="eNk-3F-1hM"/>
                         <outlet property="ownedSwitch" destination="IP4-Nt-zPz" id="4P4-AW-Eef"/>
+                        <outlet property="scoreLabel" destination="a5F-9I-EZd" id="7b4-A0-s8U"/>
                         <outlet property="scoreSlider" destination="W3d-3l-PIE" id="qwH-KA-pPw"/>
                         <outlet property="scoreValueLabel" destination="yw2-rs-jqs" id="Kfc-Fs-zw6"/>
                     </connections>
