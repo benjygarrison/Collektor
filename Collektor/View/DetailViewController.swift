@@ -24,9 +24,11 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var conditionButton: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var gradedLabel: UILabel!
+    @IBOutlet weak var gradedSwitch: UISwitch!
     @IBOutlet weak var scoreValueLabel: UILabel!
     @IBOutlet weak var scoreSlider: UISlider!
     @IBOutlet weak var duplicatesLabel: UILabel!
+  
     
     var selectedCard: Card?
     
@@ -35,24 +37,40 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     
    override func viewDidLoad() {
        super.viewDidLoad()
-
+    
         cardName.text = selectedCard?.cardName
     
         if selectedCard?.owned == true {
             ownedSwitch.isOn = true
-        }
+            conditionLabel.isEnabled = true
+            conditionValueLabel.isEnabled = true
+            conditionButton.isEnabled = true
+            gradedLabel.isEnabled = true
+            gradedSwitch.isEnabled = true
+            }
+    
+        if selectedCard?.graded == true {
+            gradedSwitch.isOn = true
+            }
+    
         
         if selectedCard?.condition != "" {
             conditionValueLabel.text = selectedCard?.condition
         } else {
             conditionValueLabel.text = ""
-        }
+            }
+    
+        if gradedSwitch.isOn == true {
+            scoreLabel.isEnabled = true
+            scoreValueLabel.isEnabled = true
+            scoreSlider.isEnabled = true
+            }
     
         if selectedCard?.score != "" {
             scoreValueLabel.text = selectedCard?.score
         } else {
             scoreValueLabel.text = "5"
-        }
+            }
     
         switch scoreValueLabel.text {
             case "0": scoreSlider.value = -5
@@ -67,13 +85,13 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             case "9": scoreSlider.value = 4
             case "10": scoreSlider.value = 5
             default: scoreSlider.value = 0
-        }
+            }
     
    }
     
 
     
-    //MARK: - owned switch function
+    //MARK: - switch functions
     
     @IBAction func ownedSwitchActivated(_ sender: UISwitch) {
         
@@ -81,23 +99,35 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             conditionLabel.isEnabled = false
             conditionValueLabel.isEnabled = false
             conditionButton.isEnabled = false
+            gradedLabel.isEnabled = false
+            gradedSwitch.isEnabled = false
             scoreLabel.isEnabled = false
             scoreValueLabel.isEnabled = false
             scoreSlider.isEnabled = false
-            gradedLabel.isEnabled = false
-            duplicatesLabel.isEnabled = false
+            
         } else {
             conditionLabel.isEnabled = true
             conditionValueLabel.isEnabled = true
             conditionButton.isEnabled = true
+            gradedLabel.isEnabled = true
+            gradedSwitch.isEnabled = true
+        }
+            
+    }
+    
+    
+    @IBAction func gradedSwitchActivated(_ sender: Any) {
+        
+        if gradedSwitch.isOn == true {
             scoreLabel.isEnabled = true
             scoreValueLabel.isEnabled = true
             scoreSlider.isEnabled = true
-            gradedLabel.isEnabled = true
-            duplicatesLabel.isEnabled = true
-            
+        } else {
+            scoreLabel.isEnabled = false
+            scoreValueLabel.isEnabled = false
+            scoreSlider.isEnabled = false
         }
-            
+        
     }
     
     
@@ -230,9 +260,19 @@ extension DetailViewController {
                     print("error writing detail to realm \(error)")
                     }
             }
+            
+            if gradedSwitch.isOn == true {
+                do {
+                try self.realm.write {
+                    selectedCard?.graded = true
+                    selectedCard?.score = scoreValueLabel.text!
+                    }
+                } catch {
+                    print("error writing detail to realm \(error)")
+                    }
+            }
         }
-      
-
     }
+    
 }
 
