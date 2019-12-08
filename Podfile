@@ -6,7 +6,6 @@ target 'Collektor' do
 
   # Pods for Collektor
 
-  pod 'IQKeyboardManagerSwift'
 pod 'RealmSwift'
 
 
