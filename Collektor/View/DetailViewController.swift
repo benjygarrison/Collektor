@@ -8,14 +8,17 @@
 
 import UIKit
 import RealmSwift
+import Vision
 
-class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     let realm = try! Realm()
     
     var conditionPicker = UIPickerView()
     var conditionPickerValue = String()
     let conditionPickerData = ["", "gem mint", "mint", "near mint-mint", "near mint", "excellent-mint", "excellent", "very good-excellent", "very good", "good", "fair", "poor"]
+    
+    let imagePicker = UIImagePickerController()
     
     @IBOutlet weak var cardName: UILabel!
     @IBOutlet weak var ownedSwitch: UISwitch!
@@ -27,7 +30,9 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var gradedSwitch: UISwitch!
     @IBOutlet weak var scoreValueLabel: UILabel!
     @IBOutlet weak var scoreSlider: UISlider!
-    @IBOutlet weak var duplicatesLabel: UILabel!
+    @IBOutlet weak var cardImageView: UIImageView!
+    @IBOutlet weak var addPhotoButton: UIButton!
+    
   
     
     var selectedCard: Card?
@@ -37,6 +42,10 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     
    override func viewDidLoad() {
        super.viewDidLoad()
+    
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
     
         cardName.text = selectedCard?.cardName
     
@@ -215,6 +224,27 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             default: scoreValueLabel.text = "5"
         }
     }
+    
+    
+    
+    //MARK: - image functions
+    
+    @IBAction func addPhotoButtonPressed(_ sender: UIButton) {
+        
+        present(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let cardImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+        cardImageView.contentMode = .scaleToFill
+        cardImageView.image = cardImage
+        }
+        
+        imagePicker.dismiss(animated: true, completion: nil)
+    }
+    
     
     
 }
