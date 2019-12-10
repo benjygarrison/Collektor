@@ -58,6 +58,24 @@ class CardViewController : UITableViewController {
     
     //MARK: - Tableview delegate methods
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            if let cardToDelete = cardArray?[indexPath.row]{
+                do {
+                    try realm.write {
+                        realm.delete(cardToDelete)
+                    }
+                } catch {
+                        print("There was an error deleting the card.")
+                }
+                
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         performSegue(withIdentifier: "detailSegue", sender: self)

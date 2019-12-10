@@ -54,6 +54,26 @@ class DeckViewController: UITableViewController {
     
     //MARK: - Tableview delegate methods
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            if let deckToDelete = deckArray?[indexPath.row]{
+                let cardsToDelete = deckToDelete.cards
+                do {
+                    try realm.write {
+                        realm.delete(cardsToDelete)
+                        realm.delete(deckToDelete)
+                    }
+                } catch {
+                        print("There was an error deleting the deck.")
+                }
+                
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         performSegue(withIdentifier: "cardSegue", sender: self)
@@ -68,6 +88,7 @@ class DeckViewController: UITableViewController {
             destinationVC.selectedDeck = deckArray?[indexPath.row]
         }
     }
+    
     
     
     //MARK: - Add new items
