@@ -15,6 +15,7 @@ class SeriesViewController: UITableViewController {
     
     var seriesArray: Results<Series>?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,10 +48,12 @@ class SeriesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
             
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            if let series = seriesArray?[indexPath.row] {
+            if let seriesToDelete = seriesArray?[indexPath.row]{
+                let decksToDelete = seriesToDelete.decks
                 do {
                     try realm.write {
-                        realm.delete(series)
+                        realm.delete(decksToDelete)
+                        realm.delete(seriesToDelete)
                     }
                 } catch {
                         print("There was an error deleting the series.")
@@ -130,7 +133,6 @@ class SeriesViewController: UITableViewController {
     
     func loadSeries() {
         
-
         seriesArray = realm.objects(Series.self)
         
         tableView.reloadData()

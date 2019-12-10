@@ -20,8 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+        //print(Realm.Configuration.defaultConfiguration.fileURL)
         
+        let realm = try! Realm()
+        
+        let lostCards = realm.objects(Card.self).filter("parentDeck.@count == 0")
+        do {
+            try realm.write {
+                realm.delete(lostCards)
+            }
+        } catch {
+                print("There was an error deleting child cards.")
+            }
         
         return true
     }
