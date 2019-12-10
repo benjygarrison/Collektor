@@ -44,6 +44,24 @@ class SeriesViewController: UITableViewController {
     
     //MARK: - Tableview delegate methods
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            if let series = seriesArray?[indexPath.row] {
+                do {
+                    try realm.write {
+                        realm.delete(series)
+                    }
+                } catch {
+                        print("There was an error deleting the series.")
+                }
+                
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
        performSegue(withIdentifier: "deckSegue", sender: self)

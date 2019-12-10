@@ -8,5 +8,4 @@ target 'Collektor' do
 
 pod 'RealmSwift'
 
-
 end
