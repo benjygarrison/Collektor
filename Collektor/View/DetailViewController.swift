@@ -47,6 +47,12 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = false
     
+        let imagePickerData = selectedCard?.cardPicture as! NSData
+    
+        if selectedCard?.cardPicture != nil {
+            cardImageView.image = UIImage(data: imagePickerData as Data)
+        }
+    
         cardName.text = selectedCard?.cardName
     
         if selectedCard?.owned == true {
@@ -240,6 +246,14 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         if let cardImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
         cardImageView.contentMode = .scaleToFill
         cardImageView.image = cardImage
+        let cardImageData = cardImage.jpegData(compressionQuality: 0.1)! as NSData
+            do {
+            try self.realm.write {
+                (selectedCard?.cardPicture = cardImageData as Data)!
+                }
+            } catch {
+                print("error writing cardPicture to realm \(error)")
+                }
         }
         
         imagePicker.dismiss(animated: true, completion: nil)
