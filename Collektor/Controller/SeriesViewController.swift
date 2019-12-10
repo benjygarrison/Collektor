@@ -69,6 +69,7 @@ class SeriesViewController: UITableViewController {
         var textField = UITextField()
         let alert = UIAlertController(title: "Add new series", message: "", preferredStyle: .alert)
         
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         let action = UIAlertAction(title: "Add it!", style: .default) { (action) in
             
             let newSeries = Series()

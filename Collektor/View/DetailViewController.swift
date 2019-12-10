@@ -33,10 +33,9 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var addPhotoButton: UIButton!
     
-  
-    
     var selectedCard: Card?
     
+
     
     //MARK: - viewDidLoad
     
@@ -147,7 +146,7 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     
     
     
-    //MARK: - condition button function
+    //MARK: - condition button functions
     
     @IBAction func conditionButtonPressed(_ sender: UIButton) {
        let alert = UIAlertController(title: "Condition", message: "\n\n\n\n\n\n", preferredStyle: .alert)
@@ -159,14 +158,11 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         pickerFrame.dataSource = self
         pickerFrame.delegate = self
         
-        
-        
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (UIAlertAction) in
             
             self.conditionValueLabel.text = self.conditionPickerValue
         }))
-        
         
         self.present(alert,animated: true, completion: nil )
     }
@@ -233,7 +229,7 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     
     
     
-    //MARK: - image functions
+    //MARK: - imagePicker functions
     
     @IBAction func addPhotoButtonPressed(_ sender: UIButton) {
         
@@ -259,8 +255,6 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
-    
-    
 }
 
 
@@ -272,18 +266,21 @@ extension DetailViewController {
     override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear(animated);
+        
+   //NOTE: *** See imagePickerController for cardPicture write function ***
 
    //create core data objects
+        
         if self.isMovingFromParent
         {
              do {
                 try self.realm.write {
                 selectedCard?.condition = conditionValueLabel.text!
                 selectedCard?.score = scoreValueLabel.text!
-                 }
+                }
              } catch {
                  print("error writing detail to realm \(error)")
-                 }
+                }
             
             if ownedSwitch.isOn == true {
                 do {
@@ -292,7 +289,7 @@ extension DetailViewController {
                     }
                 } catch {
                     print("error writing detail to realm \(error)")
-                    }
+                }
             }
             
             if ownedSwitch.isOn != true {
@@ -302,7 +299,7 @@ extension DetailViewController {
                     }
                 } catch {
                     print("error writing detail to realm \(error)")
-                    }
+                }
             }
             
             if gradedSwitch.isOn == true {
@@ -313,10 +310,9 @@ extension DetailViewController {
                     }
                 } catch {
                     print("error writing detail to realm \(error)")
-                    }
+                }
             }
         }
     }
-    
 }
 

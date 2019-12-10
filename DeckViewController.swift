@@ -76,6 +76,7 @@ class DeckViewController: UITableViewController {
         var textField = UITextField()
             let alert = UIAlertController(title: "Add new deck", message: "", preferredStyle: .alert)
             
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             let action = UIAlertAction(title: "Add it!", style: .default) { (action) in
                 
                 if let currentSeries = self.selectedSeries {
