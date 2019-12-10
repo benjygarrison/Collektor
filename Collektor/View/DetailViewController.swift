@@ -46,11 +46,11 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = false
-    
-        let imagePickerData = selectedCard?.cardPicture as! NSData
-    
+        
+            
         if selectedCard?.cardPicture != nil {
-            cardImageView.image = UIImage(data: imagePickerData as Data)
+            let imagePickerData = selectedCard?.cardPicture! as NSData?
+            cardImageView.image = UIImage(data: (imagePickerData as Data?)!)
         }
     
         cardName.text = selectedCard?.cardName
@@ -244,7 +244,7 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let cardImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-        cardImageView.contentMode = .scaleToFill
+        cardImageView.contentMode = .scaleAspectFill
         cardImageView.image = cardImage
         let cardImageData = cardImage.jpegData(compressionQuality: 0.1)! as NSData
             do {
@@ -277,7 +277,7 @@ extension DetailViewController {
         if self.isMovingFromParent
         {
              do {
-             try self.realm.write {
+                try self.realm.write {
                 selectedCard?.condition = conditionValueLabel.text!
                 selectedCard?.score = scoreValueLabel.text!
                  }
