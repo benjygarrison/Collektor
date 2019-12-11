@@ -12,16 +12,17 @@ import RealmSwift
 class DeckViewController: UITableViewController {
     
     let realm = try! Realm()
-    
     var deckArray: Results<Deck>?
     
     var selectedSeries : Series? {
-        
         didSet {
             loadDeck()
         }
     }
     
+    
+    
+    //MARK: - viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,25 +55,60 @@ class DeckViewController: UITableViewController {
     
     //MARK: - Tableview delegate methods
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-            if let deckToDelete = deckArray?[indexPath.row]{
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            if let deckToDelete = self.deckArray?[indexPath.row]{
                 let cardsToDelete = deckToDelete.cards
                 do {
-                    try realm.write {
-                        realm.delete(cardsToDelete)
-                        realm.delete(deckToDelete)
+                    try self.realm.write {
+                        self.realm.delete(cardsToDelete)
+                        self.realm.delete(deckToDelete)
                     }
                 } catch {
-                        print("There was an error deleting the deck.")
+                    print("error deleting the deck \(Error.self)")
                 }
-                
+
                 self.tableView.reloadData()
             }
         }
-        
+
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
+            var textField = UITextField()
+                let alert = UIAlertController(title: "Edit series name", message: "", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                let action = UIAlertAction(title: "Update!", style: .default) { (action) in
+                    
+                    let deck = self.deckArray?[indexPath.row]
+                            do {
+                                try self.realm.write {
+                                    deck?.deckName = textField.text!
+                                }
+                            } catch {
+                        print("error updating deck name \(error)")
+                    }
+                    
+                    self.tableView.reloadData()
+                }
+                
+                alert.addTextField { (alertTextField) in
+                    alertTextField.placeholder = "Sun and Moon, etc."
+                    textField = alertTextField
+                }
+            
+                alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
+
+        edit.backgroundColor = UIColor.blue
+
+        return [delete, edit]
     }
+
+    
+    
+    //MARK: - segue functions
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -91,7 +127,8 @@ class DeckViewController: UITableViewController {
     
     
     
-    //MARK: - Add new items
+    //MARK: - add decks
+    
     @IBAction func addDeck(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
@@ -127,12 +164,11 @@ class DeckViewController: UITableViewController {
     
     
     
-    //MARK: - load items
+    //MARK: - load decks
     
     func loadDeck() {
         
         deckArray = selectedSeries?.decks.sorted(byKeyPath: "deckName", ascending: true)
-
 
         tableView.reloadData()
     }

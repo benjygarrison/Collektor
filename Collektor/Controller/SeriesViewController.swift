@@ -12,9 +12,11 @@ import RealmSwift
 class SeriesViewController: UITableViewController {
     
     let realm = try! Realm()
-    
     var seriesArray: Results<Series>?
     
+    
+   
+    //MARK: = viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,26 +46,61 @@ class SeriesViewController: UITableViewController {
     
     
     //MARK: - Tableview delegate methods
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-            if let seriesToDelete = seriesArray?[indexPath.row]{
+        
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            if let seriesToDelete = self.seriesArray?[indexPath.row]{
                 let decksToDelete = seriesToDelete.decks
                 do {
-                    try realm.write {
-                        realm.delete(decksToDelete)
-                        realm.delete(seriesToDelete)
+                    try self.realm.write {
+                        self.realm.delete(decksToDelete)
+                        self.realm.delete(seriesToDelete)
                     }
                 } catch {
-                        print("There was an error deleting the series.")
+                    print("error deleting the series \(Error.self)")
                 }
-                
+
                 self.tableView.reloadData()
             }
         }
-        
+
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
+            var textField = UITextField()
+                let alert = UIAlertController(title: "Edit series name", message: "", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                let action = UIAlertAction(title: "Update!", style: .default) { (action) in
+                    
+                    let series = self.seriesArray?[indexPath.row]
+                            do {
+                                try self.realm.write {
+                                    series?.seriesName = textField.text!
+                                }
+                            } catch {
+                        print("error updating series name \(error)")
+                    }
+                    
+                    self.tableView.reloadData()
+                }
+                
+                alert.addTextField { (alertTextField) in
+                    alertTextField.placeholder = "Pokemon, etc."
+                    textField = alertTextField
+                }
+            
+                alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
+
+        edit.backgroundColor = UIColor.blue
+
+        return [delete, edit]
     }
+    
+    
+    
+    //MARK: - segue functions
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -82,8 +119,7 @@ class SeriesViewController: UITableViewController {
     
     
     
-    //MARK: - Add new items
-    
+    //MARK: - add new series
     
     @IBAction func addSeries(_ sender: UIBarButtonItem) {
         
@@ -95,9 +131,13 @@ class SeriesViewController: UITableViewController {
             
             let newSeries = Series()
             newSeries.seriesName = textField.text!
-            //TODO: add code to check for empty string
-            
-            self.save(series: newSeries)
+                    do {
+                        try self.realm.write {
+                            self.realm.add(newSeries)
+                        }
+                    } catch {
+                print("error saving context \(error)")
+            }
             
             self.tableView.reloadData()
         }
@@ -110,26 +150,11 @@ class SeriesViewController: UITableViewController {
     
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
-        
-    }
-    
-    //MARK: - save items
-    
-    func save(series: Series) {
-
-        do {
-            try realm.write {
-                realm.add(series)
-            }
-        } catch {
-            print("error saving context \(error)")
-        }
-        
-        self.tableView.reloadData()
     }
     
     
-    //MARK: - load items
+    
+    //MARK: - load series
     
     func loadSeries() {
         
@@ -139,6 +164,7 @@ class SeriesViewController: UITableViewController {
     
     }
 }
+
 
 
 //MARK: - Search bar functions

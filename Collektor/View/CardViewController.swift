@@ -12,20 +12,30 @@ import RealmSwift
 class CardViewController : UITableViewController {
     
     let realm = try! Realm()
-    
     var cardArray: Results<Card>?
     
     var selectedDeck : Deck? {
-        
         didSet {
             loadCard()
         }
     }
     
     
+    
+    //MARK: - viewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //find and delete orphaned cards
+        let lostCards = realm.objects(Card.self).filter("parentDeck.@count == 0")
+        do {
+            try realm.write {
+                realm.delete(lostCards)
+            }
+        } catch {
+                print("There was an error deleting child cards.")
+            }
         
     }
     
@@ -50,7 +60,6 @@ class CardViewController : UITableViewController {
             cell.detailTextLabel?.text = "No Cards Added Yet"
         }
         
-       
         return cell
     }
     
@@ -58,23 +67,67 @@ class CardViewController : UITableViewController {
     
     //MARK: - Tableview delegate methods
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-            
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-            if let cardToDelete = cardArray?[indexPath.row]{
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            if let cardToDelete = self.cardArray?[indexPath.row]{
                 do {
-                    try realm.write {
-                        realm.delete(cardToDelete)
+                    try self.realm.write {
+                        self.realm.delete(cardToDelete)
                     }
                 } catch {
-                        print("There was an error deleting the card.")
+                    print("error deleting the deck \(Error.self)")
                 }
-                
+
                 self.tableView.reloadData()
             }
         }
-        
+
+        let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
+            var textField1 = UITextField()
+            var textField2 = UITextField()
+                let alert = UIAlertController(title: "Edit card information", message: "", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                let action = UIAlertAction(title: "Update!", style: .default) { (action) in
+                    
+                    let card = self.cardArray?[indexPath.row]
+                            do {
+                                try self.realm.write {
+                                    card?.cardNumber = textField1.text!
+                                    card?.cardName = textField2.text!
+                                }
+                            } catch {
+                        print("error updating deck name \(error)")
+                    }
+                    
+                    self.tableView.reloadData()
+                }
+            
+                alert.addTextField { (alertTextField) in
+                alertTextField.placeholder = "123, etc."
+                alertTextField.keyboardType = UIKeyboardType.phonePad
+                textField1 = alertTextField
+                }
+            
+                alert.addTextField { (alertTextField) in
+                alertTextField.placeholder = "Pikachu, etc."
+                textField2 = alertTextField
+                }
+            
+                alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
+        }
+
+        edit.backgroundColor = UIColor.blue
+
+        return [delete, edit]
     }
+
+    
+    
+    
+    //MARK: - segue functions
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -129,7 +182,7 @@ class CardViewController : UITableViewController {
         //print(alertTextField.text)
         }
         alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "Charizard, etc."
+            alertTextField.placeholder = "Pikachu, etc."
             textField2 = alertTextField
             //print(alertTextField.text)
             }
@@ -140,6 +193,8 @@ class CardViewController : UITableViewController {
     }
     
     
+    
+    //MARK: - load cards
     
     func loadCard() {
             
