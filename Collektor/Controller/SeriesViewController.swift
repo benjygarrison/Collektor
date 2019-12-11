@@ -178,26 +178,26 @@ class SeriesViewController: UITableViewController {
 
 
 //MARK: - Search bar functions
-//extension SeriesViewController : UISearchBarDelegate {
-//    
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        
-//        let request : NSFetchRequest<Series> = Series.fetchRequest()
-//        request.predicate = NSPredicate(format: "seriesName CONTAINS[cd] %@", searchBar.text!)
-//        request.sortDescriptors = [NSSortDescriptor(key: "seriesName", ascending: true)]
-//        
-//        loadSeries(with: request)
-//    }
-//    
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        if searchBar.text?.count == 0 {
-//            loadSeries()
-//            
-//            DispatchQueue.main.async {
-//                 searchBar.resignFirstResponder()
-//            }
-//        }
-//    }
-//    
-//}
+
+extension SeriesViewController : UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        seriesArray = seriesArray?.filter("seriesName CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "seriesName", ascending: true)
+        
+        tableView.reloadData()
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadSeries()
+            
+            DispatchQueue.main.async {
+                 searchBar.resignFirstResponder()
+            }
+        }
+    }
+    
+}
 

@@ -26,6 +26,7 @@ class CardViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
         
         //find and delete orphaned cards
         let lostCards = realm.objects(Card.self).filter("parentDeck.@count == 0")
@@ -216,27 +217,25 @@ class CardViewController : UITableViewController {
 
 
 //MARK: - Search bar functions
-//extension CardViewController : UISearchBarDelegate {
-//    
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        
-//        let request : NSFetchRequest<Card> = Card.fetchRequest()
-//        
-//        let predicate = NSPredicate(format: "cardName CONTAINS[cd] %@", searchBar.text!)
-//        
-//        request.sortDescriptors = [NSSortDescriptor(key: "cardName", ascending: true)]
-//        
-//        loadCard(with: request, predicate: predicate)
-//    }
-//    
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        if searchBar.text?.count == 0 {
-//            loadCard()
-//            
-//            DispatchQueue.main.async {
-//                 searchBar.resignFirstResponder()
-//            }
-//        }
-//    }
-//    
-//}
+    
+extension CardViewController : UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        cardArray = cardArray?.filter("cardName CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "cardName", ascending: true)
+        
+        tableView.reloadData()
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadCard()
+            
+            DispatchQueue.main.async {
+                 searchBar.resignFirstResponder()
+            }
+        }
+    }
+    
+}

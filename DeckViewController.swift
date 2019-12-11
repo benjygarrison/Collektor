@@ -184,27 +184,25 @@ class DeckViewController: UITableViewController {
 
 
 //MARK: - Search bar functions
-//extension DeckViewController : UISearchBarDelegate {
-//
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//
-//        let request : NSFetchRequest<Deck> = Deck.fetchRequest()
-//
-//        let predicate = NSPredicate(format: "deckName CONTAINS[cd] %@", searchBar.text!)
-//
-//        request.sortDescriptors = [NSSortDescriptor(key: "deckName", ascending: true)]
-//
-//        loadDeck(with: request, predicate: predicate)
-//    }
-//
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        if searchBar.text?.count == 0 {
-//            loadDeck()
-//
-//            DispatchQueue.main.async {
-//                 searchBar.resignFirstResponder()
-//            }
-//        }
-//    }
-//
-//}
+
+extension DeckViewController : UISearchBarDelegate {
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+
+        deckArray = deckArray?.filter("deckName CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "deckName", ascending: true)
+        
+        tableView.reloadData()
+
+    }
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadDeck()
+
+            DispatchQueue.main.async {
+                 searchBar.resignFirstResponder()
+            }
+        }
+    }
+
+}
