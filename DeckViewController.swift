@@ -58,7 +58,12 @@ class DeckViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            if let deckToDelete = self.deckArray?[indexPath.row]{
+            let alert = UIAlertController(title: "Confirm delete?", message: "", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            let action = UIAlertAction(title: "Delete", style: .default) { (action) in
+                
+                if let deckToDelete = self.deckArray?[indexPath.row]{
                 let cardsToDelete = deckToDelete.cards
                 do {
                     try self.realm.write {
@@ -67,10 +72,13 @@ class DeckViewController: UITableViewController {
                     }
                 } catch {
                     print("error deleting the deck \(Error.self)")
+                    }
                 }
-
-                self.tableView.reloadData()
+                
+               self.tableView.reloadData()
             }
+             alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
         }
 
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in

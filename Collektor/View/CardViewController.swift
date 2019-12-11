@@ -70,17 +70,25 @@ class CardViewController : UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            if let cardToDelete = self.cardArray?[indexPath.row]{
+                        let alert = UIAlertController(title: "Confirm delete?", message: "", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            let action = UIAlertAction(title: "Delete", style: .default) { (action) in
+                
+                if let cardToDelete = self.cardArray?[indexPath.row]{
                 do {
                     try self.realm.write {
                         self.realm.delete(cardToDelete)
                     }
                 } catch {
                     print("error deleting the deck \(Error.self)")
+                    }
                 }
-
-                self.tableView.reloadData()
+                
+               self.tableView.reloadData()
             }
+             alert.addAction(action)
+            self.present(alert, animated: true, completion: nil)
         }
 
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
