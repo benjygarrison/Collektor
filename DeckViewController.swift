@@ -57,6 +57,8 @@ class DeckViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
+        let currentDeck = deckArray?[indexPath.row]
+        
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
             let alert = UIAlertController(title: "Confirm delete?", message: "", preferredStyle: .alert)
             
@@ -89,9 +91,16 @@ class DeckViewController: UITableViewController {
                 let action = UIAlertAction(title: "Update!", style: .default) { (action) in
                     
                     let deck = self.deckArray?[indexPath.row]
+                    var deckText = ""
+                    
+                    if textField.text != "" {
+                        deckText = textField.text!
+                    } else {
+                        deckText = "Untitled"
+                    }
                             do {
                                 try self.realm.write {
-                                    deck?.deckName = textField.text!
+                                    deck?.deckName = deckText
                                 }
                             } catch {
                         print("error updating deck name \(error)")
@@ -101,7 +110,7 @@ class DeckViewController: UITableViewController {
                 }
                 
                 alert.addTextField { (alertTextField) in
-                    alertTextField.placeholder = "Sun and Moon, etc."
+                    alertTextField.placeholder = "\(currentDeck!.deckName)"
                     textField = alertTextField
                 }
             
@@ -149,7 +158,12 @@ class DeckViewController: UITableViewController {
                     do {
                         try self.realm.write {
                         let newDeck = Deck()
-                        newDeck.deckName = textField.text!
+                        
+                        if textField.text != ""{
+                            newDeck.deckName = textField.text!
+                        } else {
+                            newDeck.deckName = "Untitled"
+                            }
                         currentSeries.decks.append(newDeck)
                             }
                         } catch {

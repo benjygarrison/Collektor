@@ -70,8 +70,10 @@ class CardViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
+        let currentCard = cardArray?[indexPath.row]
+        
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-                        let alert = UIAlertController(title: "Confirm delete?", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Confirm delete?", message: "", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             let action = UIAlertAction(title: "Delete", style: .default) { (action) in
@@ -101,10 +103,23 @@ class CardViewController : UITableViewController {
                 let action = UIAlertAction(title: "Update!", style: .default) { (action) in
                     
                     let card = self.cardArray?[indexPath.row]
+                    var cardNumberText = ""
+                    var cardNameText = ""
+                    
+                    if textField1.text != "" {
+                        cardNumberText = textField1.text!
+                    } else {
+                        cardNumberText = ""
+                    }
+                    if textField2.text != "" {
+                        cardNameText = textField2.text!
+                    } else {
+                        cardNameText = "Untitled"
+                    }
                             do {
                                 try self.realm.write {
-                                    card?.cardNumber = textField1.text!
-                                    card?.cardName = textField2.text!
+                                    card?.cardNumber = cardNumberText
+                                    card?.cardName = cardNameText
                                 }
                             } catch {
                         print("error updating deck name \(error)")
@@ -114,13 +129,13 @@ class CardViewController : UITableViewController {
                 }
             
                 alert.addTextField { (alertTextField) in
-                alertTextField.placeholder = "123, etc."
+                alertTextField.placeholder = "\(currentCard!.cardNumber)"
                 alertTextField.keyboardType = UIKeyboardType.phonePad
                 textField1 = alertTextField
                 }
             
                 alert.addTextField { (alertTextField) in
-                alertTextField.placeholder = "Pikachu, etc."
+                alertTextField.placeholder = "\(currentCard!.cardName)"
                 textField2 = alertTextField
                 }
             
@@ -169,11 +184,26 @@ class CardViewController : UITableViewController {
             
             
             if let currentDeck = self.selectedDeck {
+                
+                var cardNumberText = ""
+                var cardNameText = ""
+                
+                if textField1.text != "" {
+                    cardNumberText = textField1.text!
+                } else {
+                    cardNumberText = ""
+                }
+                if textField2.text != "" {
+                    cardNameText = textField2.text!
+                } else {
+                    cardNameText = "Untitled"
+                }
+                
                 do {
                     try self.realm.write {
                     let newCard = Card()
-                    newCard.cardNumber = textField1.text!
-                    newCard.cardName = textField2.text!
+                    newCard.cardNumber = cardNumberText
+                    newCard.cardName = cardNameText
                     currentDeck.cards.append(newCard)
                         }
                     } catch {

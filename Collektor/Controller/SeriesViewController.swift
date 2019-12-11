@@ -49,9 +49,10 @@ class SeriesViewController: UITableViewController {
         
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
+        let currentSeries = seriesArray?[indexPath.row]
+        
         let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            
-            let alert = UIAlertController(title: "Confirm delete?", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Confirm delete?", message: "", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             let action = UIAlertAction(title: "Delete", style: .default) { (action) in
@@ -83,9 +84,16 @@ class SeriesViewController: UITableViewController {
                 let action = UIAlertAction(title: "Update!", style: .default) { (action) in
                     
                     let series = self.seriesArray?[indexPath.row]
+                    var seriesText = ""
+                    
+                    if textField.text != "" {
+                        seriesText = textField.text!
+                    } else {
+                        seriesText = "Untitled"
+                    }
                             do {
                                 try self.realm.write {
-                                    series?.seriesName = textField.text!
+                                    series?.seriesName = seriesText
                                 }
                             } catch {
                         print("error updating series name \(error)")
@@ -95,7 +103,7 @@ class SeriesViewController: UITableViewController {
                 }
                 
                 alert.addTextField { (alertTextField) in
-                    alertTextField.placeholder = "Pokemon, etc."
+                    alertTextField.placeholder = "\(currentSeries!.seriesName)"
                     textField = alertTextField
                 }
             
@@ -140,7 +148,12 @@ class SeriesViewController: UITableViewController {
         let action = UIAlertAction(title: "Add it!", style: .default) { (action) in
             
             let newSeries = Series()
+            
+            if textField.text  != ""{
             newSeries.seriesName = textField.text!
+            } else {
+                newSeries.seriesName = "Untitled"
+            }
                     do {
                         try self.realm.write {
                             self.realm.add(newSeries)
@@ -148,27 +161,27 @@ class SeriesViewController: UITableViewController {
                     } catch {
                 print("error saving context \(error)")
             }
-            
+
             self.tableView.reloadData()
         }
         
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Pokemon, etc."
             textField = alertTextField
-            //print(alertTextField.text)
         }
     
         alert.addAction(action)
+        //action.isEnabled = false
         present(alert, animated: true, completion: nil)
+        
     }
     
-    
-    
+
     //MARK: - load series
     
     func loadSeries() {
         
-        seriesArray = realm.objects(Series.self)
+        seriesArray = realm.objects(Series.self).sorted(byKeyPath: "seriesName", ascending: true)
         
         tableView.reloadData()
     
