@@ -7,6 +7,6 @@ target 'Collektor' do
 
   # Pods for Collektor
 
-  pod 'IQKeyboardManagerSwift'
+
 
 end
