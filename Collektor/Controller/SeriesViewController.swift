@@ -39,15 +39,11 @@ class SeriesViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        setTableViewBackgroundGradient(sender: self, UIColor.white, UIColor.blue)
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "seriesCell", for: indexPath)
         
          let series = seriesArray?[indexPath.row]
         
         cell.textLabel?.text = series?.seriesName ?? "No Series Added Yet."
-        
-        cell.backgroundColor = UIColor.clear
         
         return cell
         
@@ -56,25 +52,7 @@ class SeriesViewController: UITableViewController {
 
     
     //MARK: - Tableview delegate methods
-    
-    func setTableViewBackgroundGradient(sender: UITableViewController, _ topColor:UIColor, _ bottomColor:UIColor) {
-
-//        let gradientBackgroundColors = [topColor.cgColor, bottomColor.cgColor]
-//        let gradientLocations = [0.0,1.0]
-//
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.colors = gradientBackgroundColors
-//        gradientLayer.locations = gradientLocations as [NSNumber]
-//
-//        gradientLayer.frame = sender.tableView.bounds
-//        let backgroundView = UIView(frame: sender.tableView.bounds)
-//        backgroundView.layer.insertSublayer(gradientLayer, at: 0)
-//        sender.tableView.backgroundView = backgroundView
-        
-    }
-    
-    
-        
+                
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let currentSeries = seriesArray?[indexPath.row]
@@ -87,10 +65,13 @@ class SeriesViewController: UITableViewController {
                 
                 if let seriesToDelete = self.seriesArray?[indexPath.row]{
                 let decksToDelete = seriesToDelete.decks
-                do {
+                    let cardsToDelete = self.realm.objects(Card.self).filter("parentDeck.@count == 0")
+                    
+                    do {
                     try self.realm.write {
                         self.realm.delete(decksToDelete)
                         self.realm.delete(seriesToDelete)
+                        self.realm.delete(cardsToDelete)
                     }
                 } catch {
                     print("error deleting the series \(Error.self)")

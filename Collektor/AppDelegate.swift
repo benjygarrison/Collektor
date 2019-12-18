@@ -52,17 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Hello from the App Delegate")
         }
             
-
-        //Search and delete lost cards
-        
-        let lostCards = realm.objects(Card.self).filter("parentDeck.@count == 0")
-        do {
-            try realm.write {
-                realm.delete(lostCards)
-            }
-        } catch {
-                print("There was an error deleting child cards.")
-            }
         
         return true
     }
