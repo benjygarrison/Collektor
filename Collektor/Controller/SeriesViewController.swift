@@ -66,7 +66,7 @@ class SeriesViewController: UITableViewController {
                 let cardsToDelete = self.realm.objects(Card.self).filter("parentDeck.@count == 0")
                     
                     do {
-                    try self.realm.write {
+                        try self.realm.write {
                         self.realm.delete(decksToDelete)
                         self.realm.delete(seriesToDelete)
                         self.realm.delete(cardsToDelete)
