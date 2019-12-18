@@ -14,13 +14,17 @@ class SeriesViewController: UITableViewController {
     let realm = try! Realm()
     var seriesArray: Results<Series>?
     
-    
    
     //MARK: = viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.frame = self.view.bounds
+//        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.green.cgColor]
+//        self.view.layer.insertSublayer(gradientLayer, at: 0)
+
         loadSeries()
     }
     
@@ -34,18 +38,42 @@ class SeriesViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                
+        
+        setTableViewBackgroundGradient(sender: self, UIColor.white, UIColor.blue)
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "seriesCell", for: indexPath)
         
          let series = seriesArray?[indexPath.row]
         
         cell.textLabel?.text = series?.seriesName ?? "No Series Added Yet."
+        
+        cell.backgroundColor = UIColor.clear
+        
         return cell
+        
+        
+    }
+
+    
+    //MARK: - Tableview delegate methods
+    
+    func setTableViewBackgroundGradient(sender: UITableViewController, _ topColor:UIColor, _ bottomColor:UIColor) {
+
+//        let gradientBackgroundColors = [topColor.cgColor, bottomColor.cgColor]
+//        let gradientLocations = [0.0,1.0]
+//
+//        let gradientLayer = CAGradientLayer()
+//        gradientLayer.colors = gradientBackgroundColors
+//        gradientLayer.locations = gradientLocations as [NSNumber]
+//
+//        gradientLayer.frame = sender.tableView.bounds
+//        let backgroundView = UIView(frame: sender.tableView.bounds)
+//        backgroundView.layer.insertSublayer(gradientLayer, at: 0)
+//        sender.tableView.backgroundView = backgroundView
+        
     }
     
     
-    
-    //MARK: - Tableview delegate methods
         
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
@@ -110,7 +138,7 @@ class SeriesViewController: UITableViewController {
                 alert.addAction(action)
             self.present(alert, animated: true, completion: nil)
         }
-
+    
         edit.backgroundColor = UIColor.blue
 
         return [delete, edit]

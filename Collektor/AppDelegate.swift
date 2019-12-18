@@ -22,6 +22,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let realm = try! Realm()
         
+        //Pre-load data if none exists -- TODO: modify to pull from remote
+        
+        let seriesArray = realm.objects(Series.self)
+        
+        if seriesArray.count == 0 {
+
+            let importSeries = Series()
+            importSeries.seriesName = "Dragon Ball Z"
+
+            let importDeck = Deck()
+            importDeck.deckName = "Seven stars"
+
+            let importCard = Card()
+            importCard.cardNumber = "1"
+            importCard.cardName = "Goku"
+
+            importDeck.cards.append(importCard)
+            importSeries.decks.append(importDeck)
+
+            do {
+                try realm.write {
+                    realm.add(importSeries)
+                    }
+                } catch {
+                    print("error saving context \(error)")
+                }
+            } else {
+                print("Hello from the App Delegate")
+        }
+            
+
+        //Search and delete lost cards
+        
         let lostCards = realm.objects(Card.self).filter("parentDeck.@count == 0")
         do {
             try realm.write {
