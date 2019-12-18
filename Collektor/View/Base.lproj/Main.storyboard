@@ -41,6 +41,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Series" id="qAS-05-xIm">
+                        <barButtonItem key="leftBarButtonItem" title="Download" id="f1S-2m-tMw">
+                            <connections>
+                                <action selector="downloadSeries:" destination="4ge-CB-5Gv" id="sDq-o4-qyI"/>
+                                <segue destination="nBo-2r-03d" kind="show" identifier="seriesDownloadSegue" id="fPC-sl-8sU"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ffE-Is-wxF">
                             <connections>
                                 <action selector="addSeries:" destination="4ge-CB-5Gv" id="8EY-8H-kl1"/>
@@ -48,12 +54,42 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="downloadButton" destination="f1S-2m-tMw" id="8kK-aC-YQ4"/>
                         <segue destination="SJr-Yb-fFO" kind="show" identifier="deckSegue" id="PcA-Rz-aAE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IhK-V3-yt0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="832" y="114"/>
+        </scene>
+        <!--Series Download View Controller-->
+        <scene sceneID="3G3-I2-3KF">
+            <objects>
+                <tableViewController id="nBo-2r-03d" customClass="SeriesDownloadViewController" customModule="Collektor" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JeY-XI-40j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="seriesCell" id="a56-fD-5ah">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a56-fD-5ah" id="LXz-Fu-cqs">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nBo-2r-03d" id="T1g-XZ-VxW"/>
+                            <outlet property="delegate" destination="nBo-2r-03d" id="eOH-Jt-yjJ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Tjo-7R-sjI"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dra-f6-37t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="832" y="815"/>
         </scene>
         <!--Decks-->
         <scene sceneID="GIl-wQ-PXI">

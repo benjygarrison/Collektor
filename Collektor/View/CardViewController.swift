@@ -26,17 +26,6 @@ class CardViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        
-        //find and delete orphaned cards
-        let lostCards = realm.objects(Card.self).filter("parentDeck.@count == 0")
-        do {
-            try realm.write {
-                realm.delete(lostCards)
-            }
-        } catch {
-                print("There was an error deleting child cards.")
-            }
         
     }
     

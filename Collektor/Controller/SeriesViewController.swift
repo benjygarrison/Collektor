@@ -11,6 +11,9 @@ import RealmSwift
 
 class SeriesViewController: UITableViewController {
     
+    
+    @IBOutlet weak var downloadButton: UIBarButtonItem!
+    
     let realm = try! Realm()
     var seriesArray: Results<Series>?
     
@@ -19,11 +22,6 @@ class SeriesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.frame = self.view.bounds
-//        gradientLayer.colors = [UIColor.blue.cgColor, UIColor.green.cgColor]
-//        self.view.layer.insertSublayer(gradientLayer, at: 0)
 
         loadSeries()
     }
@@ -65,7 +63,7 @@ class SeriesViewController: UITableViewController {
                 
                 if let seriesToDelete = self.seriesArray?[indexPath.row]{
                 let decksToDelete = seriesToDelete.decks
-                    let cardsToDelete = self.realm.objects(Card.self).filter("parentDeck.@count == 0")
+                let cardsToDelete = self.realm.objects(Card.self).filter("parentDeck.@count == 0")
                     
                     do {
                     try self.realm.write {
@@ -135,16 +133,26 @@ class SeriesViewController: UITableViewController {
         
     }
     
+    @IBAction func downloadSeries(_ sender: UIBarButtonItem) {
+        
+        performSegue(withIdentifier: "seriesDownloadSegue", sender: self)
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let destinationVC = segue.destination as! DeckViewController
+        if segue.identifier == "deckSegue" {
+            let destinationVC = segue.destination as! DeckViewController
         
-        if let indexPath = tableView.indexPathForSelectedRow {
+            if let indexPath = tableView.indexPathForSelectedRow {
             destinationVC.selectedSeries = seriesArray?[indexPath.row]
+            }
+        } else if segue.identifier == "seriesDownloadSegue" {
+            print("Download screen reached")
         }
     }
     
-    
+
     
     //MARK: - add new series
     
