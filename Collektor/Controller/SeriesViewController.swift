@@ -24,6 +24,11 @@ class SeriesViewController: UITableViewController {
         super.viewDidLoad()
 
         loadSeries()
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadSeries()
     }
     
     
@@ -33,6 +38,7 @@ class SeriesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return seriesArray?.count ?? 1
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,7 +50,6 @@ class SeriesViewController: UITableViewController {
         cell.textLabel?.text = series?.seriesName ?? "No Series Added Yet."
         
         return cell
-        
         
     }
 

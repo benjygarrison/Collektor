@@ -13,8 +13,9 @@ import Firebase
 
 class SeriesDownloadViewController: UITableViewController {
 
-    let database = Firestore.firestore()
+    let realm = try! Realm()
     
+    let database = Firestore.firestore()
     var seriesArray = [Series]()
 
     
@@ -25,12 +26,11 @@ class SeriesDownloadViewController: UITableViewController {
         tableView.delegate = self
         
         loadData()
-        
-        //tableView.reloadData()
-        
-        
     }
     
+    
+    
+    //MARK: - tableview methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
@@ -49,6 +49,38 @@ class SeriesDownloadViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        //let cell = tableView.dequeueReusableCell(withIdentifier: "seriesCell", for: indexPath)
+        let series = seriesArray[indexPath.row]
+        let clickedSeries = series.seriesName
+        
+        //print(clickedSeries)
+        
+        let alert = UIAlertController(title: "Download series", message: "", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        let action = UIAlertAction(title: "Add it!", style: .default) { (action) in
+         
+            let newSeries = Series()
+            newSeries.seriesName = clickedSeries
+            
+             do {
+                    try self.realm.write {
+                    self.realm.add(newSeries)
+                    }
+                } catch {
+                    print("Error downloading series \(error)")
+                }
+        }
+
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    //MARK: - load series
     
     func loadData() {
         database.collection("series").getDocuments { (snapshot, error) in
