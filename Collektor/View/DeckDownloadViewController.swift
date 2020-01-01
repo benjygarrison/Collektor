@@ -12,9 +12,20 @@ import RealmSwift
 
 class DeckDownloadViewController : UITableViewController {
     
+    var deckArray = [String]()
+    //let magicDeckArray = ["magic1", "magic2"]
+    //let yugiohDeckArray = ["yugioh1", "yugioh2"]
+    
     var selectedSeries : String? {
         didSet {
-            //loadDeck()
+            
+            switch selectedSeries {
+            case "Pokemon": deckArray = ["Southern Islands", "Base Set"]
+            case "Magic, The Gathering": deckArray = ["Magic1", "Magic2"]
+            case "Yu-Gi-Oh": deckArray = ["yugioh1", "yugioh2"]
+            default: deckArray = ["Problem loading decks"]
+            }
+            
             print(selectedSeries as Any)
         }
     }
@@ -22,8 +33,37 @@ class DeckDownloadViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.dataSource = self
+        tableView.delegate = self
+        
     }
     
+    
+    
+    //MARK: - tableview methods
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+        deckArray.count
+        
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: "deckCell", for: indexPath)
+
+        let deck = deckArray[indexPath.row]
+
+        cell.textLabel?.text = deck
+
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        //TODO
+               
+    }
     
     
 }

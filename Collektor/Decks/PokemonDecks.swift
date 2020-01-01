@@ -74,7 +74,7 @@ public class PokemonDecks {
                 realm.add(pokemonSeries)
                 }
             } catch {
-                print("error saving context \(error)")
+                print("error saving to realm \(error)")
             }
         }
 }
