@@ -28,7 +28,7 @@ public class PokemonDecks {
         
         
         
-    //MARK: - Add Base Set Cards
+    //MARK: - Add Base Set Deck
         
         let baseSet = Deck()
         baseSet.deckName = "Base Set"
@@ -39,12 +39,11 @@ public class PokemonDecks {
         let baseSetCard2 = Card(value: ["2", "Blastoise"])
         let baseSetCard3 = Card(value: ["3", "Chansey"])
         
-        baseSet.cards.append(baseSetCard1)
-        baseSet.cards.append(baseSetCard2)
-        baseSet.cards.append(baseSetCard3)
+        baseSet.cards.append(objectsIn: [baseSetCard1, baseSetCard2, baseSetCard3])
         
+
         
-    //MARK: - Add Southern Islands Cards
+    //MARK: - Add Southern Islands Deck
         
         let southernIslands = Deck()
         southernIslands.deckName = "Southern Islands"
@@ -55,9 +54,7 @@ public class PokemonDecks {
         let soIslandsCard2 = Card(value: ["2", "Pidgeot"])
         let soIslandsCard3 = Card(value: ["3", "Onix"])
         
-        southernIslands.cards.append(soIslandsCard1)
-        southernIslands.cards.append(soIslandsCard2)
-        southernIslands.cards.append(soIslandsCard3)
+        southernIslands.cards.append(objectsIn: [soIslandsCard1, soIslandsCard2, soIslandsCard3])
         
         
         
