@@ -20,13 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //print(Realm.Configuration.defaultConfiguration.fileURL)
         
+        var counter = UserDefaults.standard.integer(forKey: "counter")
+        
+        counter = counter + 1
+        
+        UserDefaults.standard.set(counter, forKey: "counter")
+        
+        print(counter)
+        
         let realm = try! Realm()
         
         //preload Series and Decks on first boot
 
         let seriesArray = realm.objects(Series.self)
 
-        if seriesArray.count == 0 {
+        if seriesArray.count == 0 && counter == 1 {
             
             PokemonDecks().addDecks()
             print("Decks Added!")
