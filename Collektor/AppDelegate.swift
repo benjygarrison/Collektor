@@ -9,7 +9,6 @@
 import UIKit
 import CoreData
 import RealmSwift
-import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,42 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        FirebaseApp.configure()
-        
         //print(Realm.Configuration.defaultConfiguration.fileURL)
         
         let realm = try! Realm()
         
-        //Pre-load data if none exists -- TODO: modify to pull from remote
-        
+        //preload Series and Decks on first boot
+
         let seriesArray = realm.objects(Series.self)
-        
+
         if seriesArray.count == 0 {
-
-            let importSeries = Series()
-            importSeries.seriesName = "Dragon Ball Z"
-
-            let importDeck = Deck()
-            importDeck.deckName = "Seven stars"
-
-            let importCard = Card()
-            importCard.cardNumber = "1"
-            importCard.cardName = "Goku"
-
-            importDeck.cards.append(importCard)
-            importSeries.decks.append(importDeck)
-
-            do {
-                try realm.write {
-                    realm.add(importSeries)
-                    }
-                } catch {
-                    print("error saving context \(error)")
-                }
-            } else {
-                print("Hello from the App Delegate")
-        }
             
+            PokemonDecks().addDecks()
+            print("Decks Added!")
+            
+        }
+        
         
         return true
     }

@@ -7,7 +7,6 @@ target 'Collektor' do
   # Pods for Collektor
 
 pod 'RealmSwift'
-pod 'Firebase/Core'
-pod 'Firebase/Firestore'
+
 
 end
