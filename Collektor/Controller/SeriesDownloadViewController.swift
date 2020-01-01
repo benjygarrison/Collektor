@@ -14,7 +14,9 @@ class SeriesDownloadViewController: UITableViewController {
 
     let realm = try! Realm()
     
-    var seriesArray = [Series]()
+    //var seriesArray = [Series]()
+    
+    var seriesArray = ["Pokemon", "Magic, The Gathering", "Yu-Gi-Oh"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +42,24 @@ class SeriesDownloadViewController: UITableViewController {
 
         let series = seriesArray[indexPath.row]
 
-        cell.textLabel?.text = series.seriesName
+        cell.textLabel?.text = series
 
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        //TODO
+        performSegue(withIdentifier: "deckDownloadSegue", sender: self)
                
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let destinationVC = segue.destination as! DeckDownloadViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedSeries = seriesArray[indexPath.row]
+        }
     }
     
 }

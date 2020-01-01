@@ -18,6 +18,7 @@
 		AFC2C24F238B447E0014BEA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC2C24D238B447E0014BEA2 /* LaunchScreen.storyboard */; };
 		AFC2C267238B9C780014BEA2 /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C266238B9C780014BEA2 /* DeckViewController.swift */; };
 		AFC2C271238C80A40014BEA2 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C270238C80A40014BEA2 /* CardViewController.swift */; };
+		AFC7339E23BC7AA500333AF9 /* DeckDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC7339D23BC7AA500333AF9 /* DeckDownloadViewController.swift */; };
 		AFF359FB2397519C00A69B20 /* Series.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF359FA2397519C00A69B20 /* Series.swift */; };
 		AFF359FD239751B400A69B20 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF359FC239751B400A69B20 /* Deck.swift */; };
 		AFF359FF239751C400A69B20 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF359FE239751C400A69B20 /* Card.swift */; };
@@ -39,6 +40,7 @@
 		AFC2C250238B447E0014BEA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFC2C266238B9C780014BEA2 /* DeckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = SOURCE_ROOT; };
 		AFC2C270238C80A40014BEA2 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CardViewController.swift; path = Collektor/View/CardViewController.swift; sourceTree = SOURCE_ROOT; };
+		AFC7339D23BC7AA500333AF9 /* DeckDownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DeckDownloadViewController.swift; path = Collektor/View/DeckDownloadViewController.swift; sourceTree = SOURCE_ROOT; };
 		AFF359FA2397519C00A69B20 /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = SOURCE_ROOT; };
 		AFF359FC239751B400A69B20 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		AFF359FE239751C400A69B20 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				AFC2C243238B447C0014BEA2 /* SeriesViewController.swift */,
 				AF5175C623A9CFD90087DC73 /* SeriesDownloadViewController.swift */,
+				AFC7339D23BC7AA500333AF9 /* DeckDownloadViewController.swift */,
 				AFC2C266238B9C780014BEA2 /* DeckViewController.swift */,
 				AFC2C270238C80A40014BEA2 /* CardViewController.swift */,
 				AF406965238E24E900CC1E18 /* DetailViewController.swift */,
@@ -272,6 +275,7 @@
 				AFC2C244238B447C0014BEA2 /* SeriesViewController.swift in Sources */,
 				AFB059B023BC180400DFB00A /* PokemonDecks.swift in Sources */,
 				AFC2C267238B9C780014BEA2 /* DeckViewController.swift in Sources */,
+				AFC7339E23BC7AA500333AF9 /* DeckDownloadViewController.swift in Sources */,
 				AFF359FF239751C400A69B20 /* Card.swift in Sources */,
 				AFC2C240238B447C0014BEA2 /* AppDelegate.swift in Sources */,
 				AFF359FB2397519C00A69B20 /* Series.swift in Sources */,

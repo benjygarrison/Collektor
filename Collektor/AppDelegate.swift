@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let seriesArray = realm.objects(Series.self)
 
-        if seriesArray.count == 0 && counter == 13 {
+        if seriesArray.count == 0 && counter == 14 {
             
             PokemonDecks().addDecks()
             print("Decks Added!")

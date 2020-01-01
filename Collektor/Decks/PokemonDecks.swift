@@ -13,9 +13,11 @@ import RealmSwift
 
 public class PokemonDecks {
     
+    let realm = try! Realm()
+    
     public func addDecks() {
         
-        let realm = try! Realm()
+        
         
 //MARK: - Add Pokemon Series
            
