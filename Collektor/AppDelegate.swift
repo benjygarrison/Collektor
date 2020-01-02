@@ -18,29 +18,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        //print(Realm.Configuration.defaultConfiguration.fileURL)
+        print(Realm.Configuration.defaultConfiguration.fileURL as Any)
         
-        var counter = UserDefaults.standard.integer(forKey: "counter")
-        
-        counter = counter + 1
-        
-        UserDefaults.standard.set(counter, forKey: "counter")
-        
-        print(counter)
-        
-        let realm = try! Realm()
-        
-        //preload Series and Decks on first boot
-
-        let seriesArray = realm.objects(Series.self)
-
-        if seriesArray.count == 0 && counter == 14 {
-            
-            PokemonDecks().addDecks()
-            print("Decks Added!")
-            
-        }
-        
+//        var counter = UserDefaults.standard.integer(forKey: "counter")
+//
+//        counter = counter + 1
+//
+//        UserDefaults.standard.set(counter, forKey: "counter")
+//
+//        print(counter)
+//
+//        let realm = try! Realm()
+//
+//
+//        let seriesArray = realm.objects(Series.self)
+//
+//        if seriesArray.count == 0 && counter == 14 {
+//
+//            PokemonDecks().addDecks()
+//            print("Decks Added!")
+//
+//        }
+//
         
         return true
     }

@@ -12,6 +12,10 @@ import RealmSwift
 class Series: Object {
 
     @objc dynamic var seriesName: String = ""
+    @objc dynamic var seriesID: String = ""
     let decks = List<Deck>()
     
+    override static func primaryKey() -> String? {
+      return "seriesID"
+    }
 }

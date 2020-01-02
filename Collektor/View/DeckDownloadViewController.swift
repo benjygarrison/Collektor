@@ -13,8 +13,6 @@ import RealmSwift
 class DeckDownloadViewController : UITableViewController {
     
     var deckArray = [String]()
-    //let magicDeckArray = ["magic1", "magic2"]
-    //let yugiohDeckArray = ["yugioh1", "yugioh2"]
     
     var selectedSeries : String? {
         didSet {
@@ -24,6 +22,7 @@ class DeckDownloadViewController : UITableViewController {
             case "Magic, The Gathering": deckArray = ["Magic1", "Magic2"]
             case "Yu-Gi-Oh": deckArray = ["yugioh1", "yugioh2"]
             default: deckArray = ["Problem loading decks"]
+            
             }
             
             print(selectedSeries as Any)
@@ -60,8 +59,15 @@ class DeckDownloadViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let selectedDeck = deckArray[indexPath.row]
+        
+        switch selectedDeck {
+            case "Southern Islands": PokemonDecks().addSouthernIslands()
+            case "Base Set": PokemonDecks().addBaseSet()
+            default: print("Something Else")
+        }
 
-        //TODO
                
     }
     
