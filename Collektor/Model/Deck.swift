@@ -12,10 +12,7 @@ import RealmSwift
 class Deck: Object {
     
     @objc dynamic var deckName: String = ""
-    @objc dynamic var deckID: String = ""
     var parentSeries = LinkingObjects(fromType: Series.self, property: "decks")
     var cards = List<Card>()
     
-    override static func primaryKey() -> String? {
-      return "deckID"
-    }}
+}

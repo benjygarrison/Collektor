@@ -37,6 +37,14 @@ class DeckDownloadViewController : UITableViewController {
         
     }
     
+    func addedAlert() {
+        let alert = UIAlertController(title:"Deck Added!",message:nil,preferredStyle:.alert)
+       self.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+            alert.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     
     
     //MARK: - tableview methods
@@ -63,13 +71,11 @@ class DeckDownloadViewController : UITableViewController {
         let selectedDeck = deckArray[indexPath.row]
         
         switch selectedDeck {
-            case "Southern Islands": PokemonDecks().addSouthernIslands()
-            case "Base Set": PokemonDecks().addBaseSet()
-            default: print("Something Else")
+        case "Southern Islands": PokemonDecks().addSouthernIslands(); addedAlert()
+        case "Base Set": PokemonDecks().addBaseSet(); addedAlert()
+        default: print("Something Else")
         }
 
-               
     }
-    
     
 }
