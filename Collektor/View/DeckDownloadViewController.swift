@@ -37,9 +37,13 @@ class DeckDownloadViewController : UITableViewController {
         
     }
     
+    
+    
+    //MARK: - Alert function for added decks
+    
     func addedAlert() {
         let alert = UIAlertController(title:"Deck Added!",message:nil,preferredStyle:.alert)
-       self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
             alert.dismiss(animated: true, completion: nil)
         }
