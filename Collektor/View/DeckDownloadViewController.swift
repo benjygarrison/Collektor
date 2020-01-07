@@ -42,10 +42,19 @@ class DeckDownloadViewController : UITableViewController {
     //MARK: - Alert function for added decks
     
     func addedAlert() {
-        let alert = UIAlertController(title:"Deck Added!",message:nil,preferredStyle:.alert)
-        self.present(alert, animated: true, completion: nil)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-            alert.dismiss(animated: true, completion: nil)
+        print(PokemonDecks().deckExists)
+        if PokemonDecks().deckExists == true {
+            let alert = UIAlertController(title:"This deck was already added",message:nil,preferredStyle:.alert)
+            self.present(alert, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                alert.dismiss(animated: true, completion: nil)
+            }
+        } else {
+            let alert = UIAlertController(title:"Deck added!",message:nil,preferredStyle:.alert)
+            self.present(alert, animated: true, completion: nil)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+                alert.dismiss(animated: true, completion: nil)
+            }
         }
     }
     
