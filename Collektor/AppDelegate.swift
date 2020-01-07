@@ -12,7 +12,9 @@ import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    var deckExists = UserDefaults.standard.bool(forKey: "deckExists")
+    
     var window: UIWindow?
     
 

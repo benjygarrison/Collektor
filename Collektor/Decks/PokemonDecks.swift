@@ -14,15 +14,18 @@ public class PokemonDecks {
     
     let realm = try! Realm()
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     //public var deckExists: Bool = false
-    var deckExists = UserDefaults.standard.bool(forKey: "deckExists")
+    //var deckExists = UserDefaults.standard.bool(forKey: "deckExists")
 
     //MARK: - Add Base Set
     
     public func addBaseSet() {
         
-        deckExists = false
-        UserDefaults.standard.set(deckExists, forKey: "deckExists")
+        appDelegate.deckExists = false
+        UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+        print(appDelegate.deckExists)
         
         var pokemonSeries = Series()
         pokemonSeries.seriesID = "1"
@@ -61,9 +64,9 @@ public class PokemonDecks {
                 }
             }
             else {
-                deckExists = true
-                UserDefaults.standard.set(deckExists, forKey: "deckExists")
-                print(deckExists)
+                appDelegate.deckExists = true
+                UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+                print(appDelegate.deckExists)
             }
         }
         
@@ -75,9 +78,10 @@ public class PokemonDecks {
     
     public func addSouthernIslands() {
         
-        deckExists = false
-        UserDefaults.standard.set(deckExists, forKey: "deckExists")
-           
+        appDelegate.deckExists = false
+        UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+        print(appDelegate.deckExists)
+        
         var pokemonSeries = Series()
         pokemonSeries.seriesID = "1"
         pokemonSeries.seriesName = "Pokemon"
@@ -114,8 +118,8 @@ public class PokemonDecks {
                       print("error saving to realm \(error)")
                     }
             } else {
-                deckExists = true
-                UserDefaults.standard.set(deckExists, forKey: "deckExists")
+                appDelegate.deckExists = true
+                UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
             }
         }
     }

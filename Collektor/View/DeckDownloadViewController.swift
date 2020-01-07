@@ -12,6 +12,8 @@ import RealmSwift
 
 class DeckDownloadViewController : UITableViewController {
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     var deckArray = [String]()
     
     var selectedSeries : String? {
@@ -42,11 +44,10 @@ class DeckDownloadViewController : UITableViewController {
     //MARK: - Alert function for added decks
     
     func addedAlert() {
-        print(PokemonDecks().deckExists)
-        if PokemonDecks().deckExists == true {
-            let alert = UIAlertController(title:"This deck was already added",message:nil,preferredStyle:.alert)
+        if appDelegate.deckExists == true {
+            let alert = UIAlertController(title:"You've already added this deck.",message:nil,preferredStyle:.alert)
             self.present(alert, animated: true, completion: nil)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 alert.dismiss(animated: true, completion: nil)
             }
         } else {
