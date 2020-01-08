@@ -19,6 +19,7 @@ class DeckDownloadViewController : UITableViewController {
     var selectedSeries : String? {
         didSet {
             
+            //TODO - Update arrays as new decks added
             switch selectedSeries {
             case "Pokemon": deckArray = ["Southern Islands", "Base Set"]
             case "Magic, The Gathering": deckArray = ["Magic1", "Magic2"]
@@ -84,6 +85,7 @@ class DeckDownloadViewController : UITableViewController {
         
         let selectedDeck = deckArray[indexPath.row]
         
+        //TODO - Update switch as new decks added
         switch selectedDeck {
         case "Southern Islands": PokemonDecks().addSouthernIslands(); addedAlert()
         case "Base Set": PokemonDecks().addBaseSet(); addedAlert()

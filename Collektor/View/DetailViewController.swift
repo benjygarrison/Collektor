@@ -43,7 +43,7 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
        super.viewDidLoad()
     
         imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
         
             
@@ -237,6 +237,7 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         
     }
     
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let cardImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
@@ -269,7 +270,7 @@ extension DetailViewController {
         
    //NOTE: *** See imagePickerController for cardPicture write function ***
 
-   //create core data objects
+   //create realm objects
         
         if self.isMovingFromParent
         {
