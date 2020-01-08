@@ -16,8 +16,7 @@ public class PokemonDecks {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    //public var deckExists: Bool = false
-    //var deckExists = UserDefaults.standard.bool(forKey: "deckExists")
+
 
     //MARK: - Add Base Set
     

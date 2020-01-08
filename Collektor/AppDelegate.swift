@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(Realm.Configuration.defaultConfiguration.fileURL as Any)
         
+        let time = 3
+        sleep(UInt32(time))
+        
 //        var counter = UserDefaults.standard.integer(forKey: "counter")
 //
 //        counter = counter + 1
