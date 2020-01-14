@@ -43,8 +43,8 @@ class CardViewController : UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)
         
         if let card = cardArray?[indexPath.row] {
-            cell.textLabel?.text = card.cardNumber
-            cell.detailTextLabel?.text = card.cardName
+            cell.textLabel?.text = "\(card.cardNumber)       \(card.cardName)"
+            //cell.detailTextLabel?.text = card.cardName
         } else {
             cell.textLabel?.text = ""
             cell.detailTextLabel?.text = "No Cards Added Yet"
