@@ -53,6 +53,10 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         if selectedCard?.cardPicture != nil {
             let imagePickerData = selectedCard?.cardPicture! as NSData?
             cardImageView.image = UIImage(data: (imagePickerData as Data?)!)
+        } else if selectedCard?.cardPicture == nil {
+            cardImageView.image = UIImage(named: "noImage")
+            cardImageView.layer.borderWidth = 1
+            cardImageView.layer.borderColor = UIColor.darkGray.cgColor
         }
     
         cardName.text = selectedCard?.cardName
