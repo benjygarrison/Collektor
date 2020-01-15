@@ -70,6 +70,13 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             gradedSwitch.isEnabled = true
             }
     
+    
+        if ownedSwitch.isOn == false {
+            conditionButton.layer.backgroundColor = UIColor.lightGray.cgColor
+            addPhotoButton.layer.backgroundColor = UIColor.lightGray.cgColor
+        }
+    
+    
         if selectedCard?.graded == true {
             gradedSwitch.isOn = true
             }
@@ -125,6 +132,8 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             scoreLabel.isEnabled = false
             scoreValueLabel.isEnabled = false
             scoreSlider.isEnabled = false
+            conditionButton.layer.backgroundColor = UIColor.lightGray.cgColor
+            addPhotoButton.layer.backgroundColor = UIColor.lightGray.cgColor
             
         } else {
             conditionLabel.isEnabled = true
@@ -132,6 +141,8 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             conditionButton.isEnabled = true
             gradedLabel.isEnabled = true
             gradedSwitch.isEnabled = true
+            conditionButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+            addPhotoButton.layer.backgroundColor = UIColor.systemBlue.cgColor
         }
             
     }
