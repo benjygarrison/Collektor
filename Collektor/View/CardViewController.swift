@@ -13,7 +13,7 @@ class CardViewController : UITableViewController {
     
     let realm = try! Realm()
     var cardArray: Results<Card>?
-    
+
     var selectedDeck : Deck? {
         didSet {
             loadCard()
@@ -39,12 +39,20 @@ class CardViewController : UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-                
+        
+        let ownedImageView: UIImageView = UIImageView(frame:CGRect(x: 0, y: 0, width: 30, height: 20))
+        ownedImageView.image = UIImage(named: "ownedIcon.png")
+        ownedImageView.contentMode = .scaleAspectFill
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)
         
         if let card = cardArray?[indexPath.row] {
             cell.textLabel?.text = "\(card.cardNumber)       \(card.cardName)"
-            //cell.detailTextLabel?.text = card.cardName
+            if card.owned == true {
+            cell.accessoryView = ownedImageView
+            }
+            print(card.owned)
+       
         } else {
             cell.textLabel?.text = ""
             cell.detailTextLabel?.text = "No Cards Added Yet"
