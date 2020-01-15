@@ -42,8 +42,11 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
    override func viewDidLoad() {
        super.viewDidLoad()
     
+        addPhotoButton.layer.cornerRadius = 5
+        conditionButton.layer.cornerRadius = 5
+    
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = false
         
             
