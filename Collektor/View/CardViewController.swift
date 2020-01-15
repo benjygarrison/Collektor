@@ -26,7 +26,14 @@ class CardViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+    }
+    
+    //MARK: - viewWillAppear
+        override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        loadCard()
         
     }
     
@@ -48,9 +55,12 @@ class CardViewController : UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)
         
         if let card = cardArray?[indexPath.row] {
-            cell.textLabel?.text = "\(card.cardNumber)       \(card.cardName)"
+            cell.textLabel?.text = "\(card.cardNumber)    \(card.cardName)"
             if card.owned == true {
             cell.accessoryView = ownedImageView
+            }
+            if card.owned == false {
+                cell.accessoryView = .none
             }
         } else {
             cell.textLabel?.text = ""
@@ -238,6 +248,7 @@ class CardViewController : UITableViewController {
             tableView.reloadData()
         }
     
+        
 }
 
 
