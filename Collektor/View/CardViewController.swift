@@ -40,7 +40,7 @@ class CardViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let ownedImageView: UIImageView = UIImageView(frame:CGRect(x: 0, y: 0, width: 40, height: 40))
+        let ownedImageView: UIImageView = UIImageView(frame:CGRect(x: 0, y: 0, width: 30, height: 30))
         ownedImageView.image = UIImage(named: "ownedStamp.png")
         ownedImageView.contentMode = .scaleAspectFill
         
@@ -51,7 +51,6 @@ class CardViewController : UITableViewController {
             if card.owned == true {
             cell.accessoryView = ownedImageView
             }
-            //print(card.owned)
         } else {
             cell.textLabel?.text = ""
             cell.detailTextLabel?.text = "No Cards Added Yet"
