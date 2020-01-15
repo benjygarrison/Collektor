@@ -41,13 +41,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Series" id="qAS-05-xIm">
-                        <barButtonItem key="leftBarButtonItem" title="Download" id="f1S-2m-tMw">
+                        <barButtonItem key="leftBarButtonItem" title="Get Decks!" id="f1S-2m-tMw">
                             <connections>
                                 <action selector="downloadSeries:" destination="4ge-CB-5Gv" id="sDq-o4-qyI"/>
                                 <segue destination="nBo-2r-03d" kind="show" identifier="seriesDownloadSegue" id="fPC-sl-8sU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ffE-Is-wxF">
+                        <barButtonItem key="rightBarButtonItem" title="Add Series" id="ffE-Is-wxF">
                             <connections>
                                 <action selector="addSeries:" destination="4ge-CB-5Gv" id="8EY-8H-kl1"/>
                             </connections>
@@ -155,7 +155,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Decks" id="szi-Ib-xfn">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NIH-IN-Eyd">
+                        <barButtonItem key="rightBarButtonItem" title="Add Decks" id="NIH-IN-Eyd">
                             <connections>
                                 <action selector="addDeck:" destination="SJr-Yb-fFO" id="hRB-5d-X7q"/>
                             </connections>
@@ -210,7 +210,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Cards" id="KPe-1P-JUo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="f8d-08-nqj">
+                        <barButtonItem key="rightBarButtonItem" title="Add Cards" id="f8d-08-nqj">
                             <connections>
                                 <action selector="addCards:" destination="47S-gU-Xud" id="hae-1y-sD6"/>
                             </connections>
@@ -244,7 +244,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FcU-Nf-gdq" userLabel="cardName">
                                                     <rect key="frame" x="8" y="0.0" width="398" height="75"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
