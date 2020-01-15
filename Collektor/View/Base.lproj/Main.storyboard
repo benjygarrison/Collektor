@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Series-->
+        <!--Home-->
         <scene sceneID="EoG-Ax-T2U">
             <objects>
                 <tableViewController id="4ge-CB-5Gv" customClass="SeriesViewController" customModule="Collektor" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,16 +40,14 @@
                             <outlet property="delegate" destination="4ge-CB-5Gv" id="VkO-sn-Acn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Series" id="qAS-05-xIm">
+                    <navigationItem key="navigationItem" title="Home" id="qAS-05-xIm">
                         <barButtonItem key="leftBarButtonItem" title="Get Decks!" id="f1S-2m-tMw">
                             <connections>
                                 <action selector="downloadSeries:" destination="4ge-CB-5Gv" id="sDq-o4-qyI"/>
-                                <segue destination="nBo-2r-03d" kind="popoverPresentation" identifier="seriesDownloadSegue" popoverAnchorBarButtonItem="f1S-2m-tMw" id="fPC-sl-8sU">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <segue destination="nBo-2r-03d" kind="show" identifier="seriesDownloadSegue" id="fPC-sl-8sU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Add Series" id="ffE-Is-wxF">
+                        <barButtonItem key="rightBarButtonItem" title="New Series" id="ffE-Is-wxF">
                             <connections>
                                 <action selector="addSeries:" destination="4ge-CB-5Gv" id="8EY-8H-kl1"/>
                             </connections>
@@ -64,12 +62,12 @@
             </objects>
             <point key="canvasLocation" x="832" y="114"/>
         </scene>
-        <!--Series Download View Controller-->
+        <!--Preloaded Series-->
         <scene sceneID="3G3-I2-3KF">
             <objects>
                 <tableViewController id="nBo-2r-03d" customClass="SeriesDownloadViewController" customModule="Collektor" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JeY-XI-40j">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -87,9 +85,9 @@
                             <outlet property="delegate" destination="nBo-2r-03d" id="eOH-Jt-yjJ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Tjo-7R-sjI"/>
+                    <navigationItem key="navigationItem" title="Preloaded Series" id="Tjo-7R-sjI"/>
                     <connections>
-                        <segue destination="8lU-2g-s8F" kind="show" identifier="deckDownloadSegue" id="Tdz-eK-zxN"/>
+                        <segue destination="8lU-2g-s8F" kind="presentation" identifier="deckDownloadSegue" modalTransitionStyle="coverVertical" id="Tdz-eK-zxN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dra-f6-37t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -157,7 +155,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Decks" id="szi-Ib-xfn">
-                        <barButtonItem key="rightBarButtonItem" title="Add Decks" id="NIH-IN-Eyd">
+                        <barButtonItem key="rightBarButtonItem" title="New Deck" id="NIH-IN-Eyd">
                             <connections>
                                 <action selector="addDeck:" destination="SJr-Yb-fFO" id="hRB-5d-X7q"/>
                             </connections>
@@ -212,7 +210,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Cards" id="KPe-1P-JUo">
-                        <barButtonItem key="rightBarButtonItem" title="Add Cards" id="f8d-08-nqj">
+                        <barButtonItem key="rightBarButtonItem" title="New Card" id="f8d-08-nqj">
                             <connections>
                                 <action selector="addCards:" destination="47S-gU-Xud" id="hae-1y-sD6"/>
                             </connections>
