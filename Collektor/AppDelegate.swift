@@ -25,13 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let time = 3
         sleep(UInt32(time))
         
-//        var counter = UserDefaults.standard.integer(forKey: "counter")
-//
-//        counter = counter + 1
-//
-//        UserDefaults.standard.set(counter, forKey: "counter")
-//
-//        print(counter)
+
 //
 //        let realm = try! Realm()
 //

@@ -11,6 +11,8 @@ import RealmSwift
 
 class SeriesViewController: UITableViewController {
     
+    var counter = UserDefaults.standard.integer(forKey: "counter")
+    
     
     @IBOutlet weak var downloadButton: UIBarButtonItem!
     
@@ -31,9 +33,18 @@ class SeriesViewController: UITableViewController {
         self.toolbarItems = legalButton
         self.navigationController?.isToolbarHidden = false
         
-        
         loadSeries()
+        
+        counter = counter + 1
 
+        UserDefaults.standard.set(counter, forKey: "counter")
+        
+        print(counter)
+        
+        if counter == 1 {
+            introductoryPopup()
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -220,11 +231,24 @@ class SeriesViewController: UITableViewController {
     
     
     
+    //MARK: - Introductory popup
+    
+    func introductoryPopup() {
+        
+        let alert = UIAlertController(title: "Thanks for downloading Collektor! Press Get Decks! to add some pre-loaded card series, or press Add Series to start adding your own.", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    
+    
     //MARK: - EULA popup
     
     @objc func legalInfoButtonPressed() {
         
-        let alert = UIAlertController(title:"There are still careers in combat service!",message:nil,preferredStyle:.alert)
+        let alert = UIAlertController(title: "Legal Info", message: "Where I'm from, no one lived there. I look back now, nothings changed. Where Im from now, still No one lives there. Look back again and lock the door. I maintain, I still remain One man solitary And no city Cogito ergo sum people say, But think again 'cause I have no faith. I find building blocks filled with nothin. Seen an inkblot page And I said nothin. Outside? Ill check it out, it's just a mirror. Look back now, an empty page. Yet I maintain, I still remain One man solitary And no city. No town, no city No identity, no city No thoughts, no feelings, no city No you, just me I think, no city No words I speak, no city No outside, no city Nothin' at all, no city No way home, no city No relief, no city No sympathy, no city No understanding, no city There's no one else and no cityWhere I'm from, no one lived there. I look back now, nothings changed. Where Im from now, still No one lives there. Look back again and lock the door. I maintain, I still remain One man solitary And no city Cogito ergo sum people say, But think again 'cause I have no faith. I find building blocks filled with nothin. Seen an inkblot page And I said nothin. Outside? Ill check it out, it's just a mirror. Look back now, an empty page. Yet I maintain, I still remain One man solitary And no city. No town, no city No identity, no city No thoughts, no feelings, no city No you, just me I think, no city No words I speak, no city No outside, no city Nothin' at all, no city No way home, no city No relief, no city No sympathy, no city No understanding, no city There's no one else and no city", preferredStyle: .alert)
+        
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
