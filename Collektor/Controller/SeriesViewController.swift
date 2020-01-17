@@ -235,7 +235,7 @@ class SeriesViewController: UITableViewController {
     
     func introductoryPopup() {
         
-        let alert = UIAlertController(title: "Thanks for downloading Collektor!", message: "Press \"Get Decks!\" to add some pre-loaded decks from existing card series or \"New Series\" to start adding your own. (Once a series is added, click the series name to add or edit decks, cards, or card details on subsequent screens.)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Thanks for downloading Collektor!", message: "Press \"Get Decks!\" to add some prebuilt decks from existing franchises. \nClick \"New Series\" to start adding your own. \nOnce a series is added, the series name will appear onscreen. Click it to manually add, edit or delete underlying decks. \n(The same can be done for cards and card details on the screens that follow.)", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Got It!", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
         

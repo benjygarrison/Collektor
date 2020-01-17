@@ -14,6 +14,8 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
 
     let realm = try! Realm()
     
+    var detailCounter = UserDefaults.standard.integer(forKey: "detailCounter")
+    
     var conditionPicker = UIPickerView()
     var conditionPickerValue = String()
     let conditionPickerData = ["", "gem mint", "mint", "near mint-mint", "near mint", "excellent-mint", "excellent", "very good-excellent", "very good", "good", "fair", "poor"]
@@ -43,6 +45,14 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     
    override func viewDidLoad() {
        super.viewDidLoad()
+    
+        detailCounter = detailCounter + 1
+
+        UserDefaults.standard.set(detailCounter, forKey: "detailCounter")
+    
+        if detailCounter == 1 {
+        introDetailPopup()
+        }
     
         addPhotoButton.layer.cornerRadius = 5
         conditionButton.layer.cornerRadius = 5
@@ -316,6 +326,17 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         }
     }
     
+    
+    
+    //MARK: - introductory popup
+    
+    func introDetailPopup() {
+        
+        let alert = UIAlertController(title: "Note", message: "Activate the \"I own this!\" switch to mark the card as owned and save details of ownership. \nOnce you click back to the Cards screen, all changes made on this screen will automatically be saved for you. \nAn icon will also be added to the Cards screen to let you know the card is in your collection.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Got It!", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
     
 }
 
