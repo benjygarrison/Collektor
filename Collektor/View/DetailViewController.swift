@@ -88,6 +88,12 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             conditionButton.layer.backgroundColor = UIColor.lightGray.cgColor
             addPhotoButton.layer.backgroundColor = UIColor.lightGray.cgColor
             deletePhotoButton.layer.backgroundColor = UIColor.lightGray.cgColor
+            scoreSlider.isEnabled = false
+            scoreLabel.isEnabled = false
+            scoreValueLabel.isEnabled = false
+            cardImageView.image = UIImage(named: "noImage")
+            cardImageView.layer.borderWidth = 1
+            cardImageView.layer.borderColor = UIColor.darkGray.cgColor
         }
     
     
@@ -102,7 +108,7 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             conditionValueLabel.text = ""
             }
     
-        if gradedSwitch.isOn == true {
+    if gradedSwitch.isOn == true && ownedSwitch.isOn == true {
             scoreLabel.isEnabled = true
             scoreValueLabel.isEnabled = true
             scoreSlider.isEnabled = true
@@ -143,6 +149,7 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             conditionButton.isEnabled = false
             gradedLabel.isEnabled = false
             gradedSwitch.isEnabled = false
+            gradedSwitch.isOn = false
             scoreLabel.isEnabled = false
             scoreValueLabel.isEnabled = false
             scoreSlider.isEnabled = false
@@ -168,6 +175,8 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             //let imagePickerData = selectedCard?.cardPicture! as NSData?
             //cardImageView.image = UIImage(data: (imagePickerData as Data?)!)
             if cardImageView.image != UIImage(named: "noImage") {
+                let imagePickerData = selectedCard?.cardPicture! as NSData?
+                cardImageView.image = UIImage(data: (imagePickerData as Data?)!)
                 cardImageView.layer.borderWidth = 0
             }
         }
