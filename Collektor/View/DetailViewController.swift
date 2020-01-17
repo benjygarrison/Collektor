@@ -46,7 +46,7 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         conditionButton.layer.cornerRadius = 5
     
         imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
         
             

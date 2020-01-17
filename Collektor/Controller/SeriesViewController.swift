@@ -22,7 +22,16 @@ class SeriesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var legalButton = [UIBarButtonItem]()
 
+        let plainButton = UIBarButtonItem(title: "Legal Info", style: .plain, target: self, action: #selector(legalInfoButtonPressed))
+        legalButton.append(plainButton)
+
+        self.toolbarItems = legalButton
+        self.navigationController?.isToolbarHidden = false
+        
+        
         loadSeries()
 
     }
@@ -208,6 +217,19 @@ class SeriesViewController: UITableViewController {
         tableView.reloadData()
     
     }
+    
+    
+    
+    //MARK: - EULA popup
+    
+    @objc func legalInfoButtonPressed() {
+        
+        let alert = UIAlertController(title:"There are still careers in combat service!",message:nil,preferredStyle:.alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
 }
 
 
