@@ -32,6 +32,8 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     @IBOutlet weak var scoreSlider: UISlider!
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var addPhotoButton: UIButton!
+    @IBOutlet weak var deletePhotoButton: UIButton!
+    
     
     var selectedCard: Card?
     
@@ -44,6 +46,7 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     
         addPhotoButton.layer.cornerRadius = 5
         conditionButton.layer.cornerRadius = 5
+        deletePhotoButton.layer.cornerRadius = 5
     
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
@@ -74,6 +77,7 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         if ownedSwitch.isOn == false {
             conditionButton.layer.backgroundColor = UIColor.lightGray.cgColor
             addPhotoButton.layer.backgroundColor = UIColor.lightGray.cgColor
+            deletePhotoButton.layer.backgroundColor = UIColor.lightGray.cgColor
         }
     
     
@@ -132,8 +136,11 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             scoreLabel.isEnabled = false
             scoreValueLabel.isEnabled = false
             scoreSlider.isEnabled = false
+            addPhotoButton.isEnabled = false
+            deletePhotoButton.isEnabled = false
             conditionButton.layer.backgroundColor = UIColor.lightGray.cgColor
             addPhotoButton.layer.backgroundColor = UIColor.lightGray.cgColor
+            deletePhotoButton.layer.backgroundColor = UIColor.lightGray.cgColor
             cardImageView.image = UIImage(named: "noImage")
             cardImageView.layer.borderWidth = 1
             cardImageView.layer.borderColor = UIColor.darkGray.cgColor
@@ -143,8 +150,11 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             conditionButton.isEnabled = true
             gradedLabel.isEnabled = true
             gradedSwitch.isEnabled = true
+            addPhotoButton.isEnabled = true
+            deletePhotoButton.isEnabled = true
             conditionButton.layer.backgroundColor = UIColor.systemBlue.cgColor
             addPhotoButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+            deletePhotoButton.layer.backgroundColor = UIColor.systemBlue.cgColor
             let imagePickerData = selectedCard?.cardPicture! as NSData?
             cardImageView.image = UIImage(data: (imagePickerData as Data?)!)
             cardImageView.layer.borderWidth = 0
@@ -278,6 +288,17 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         
         imagePicker.dismiss(animated: true, completion: nil)
     }
+    
+    
+    
+    //MARK: - Delete photo
+    
+    @IBAction func deletePhoto(_ sender: UIButton) {
+        
+        
+        
+    }
+    
     
 }
 
