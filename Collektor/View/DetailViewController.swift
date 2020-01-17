@@ -46,7 +46,7 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         conditionButton.layer.cornerRadius = 5
     
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = false
         
             
@@ -134,7 +134,9 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             scoreSlider.isEnabled = false
             conditionButton.layer.backgroundColor = UIColor.lightGray.cgColor
             addPhotoButton.layer.backgroundColor = UIColor.lightGray.cgColor
-            
+            cardImageView.image = UIImage(named: "noImage")
+            cardImageView.layer.borderWidth = 1
+            cardImageView.layer.borderColor = UIColor.darkGray.cgColor
         } else {
             conditionLabel.isEnabled = true
             conditionValueLabel.isEnabled = true
@@ -143,6 +145,9 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             gradedSwitch.isEnabled = true
             conditionButton.layer.backgroundColor = UIColor.systemBlue.cgColor
             addPhotoButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+            let imagePickerData = selectedCard?.cardPicture! as NSData?
+            cardImageView.image = UIImage(data: (imagePickerData as Data?)!)
+            cardImageView.layer.borderWidth = 0
         }
             
     }

@@ -429,10 +429,10 @@
                                                     </constraints>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9T9-rw-4ts">
-                                                    <rect key="frame" x="138" y="268" width="138" height="30"/>
+                                                    <rect key="frame" x="137.5" y="268" width="139" height="30"/>
                                                     <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <inset key="contentEdgeInsets" minX="3" minY="3" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" title=" Add/Update Photo ">
+                                                    <state key="normal" title=" Take/Retake Photo ">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
