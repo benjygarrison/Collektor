@@ -85,7 +85,7 @@ class DeckViewController: UITableViewController {
 
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
             var textField = UITextField()
-                let alert = UIAlertController(title: "Edit series name", message: "", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Edit deck name", message: "", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 let action = UIAlertAction(title: "Update!", style: .default) { (action) in
@@ -96,7 +96,7 @@ class DeckViewController: UITableViewController {
                     if textField.text != "" {
                         deckText = textField.text!
                     } else {
-                        deckText = "Untitled"
+                        deckText = textField.placeholder!
                     }
                             do {
                                 try self.realm.write {
