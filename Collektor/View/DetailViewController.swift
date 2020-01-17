@@ -155,9 +155,11 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
             conditionButton.layer.backgroundColor = UIColor.systemBlue.cgColor
             addPhotoButton.layer.backgroundColor = UIColor.systemBlue.cgColor
             deletePhotoButton.layer.backgroundColor = UIColor.systemBlue.cgColor
-            let imagePickerData = selectedCard?.cardPicture! as NSData?
-            cardImageView.image = UIImage(data: (imagePickerData as Data?)!)
-            cardImageView.layer.borderWidth = 0
+            //let imagePickerData = selectedCard?.cardPicture! as NSData?
+            //cardImageView.image = UIImage(data: (imagePickerData as Data?)!)
+            if cardImageView.image != UIImage(named: "noImage") {
+                cardImageView.layer.borderWidth = 0
+            }
         }
             
     }
@@ -287,6 +289,8 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         }
         
         imagePicker.dismiss(animated: true, completion: nil)
+        cardImageView.layer.borderWidth = 0
+        
     }
     
     
@@ -296,7 +300,20 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
     @IBAction func deletePhoto(_ sender: UIButton) {
         
         
-        
+        if cardImageView.image != UIImage(named: "noImage") {
+            do {
+            try self.realm.write {
+                (selectedCard?.cardPicture = nil)
+                }
+                cardImageView.image = UIImage(named: "noImage")
+                cardImageView.layer.borderWidth = 1
+                cardImageView.layer.borderColor = UIColor.darkGray.cgColor
+            } catch {
+                print("error writing cardPicture to realm \(error)")
+                }
+        } else {
+            print("no photo to delete")
+        }
     }
     
     
