@@ -121,7 +121,7 @@ class SeriesViewController: UITableViewController {
                     if textField.text != "" {
                         seriesText = textField.text!
                     } else {
-                        seriesText = "Untitled"
+                        seriesText = textField.placeholder!
                     }
                             do {
                                 try self.realm.write {

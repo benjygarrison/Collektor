@@ -115,12 +115,12 @@ class CardViewController : UITableViewController {
                     if textField1.text != "" {
                         cardNumberText = textField1.text!
                     } else {
-                        cardNumberText = ""
+                        cardNumberText = textField1.placeholder!
                     }
                     if textField2.text != "" {
                         cardNameText = textField2.text!
                     } else {
-                        cardNameText = "Untitled"
+                        cardNameText = textField2.placeholder!
                     }
                             do {
                                 try self.realm.write {
@@ -197,12 +197,12 @@ class CardViewController : UITableViewController {
                 if textField1.text != "" {
                     cardNumberText = textField1.text!
                 } else {
-                    cardNumberText = ""
+                    cardNumberText = "0"
                 }
                 if textField2.text != "" {
                     cardNameText = textField2.text!
                 } else {
-                    cardNameText = "Untitled"
+                    cardNameText = "Untitled Card"
                 }
                 
                 do {
