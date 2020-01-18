@@ -103,6 +103,8 @@ class CardViewController : UITableViewController {
         let edit = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
             var textField1 = UITextField()
             var textField2 = UITextField()
+            var textToInt2 : Int = 0
+            
                 let alert = UIAlertController(title: "Edit card information", message: "", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
@@ -114,6 +116,7 @@ class CardViewController : UITableViewController {
                     
                     if textField1.text != "" {
                         cardNumberText = textField1.text!
+                        textToInt2 = Int(cardNumberText)!
                     } else {
                         cardNumberText = textField1.placeholder!
                     }
@@ -124,7 +127,7 @@ class CardViewController : UITableViewController {
                     }
                             do {
                                 try self.realm.write {
-                                    card?.cardNumber = cardNumberText
+                                    card?.cardNumber = textToInt2
                                     card?.cardName = cardNameText
                                 }
                             } catch {
@@ -136,7 +139,7 @@ class CardViewController : UITableViewController {
             
                 alert.addTextField { (alertTextField) in
                 alertTextField.placeholder = "\(currentCard!.cardNumber)"
-                alertTextField.keyboardType = UIKeyboardType.phonePad
+                alertTextField.keyboardType = UIKeyboardType.numberPad
                 textField1 = alertTextField
                 }
             
@@ -183,21 +186,23 @@ class CardViewController : UITableViewController {
         var textField1 = UITextField()
         var textField2 = UITextField()
         
+        var textToInt : Int = 0
+        
         let alert = UIAlertController(title: "Add new card", message: "", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         let action = UIAlertAction(title: "Add it!", style: .default) { (action) in
             
-            
             if let currentDeck = self.selectedDeck {
                 
-                var cardNumberText = ""
+                var cardNumberText : Int = 0
                 var cardNameText = ""
                 
                 if textField1.text != "" {
-                    cardNumberText = textField1.text!
+                    textToInt = Int(textField1.text!)!
+                    cardNumberText = textToInt
                 } else {
-                    cardNumberText = "0"
+                    cardNumberText = 0
                 }
                 if textField2.text != "" {
                     cardNameText = textField2.text!
@@ -222,7 +227,7 @@ class CardViewController : UITableViewController {
         
         alert.addTextField { (alertTextField) in
         alertTextField.placeholder = "123, etc."
-        alertTextField.keyboardType = UIKeyboardType.phonePad
+        alertTextField.keyboardType = UIKeyboardType.numberPad
         textField1 = alertTextField
         //print(alertTextField.text)
         }

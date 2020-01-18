@@ -11,7 +11,7 @@ import RealmSwift
 
 class Card: Object {
     
-    @objc dynamic var cardNumber: String = ""
+    @objc dynamic var cardNumber : Int = 0
     @objc dynamic var cardName: String = ""
     @objc dynamic var owned: Bool = false
     @objc dynamic var condition: String = ""
