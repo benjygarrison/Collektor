@@ -21,7 +21,7 @@ class DeckDownloadViewController : UITableViewController {
             
             //TODO - Update arrays as new decks added
             switch selectedSeries {
-            case "Pokemon": deckArray = ["Southern Islands", "Base Set"]
+            case "Pokemon": deckArray = ["Base Set", "Jungle", "Southern Islands"]
             case "Magic, The Gathering": deckArray = ["Magic1", "Magic2"]
             case "Yu-Gi-Oh": deckArray = ["yugioh1", "yugioh2"]
             default: deckArray = ["Problem loading decks"]
@@ -89,6 +89,7 @@ class DeckDownloadViewController : UITableViewController {
         switch selectedDeck {
         case "Southern Islands": PokemonDecks().addSouthernIslands(); addedAlert()
         case "Base Set": PokemonDecks().addBaseSet(); addedAlert()
+        case "Jungle": PokemonDecks().addJungle(); addedAlert()
         default: print("Something Else")
         }
 

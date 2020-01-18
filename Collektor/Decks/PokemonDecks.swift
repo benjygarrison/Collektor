@@ -37,9 +37,6 @@ public class PokemonDecks {
         let baseSetCard1 = Card(value: [1, "Alakazam"])
         let baseSetCard2 = Card(value: [2, "Blastoise"])
         let baseSetCard3 = Card(value: [3, "Chansey"])
-        
-        //Edit names frome here.
-        
         let baseSetCard4 = Card(value: [4, "Charizard"])
         let baseSetCard5 = Card(value: [5, "Clefairy"])
         let baseSetCard6 = Card(value: [6, "Gyarados"])
@@ -184,6 +181,127 @@ public class PokemonDecks {
     }
     
     
+    //MARK: - Add Jungle Set
+    
+    func addJungle() {
+        
+        appDelegate.deckExists = false
+        UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+        print(appDelegate.deckExists)
+        
+        var pokemonSeries = Series()
+        pokemonSeries.seriesID = "1"
+        pokemonSeries.seriesName = "Pokemon"
+        
+        let jungle = Deck()
+        jungle.deckName = "Jungle"
+        jungle.deckID = "jungle"
+        
+        let jungleCard1 = Card(value: [1, "Clefable"])
+        let jungleCard2 = Card(value: [2, "Electrode"])
+        let jungleCard3 = Card(value: [3, "Flareon"])
+        let jungleCard4 = Card(value: [4, "Jolteon"])
+        let jungleCard5 = Card(value: [5, "Kangaskhan"])
+        let jungleCard6 = Card(value: [6, "Mr. Mime"])
+        let jungleCard7 = Card(value: [7, "Nidoqueen"])
+        let jungleCard8 = Card(value: [8, "Pidgeot"])
+        let jungleCard9 = Card(value: [9, "Pinsir"])
+        let jungleCard10 = Card(value: [10, "Scyther"])
+        
+        let jungleCard11 = Card(value: [11, "Snorlax"])
+        let jungleCard12 = Card(value: [12, "Vaporeon"])
+        let jungleCard13 = Card(value: [13, "Venomoth"])
+        let jungleCard14 = Card(value: [14, "Victreebel"])
+        let jungleCard15 = Card(value: [15, "Vileplume"])
+        let jungleCard16 = Card(value: [16, "Wigglytuff"])
+        let jungleCard17 = Card(value: [17, "Clefable"])
+        let jungleCard18 = Card(value: [18, "Electrode"])
+        let jungleCard19 = Card(value: [19, "Flareon"])
+        let jungleCard20 = Card(value: [20, "Jolteon"])
+        
+        let jungleCard21 = Card(value: [21, "Kangaskhan"])
+        let jungleCard22 = Card(value: [22, "Mr. Mime"])
+        let jungleCard23 = Card(value: [23, "Nidoqueen"])
+        let jungleCard24 = Card(value: [24, "Pidgeot"])
+        let jungleCard25 = Card(value: [25, "Pinsir"])
+        let jungleCard26 = Card(value: [26, "Scyther"])
+        let jungleCard27 = Card(value: [27, "Snorlax"])
+        let jungleCard28 = Card(value: [28, "Vaporeon"])
+        let jungleCard29 = Card(value: [29, "Venomoth"])
+        let jungleCard30 = Card(value: [30, "Victreebel"])
+        
+        let jungleCard31 = Card(value: [31, "Vileplume"])
+        let jungleCard32 = Card(value: [32, "Wigglytuff"])
+        let jungleCard33 = Card(value: [33, "Butterfree"])
+        let jungleCard34 = Card(value: [34, "Dodrio"])
+        let jungleCard35 = Card(value: [35, "Eggsecutor"])
+        let jungleCard36 = Card(value: [36, "Fearow"])
+        let jungleCard37 = Card(value: [37, "Gloom"])
+        let jungleCard38 = Card(value: [38, "Lickitung"])
+        let jungleCard39 = Card(value: [39, "Marowak"])
+        let jungleCard40 = Card(value: [40, "Nidorina"])
+        
+        let jungleCard41 = Card(value: [41, "Parasect"])
+        let jungleCard42 = Card(value: [42, "Persian"])
+        let jungleCard43 = Card(value: [43, "Primeape"])
+        let jungleCard44 = Card(value: [44, "Rapidash"])
+        let jungleCard45 = Card(value: [45, "Rhydon"])
+        let jungleCard46 = Card(value: [46, "Seaking"])
+        let jungleCard47 = Card(value: [47, "Tauros"])
+        let jungleCard48 = Card(value: [48, "Weepinbell"])
+        let jungleCard49 = Card(value: [49, "Bellsprout"])
+        let jungleCard50 = Card(value: [50, "Cubone"])
+        
+        let jungleCard51 = Card(value: [51, "Eevee"])
+        let jungleCard52 = Card(value: [52, "Exeggcute"])
+        let jungleCard53 = Card(value: [53, "Goldeen"])
+        let jungleCard54 = Card(value: [54, "Jigglypuff"])
+        let jungleCard55 = Card(value: [55, "Mankey"])
+        let jungleCard56 = Card(value: [56, "Meowth"])
+        let jungleCard57 = Card(value: [57, "Nidoran F"])
+        let jungleCard58 = Card(value: [58, "Oddish"])
+        let jungleCard59 = Card(value: [59, "Paras"])
+        let jungleCard60 = Card(value: [60, "Pikachu"])
+        
+        let jungleCard61 = Card(value: [61, "Rhyhorn"])
+        let jungleCard62 = Card(value: [62, "Spearow"])
+        let jungleCard63 = Card(value: [63, "Venonat"])
+        let jungleCard64 = Card(value: [64, "Poke Ball"])
+        
+        jungle.cards.append(objectsIn: [jungleCard1, jungleCard2, jungleCard3, jungleCard4, jungleCard5, jungleCard6, jungleCard7, jungleCard8, jungleCard9, jungleCard10, jungleCard11, jungleCard12, jungleCard13, jungleCard14, jungleCard15, jungleCard16, jungleCard17, jungleCard18, jungleCard19, jungleCard20, jungleCard21, jungleCard22, jungleCard23, jungleCard24, jungleCard25, jungleCard26, jungleCard27, jungleCard28, jungleCard29, jungleCard30, jungleCard31, jungleCard32, jungleCard33, jungleCard34, jungleCard35, jungleCard36, jungleCard37, jungleCard38, jungleCard39, jungleCard40, jungleCard41, jungleCard42, jungleCard43, jungleCard44, jungleCard45, jungleCard46, jungleCard47, jungleCard48, jungleCard49, jungleCard50, jungleCard51, jungleCard52, jungleCard53, jungleCard54, jungleCard55, jungleCard56, jungleCard57, jungleCard58, jungleCard59, jungleCard60, jungleCard61, jungleCard62, jungleCard63, jungleCard64])
+        
+        if realm.object(ofType: Series.self, forPrimaryKey: pokemonSeries.seriesID) == nil {
+                  do {
+                      try realm.write {
+                          realm.add(pokemonSeries)
+                          pokemonSeries.decks.append(jungle)
+                          }
+                      } catch {
+                          print("error saving to realm \(error)")
+                  }
+        
+              } else {
+                  pokemonSeries = realm.object(ofType: Series.self, forPrimaryKey: "1")!
+                  
+                  if realm.object(ofType: Deck.self, forPrimaryKey: "jungle") == nil {
+                      do {
+                          try realm.write {
+                              pokemonSeries.decks.append(jungle)
+                          }
+                  } catch {
+                      print("error saving to realm \(error)")
+                      }
+                  }
+                  else {
+                      appDelegate.deckExists = true
+                      UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+                      print(appDelegate.deckExists)
+                  }
+              }
+        
+    }
+    
+    
     
     //MARK: - Add Southern Islands
     
@@ -204,6 +322,16 @@ public class PokemonDecks {
         let soIslandsCard1 = Card(value: [1, "Mew"])
         let soIslandsCard2 = Card(value: [2, "Pidgeot"])
         let soIslandsCard3 = Card(value: [3, "Onix"])
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         southernIslands.cards.append(objectsIn: [soIslandsCard1, soIslandsCard2, soIslandsCard3])
         
