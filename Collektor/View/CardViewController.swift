@@ -55,12 +55,15 @@ class CardViewController : UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cardCell", for: indexPath)
         
         if let card = cardArray?[indexPath.row] {
-            cell.textLabel?.text = "\(card.cardNumber)    \(card.cardName)"
+            cell.textLabel?.text = "\(card.cardNumber).    \(card.cardName)"
             if card.owned == true {
             cell.accessoryView = ownedImageView
             }
             if card.owned == false {
                 cell.accessoryView = .none
+            }
+            if card.cardNumber > 4999 || card.cardNumber == -1 {
+                cell.textLabel?.text = "      \(card.cardName)"
             }
         } else {
             cell.textLabel?.text = ""
@@ -202,7 +205,7 @@ class CardViewController : UITableViewController {
                     textToInt = Int(textField1.text!)!
                     cardNumberText = textToInt
                 } else {
-                    cardNumberText = 0
+                    cardNumberText = -1
                 }
                 if textField2.text != "" {
                     cardNameText = textField2.text!
