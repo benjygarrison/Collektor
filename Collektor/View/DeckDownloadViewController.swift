@@ -21,9 +21,13 @@ class DeckDownloadViewController : UITableViewController {
             
             //TODO - Update arrays as new decks added
             switch selectedSeries {
-            case "Pokemon": deckArray = ["Base Set", "Base Set 2", "Jungle", "Fossil", "Team Rocket", "WOTC Promos", "Gym Heroes",  "Gym Challenge", "Southern Islands", "Neo Genesis", "Neo Discovery", "Neo Revelation", "Neo Destiny", "Legendary", "Expedition Base Set", "Best of Game", "Aquapolis", "Skyridge", "EX Ruby & Sapphire", "EX Sandstorm", "EX Dragon", "EX FireRed and LeafGreen", "EX Team Rocket Returns", "EX Deoxys", "EX Emerald", "EX Unseen Forces Unown Collection", "EX Unseen Forces", "EX Delta Species", "EX Legend Maker", "EX Holon Phantoms", "EX Crystal Guardians", "EX Dragon Frontiers", "EX Power Keepers", "Diamond And Pearl", "Diamond And Pearl Promos", "Diamond And Pearl Mysterious Treasures", "Diamond And Pearl Secret Wonders", "Diamond And Pearl Great Encounters", "Diamond And Pearl Majestic Dawn", "Diamond And Pearl Legends Awakened", "Diamond And Pearl Stormfront"]
+                
+            case "Pokemon": deckArray = ["Base Set", "Base Set 2", "Jungle", "Fossil", "Team Rocket", "WOTC Promos", "Gym Heroes",  "Gym Challenge", "Southern Islands", "Neo Genesis", "Neo Discovery", "Neo Revelation", "Neo Destiny", "Legendary", "Expedition Base Set", "Best of Game", "Aquapolis", "Skyridge", "EX Ruby & Sapphire", "EX Sandstorm", "EX Dragon", "EX FireRed and LeafGreen", "EX Team Rocket Returns", "EX Deoxys", "EX Emerald", "EX Unseen Forces Unown Collection", "EX Unseen Forces", "EX Delta Species", "EX Legend Maker", "EX Holon Phantoms", "EX Crystal Guardians", "EX Dragon Frontiers", "EX Power Keepers", "Diamond And Pearl", "Diamond And Pearl Promos", "Diamond And Pearl Mysterious Treasures", "Diamond And Pearl Secret Wonders", "Diamond And Pearl Great Encounters", "Diamond And Pearl Majestic Dawn", "Diamond And Pearl Legends Awakened", "Diamond And Pearl Stormfront", "Nintendo Promos", "POP Series 1", "POP Series 2", "POP Series 3", "POP Series 4", "POP Series 5", "POP Series 6", "POP Series 7", "POP Series 8", "POP Series 9", "Platinum", "Platinum - Rising Rivals", "Platinum - Supreme Victors", "Platinum - Arceus", "Pokemon Rumble"]
+                
             case "Magic, The Gathering": deckArray = ["Magic1", "Magic2"]
+                
             case "Yu-Gi-Oh": deckArray = ["yugioh1", "yugioh2"]
+                
             default: deckArray = ["Problem loading decks"]
             
             }
@@ -128,12 +132,26 @@ class DeckDownloadViewController : UITableViewController {
         case "Diamond And Pearl Majestic Dawn": PokemonDecks().addDPMajesticDawn(); addedAlert()
         case "Diamond And Pearl Legends Awakened": PokemonDecks().addDPLegendsAwakened(); addedAlert()
         case "Diamond And Pearl Stormfront": PokemonDecks().addDPStormfront(); addedAlert()
+        case "Nintendo Promos": PokemonDecks().addNintendoPromos(); addedAlert()
+        case "POP Series 1": PokemonDecks().addPopSeries1(); addedAlert()
+        case "POP Series 2": PokemonDecks().addPopSeries2(); addedAlert()
+        case "POP Series 3": PokemonDecks().addPopSeries3(); addedAlert()
+        case "POP Series 4": PokemonDecks().addPopSeries4(); addedAlert()
+        case "POP Series 5": PokemonDecks().addPopSeries5(); addedAlert()
+        case "POP Series 6": PokemonDecks().addPopSeries6(); addedAlert()
+        case "POP Series 7": PokemonDecks().addPopSeries7(); addedAlert()
+        case "POP Series 8": PokemonDecks().addPopSeries8(); addedAlert()
+        case "POP Series 9": PokemonDecks().addPopSeries9(); addedAlert()
+        case "Platinum": PokemonDecks().addPlatinum(); addedAlert()
+        case "Platinum - Rising Rivals": PokemonDecks().addPlatinumRisingRivals(); addedAlert()
+        case "Platinum - Supreme Victors": PokemonDecks().addPlatinumSupremeVictors(); addedAlert()
+        case "Platinum - Arceus": PokemonDecks().addPlatinumArceus(); addedAlert()
+        case "Pokemon Rumble": PokemonDecks().addPokemonRumble(); addedAlert()
         default: print("Something Else")
         }
 
     }
-    
-    
+ 
     
 }
 
