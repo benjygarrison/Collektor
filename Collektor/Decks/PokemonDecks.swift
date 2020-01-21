@@ -18,7 +18,7 @@ public class PokemonDecks {
     
 
 
-    //MARK: - Add Base Set
+    //MARK: - Add 1999 sets
     
     public func addBaseSet() {
         
@@ -181,7 +181,6 @@ public class PokemonDecks {
     }
     
     
-    //MARK: - Add Jungle Set
     
     func addJungle() {
         
@@ -303,8 +302,6 @@ public class PokemonDecks {
     
     
     
-    //MARK: - Add Fossil
-    
     func addFossil() {
         
         appDelegate.deckExists = false
@@ -423,8 +420,6 @@ public class PokemonDecks {
     
     
     
-    //MARK: - Add Base Set 2
-    
     func addBaseSet2() {
         
         appDelegate.deckExists = false
@@ -483,7 +478,7 @@ public class PokemonDecks {
                 let baseSet2Card39 = Card(value: [39, "Exeggutor"])
                 let baseSet2Card40 = Card(value: [40, "Farfetch'd"])
                 
-        let baseSet2Card41 = Card(value: [41, "Fearow"])
+                let baseSet2Card41 = Card(value: [41, "Fearow"])
                 let baseSet2Card42 = Card(value: [42, "Growlithe"])
                 let baseSet2Card43 = Card(value: [43, "Haunter"])
                 let baseSet2Card44 = Card(value: [44, "Ivysaur"])
@@ -621,8 +616,6 @@ public class PokemonDecks {
     }
     
     
-    
-    //MARK: - Add Team Rocket
     
     func addTeamRocket() {
         
@@ -767,8 +760,6 @@ public class PokemonDecks {
     
     
     
-    //MARK: - Add WOTC Promos
-    
     func addWOTCPromos() {
         
                 appDelegate.deckExists = false
@@ -878,7 +869,8 @@ public class PokemonDecks {
     }
     
     
-    //MARK: - Add Gym Heroes
+    
+    //MARK: - Add Gym Heroes Series
     
     func addGymHeroes() {
         
@@ -1064,8 +1056,6 @@ public class PokemonDecks {
     
     
     
-    //MARK: - Add Gym Challenge
-    
     func addGymChallenge() {
         
                 appDelegate.deckExists = false
@@ -1247,7 +1237,7 @@ public class PokemonDecks {
     
     
     
-    //MARK: - Add Southern Islands
+    //MARK: - Add Neo Genesis Series
     
     func addSouthernIslands() {
         
@@ -1312,16 +1302,10 @@ public class PokemonDecks {
                                 print(appDelegate.deckExists)
                             }
                         }
-
-
-
-        
-        
+ 
     }
     
     
-    
-    //MARK: - Add Neo Genesis
     
     func addNeoGenesis() {
         
@@ -1485,9 +1469,6 @@ public class PokemonDecks {
     
     
     
-    //MARK: - Add Neo Discovery
-    
-    
     func addNeoDiscovery() {
         
         appDelegate.deckExists = false
@@ -1611,9 +1592,7 @@ public class PokemonDecks {
 
     }
     
-    
-    
-    //MARK: - Add Neo Revelation
+
     
     func addNeoRevelation() {
         
@@ -1730,9 +1709,7 @@ public class PokemonDecks {
                         }
     }
     
-    
-    
-    //MARK: - Add Neo Destiny
+
     
     func addNeoDestiny() {
         
@@ -1900,7 +1877,7 @@ public class PokemonDecks {
     
     
     
-    //MARK: - Add Legendary
+    //MARK: - Add Legendary Series
     
     func addLegendary() {
         
@@ -2063,7 +2040,7 @@ public class PokemonDecks {
     
     
     
-    //MARK: - Add Expedition Base Set
+    //MARK: - Add e-Card Series
     
     func addExpeditionBaseSet() {
         
@@ -2279,9 +2256,7 @@ public class PokemonDecks {
 
     }
     
-    
-    
-    //MARK: - Add Best of Game
+
     
     func addBestOfGame() {
         
@@ -2343,9 +2318,7 @@ public class PokemonDecks {
     }
     
     
-    
-    //MARK: - Add Aquapolis
-    
+
     func addAquapolis() {
         
         appDelegate.deckExists = false
@@ -2582,10 +2555,7 @@ public class PokemonDecks {
 
     }
     
-    
-    
-    //MARK: - Add Skyridge
-    
+
     
     func addSkyridge() {
         
@@ -5570,7 +5540,7 @@ public class PokemonDecks {
         pokemonSeries.seriesName = "Pokemon"
                         
         let blackStarPromo = Deck()
-        blackStarPromo.deckName = "Black Star Promos"
+        blackStarPromo.deckName = "Diamond And Pearl Black Star Promos"
         blackStarPromo.deckID = "blackStarPromo"
 
         let blackStarPromoCard1 = Card(value: [1, "Turtwig"])
@@ -5676,7 +5646,7 @@ public class PokemonDecks {
         pokemonSeries.seriesName = "Pokemon"
                         
         let mysteriousTreasures = Deck()
-        mysteriousTreasures.deckName = "Mysterious Treasures"
+        mysteriousTreasures.deckName = "Diamond And Pearl Mysterious Treasures"
         mysteriousTreasures.deckID = "mysteriousTreasures"
 
         let mysteriousTreasuresCard1 = Card(value: [1, "Aggron"])
@@ -5850,7 +5820,7 @@ public class PokemonDecks {
         pokemonSeries.seriesName = "Pokemon"
                         
         let secretWonders = Deck()
-        secretWonders.deckName = "Secret Wonders"
+        secretWonders.deckName = "Diamond And Pearl Secret Wonders"
         secretWonders.deckID = "secretWonders"
 
         let secretWondersCard1 = Card(value: [1, "Ampharos"])
@@ -6032,7 +6002,7 @@ public class PokemonDecks {
         pokemonSeries.seriesName = "Pokemon"
                         
         let greatEncounters = Deck()
-        greatEncounters.deckName = "Great Encounters"
+        greatEncounters.deckName = "Diamond And Pearl Great Encounters"
         greatEncounters.deckID = "greatEncounters"
 
         let greatEncountersCard1 = Card(value: [1, "Blaziken"])
@@ -6188,7 +6158,7 @@ public class PokemonDecks {
         pokemonSeries.seriesName = "Pokemon"
                         
         let majesticDawn = Deck()
-        majesticDawn.deckName = "Majestic Dawn"
+        majesticDawn.deckName = "Diamond And Pearl Majestic Dawn"
         majesticDawn.deckID = "majesticDawn"
 
         let majesticDawnCard1 = Card(value: [1, "Articuno"])
@@ -6338,7 +6308,7 @@ public class PokemonDecks {
         pokemonSeries.seriesName = "Pokemon"
                         
         let legendsAwakened = Deck()
-        legendsAwakened.deckName = "Legends Awakened"
+        legendsAwakened.deckName = "Diamond And Pearl Legends Awakened"
         legendsAwakened.deckID = "legendsAwakened"
 
         let legendsAwakenedCard1 = Card(value: [1, "Deoxys Normal Forme"])
@@ -6533,7 +6503,7 @@ public class PokemonDecks {
         pokemonSeries.seriesName = "Pokemon"
                         
         let stormfront = Deck()
-        stormfront.deckName = "Stormfront"
+        stormfront.deckName = "Diamond And Pearl Stormfront"
         stormfront.deckID = "stormfront"
 
         let stormfrontCard1 = Card(value: [1, "Dusknoir"])
