@@ -21,7 +21,7 @@ class DeckDownloadViewController : UITableViewController {
             
             //TODO - Update arrays as new decks added
             switch selectedSeries {
-            case "Pokemon": deckArray = ["Base Set", "Base Set 2", "Jungle", "Fossil", "Team Rocket", "WOTC Promos", "Gym Heroes",  "Gym Challenge", "Southern Islands", "Neo Genesis", "Neo Discovery"]
+            case "Pokemon": deckArray = ["Base Set", "Base Set 2", "Jungle", "Fossil", "Team Rocket", "WOTC Promos", "Gym Heroes",  "Gym Challenge", "Southern Islands", "Neo Genesis", "Neo Discovery", "Neo Revelation", "Neo Destiny", "Legendary", "Expedition Base Set", "Best of Game", "Aquapolis"]
             case "Magic, The Gathering": deckArray = ["Magic1", "Magic2"]
             case "Yu-Gi-Oh": deckArray = ["yugioh1", "yugioh2"]
             default: deckArray = ["Problem loading decks"]
@@ -98,9 +98,17 @@ class DeckDownloadViewController : UITableViewController {
         case "Neo Genesis": PokemonDecks().addNeoGenesis(); addedAlert()
         case "Neo Discovery": PokemonDecks().addNeoDiscovery(); addedAlert()
         case "Southern Islands": PokemonDecks().addSouthernIslands(); addedAlert()
+        case "Neo Revelation": PokemonDecks().addNeoRevelation(); addedAlert()
+        case "Neo Destiny": PokemonDecks().addNeoDestiny(); addedAlert()
+        case "legendary": PokemonDecks().addLegendary(); addedAlert()
+        case "Expedition Base Set": PokemonDecks().addExpeditionBaseSet(); addedAlert()
+        case "Aquapolis": PokemonDecks().addAquapolis(); addedAlert()
+        case "Best of Game": PokemonDecks().addBestOfGame(); addedAlert()
         default: print("Something Else")
         }
 
     }
+    
+    
     
 }

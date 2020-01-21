@@ -1609,6 +1609,975 @@ public class PokemonDecks {
                             }
                         }
 
+    }
+    
+    
+    
+    //MARK: - Add Neo Revelation
+    
+    func addNeoRevelation() {
+        
+        appDelegate.deckExists = false
+                        UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+                        print(appDelegate.deckExists)
+                        
+        var pokemonSeries = Series()
+        pokemonSeries.seriesID = "1"
+        pokemonSeries.seriesName = "Pokemon"
+                        
+        let neoRevelation = Deck()
+        neoRevelation.deckName = "Neo Revelation"
+        neoRevelation.deckID = "neoRevelation"
+
+        let neoRevelationCard1 = Card(value: [1, "Ampharos"])
+        let neoRevelationCard2 = Card(value: [2, "Blissey"])
+        let neoRevelationCard3 = Card(value: [3, "Celebi"])
+        let neoRevelationCard4 = Card(value: [4, "Crobat"])
+        let neoRevelationCard5 = Card(value: [5, "Delibird"])
+        let neoRevelationCard6 = Card(value: [6, "Entei"])
+        let neoRevelationCard7 = Card(value: [7, "Ho-Oh"])
+        let neoRevelationCard8 = Card(value: [8, "Houndoom"])
+        let neoRevelationCard9 = Card(value: [9, "Jumpluff"])
+        let neoRevelationCard10 = Card(value: [10, "Magneton"])
+        let neoRevelationCard11 = Card(value: [11, "Misdreavus"])
+        let neoRevelationCard12 = Card(value: [12, "Porygon2"])
+        let neoRevelationCard13 = Card(value: [13, "Raikou"])
+        let neoRevelationCard14 = Card(value: [14, "Suicune"])
+        let neoRevelationCard15 = Card(value: [15, "Aerodactyl"])
+        let neoRevelationCard16 = Card(value: [16, "Celebi"])
+        let neoRevelationCard17 = Card(value: [17, "Entei"])
+        let neoRevelationCard18 = Card(value: [18, "Ho-Oh"])
+        let neoRevelationCard19 = Card(value: [19, "Kingdra"])
+        let neoRevelationCard20 = Card(value: [20, "Lugia"])
+        let neoRevelationCard21 = Card(value: [21, "Raichu"])
+        let neoRevelationCard22 = Card(value: [22, "Raikou"])
+        let neoRevelationCard23 = Card(value: [23, "Skarmory"])
+        let neoRevelationCard24 = Card(value: [24, "Sneasel"])
+        let neoRevelationCard25 = Card(value: [25, "Starmie"])
+        let neoRevelationCard26 = Card(value: [26, "Sudowoodo"])
+        let neoRevelationCard27 = Card(value: [27, "Suicune"])
+        let neoRevelationCard28 = Card(value: [28, "Flaaffy"])
+        let neoRevelationCard29 = Card(value: [29, "Golbat"])
+        let neoRevelationCard30 = Card(value: [30, "Graveler"])
+        let neoRevelationCard31 = Card(value: [31, "Jynx"])
+        let neoRevelationCard32 = Card(value: [32, "Lanturn"])
+        let neoRevelationCard33 = Card(value: [33, "Magcargo"])
+        let neoRevelationCard34 = Card(value: [34, "Octillery"])
+        let neoRevelationCard35 = Card(value: [35, "Parasect"])
+        let neoRevelationCard36 = Card(value: [36, "Piloswine"])
+        let neoRevelationCard37 = Card(value: [37, "Seaking"])
+        let neoRevelationCard38 = Card(value: [38, "Stantler"])
+        let neoRevelationCard39 = Card(value: [39, "Unown B"])
+        let neoRevelationCard40 = Card(value: [40, "Unown Y"])
+        let neoRevelationCard41 = Card(value: [41, "Aipom"])
+        let neoRevelationCard42 = Card(value: [42, "Chinchou"])
+        let neoRevelationCard43 = Card(value: [43, "Farfetch'd"])
+        let neoRevelationCard44 = Card(value: [44, "Geodude"])
+        let neoRevelationCard45 = Card(value: [45, "Goldeen"])
+        let neoRevelationCard46 = Card(value: [46, "Murkrow"])
+        let neoRevelationCard47 = Card(value: [47, "Paras"])
+        let neoRevelationCard48 = Card(value: [48, "Quagsire"])
+        let neoRevelationCard49 = Card(value: [49, "Qwilfish"])
+        let neoRevelationCard50 = Card(value: [50, "Remoraid"])
+        let neoRevelationCard51 = Card(value: [51, "Shuckle"])
+        let neoRevelationCard52 = Card(value: [52, "Skiploom"])
+        let neoRevelationCard53 = Card(value: [53, "Slugma"])
+        let neoRevelationCard54 = Card(value: [54, "Smoochum"])
+        let neoRevelationCard55 = Card(value: [55, "Snubbull"])
+        let neoRevelationCard56 = Card(value: [56, "Staryu"])
+        let neoRevelationCard57 = Card(value: [57, "Swinub"])
+        let neoRevelationCard58 = Card(value: [58, "Unown K"])
+        let neoRevelationCard59 = Card(value: [59, "Zubat"])
+        let neoRevelationCard60 = Card(value: [60, "Balloon Berry"])
+        let neoRevelationCard61 = Card(value: [61, "Healing Field"])
+        let neoRevelationCard62 = Card(value: [62, "Pokémon Breeder Fields"])
+        let neoRevelationCard63 = Card(value: [63, "Rocket's Hideout"])
+        let neoRevelationCard64 = Card(value: [64, "Old Rod"])
+        let neoRevelationCard65 = Card(value: [5000, "Shining Gyarados"])
+        let neoRevelationCard66 = Card(value: [5001, "Shining Magikarp"])
+
+
+
+                neoRevelation.cards.append(objectsIn: [neoRevelationCard1, neoRevelationCard2, neoRevelationCard3, neoRevelationCard4, neoRevelationCard5, neoRevelationCard6, neoRevelationCard7, neoRevelationCard8, neoRevelationCard9, neoRevelationCard10, neoRevelationCard11, neoRevelationCard12, neoRevelationCard13, neoRevelationCard14, neoRevelationCard15, neoRevelationCard16, neoRevelationCard17, neoRevelationCard18, neoRevelationCard19, neoRevelationCard20, neoRevelationCard21, neoRevelationCard22, neoRevelationCard23, neoRevelationCard24, neoRevelationCard25, neoRevelationCard26, neoRevelationCard27, neoRevelationCard28, neoRevelationCard29, neoRevelationCard30, neoRevelationCard31, neoRevelationCard32, neoRevelationCard33, neoRevelationCard34, neoRevelationCard35, neoRevelationCard36, neoRevelationCard37, neoRevelationCard38, neoRevelationCard39, neoRevelationCard40, neoRevelationCard41, neoRevelationCard42, neoRevelationCard43, neoRevelationCard44, neoRevelationCard45, neoRevelationCard46, neoRevelationCard47, neoRevelationCard48, neoRevelationCard49, neoRevelationCard50, neoRevelationCard51, neoRevelationCard52, neoRevelationCard53, neoRevelationCard54, neoRevelationCard55, neoRevelationCard56, neoRevelationCard57, neoRevelationCard58, neoRevelationCard59, neoRevelationCard60, neoRevelationCard61, neoRevelationCard62, neoRevelationCard63, neoRevelationCard64, neoRevelationCard65, neoRevelationCard66])
+
+                        if realm.object(ofType: Series.self, forPrimaryKey: pokemonSeries.seriesID) == nil {
+                            do {
+                                try realm.write {
+                                    realm.add(pokemonSeries)
+                                    pokemonSeries.decks.append(neoRevelation)
+                                    }
+                                } catch {
+                                    print("error saving to realm \(error)")
+                            }
+                  
+                        } else {
+                            pokemonSeries = realm.object(ofType: Series.self, forPrimaryKey: "1")!
+                            
+                            if realm.object(ofType: Deck.self, forPrimaryKey: "neoRevelation") == nil {
+                                do {
+                                    try realm.write {
+                                        pokemonSeries.decks.append(neoRevelation)
+                                    }
+                            } catch {
+                                print("error saving to realm \(error)")
+                                }
+                            }
+                            else {
+                                appDelegate.deckExists = true
+                                UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+                                print(appDelegate.deckExists)
+                            }
+                        }
+    }
+    
+    
+    
+    //MARK: - Add Neo Destiny
+    
+    func addNeoDestiny() {
+        
+        appDelegate.deckExists = false
+                        UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+                        print(appDelegate.deckExists)
+                        
+        var pokemonSeries = Series()
+        pokemonSeries.seriesID = "1"
+        pokemonSeries.seriesName = "Pokemon"
+                        
+        let neoDestiny = Deck()
+        neoDestiny.deckName = "Neo Destiny"
+        neoDestiny.deckID = "neoDestiny"
+
+        let neoDestinyCard1 = Card(value: [1, "Dark Ampharos"])
+        let neoDestinyCard2 = Card(value: [2, "Dark Crobat"])
+        let neoDestinyCard3 = Card(value: [3, "Dark Donphan"])
+        let neoDestinyCard4 = Card(value: [4, "Dark Espeon"])
+        let neoDestinyCard5 = Card(value: [5, "Dark Feraligatr"])
+        let neoDestinyCard6 = Card(value: [6, "Dark Gengar"])
+        let neoDestinyCard7 = Card(value: [7, "Dark Houndoom"])
+        let neoDestinyCard8 = Card(value: [8, "Dark Porygon2"])
+        let neoDestinyCard9 = Card(value: [9, "Dark Scizor"])
+        let neoDestinyCard10 = Card(value: [10, "Dark Typhlosion"])
+        let neoDestinyCard11 = Card(value: [11, "Dark Tyranitar"])
+        let neoDestinyCard12 = Card(value: [12, "Light Arcanine"])
+        let neoDestinyCard13 = Card(value: [13, "Light Azumarill"])
+        let neoDestinyCard14 = Card(value: [14, "Light Dragonite"])
+        let neoDestinyCard15 = Card(value: [15, "Light Togetic"])
+        let neoDestinyCard16 = Card(value: [16, "Miracle Energy"])
+        let neoDestinyCard17 = Card(value: [17, "Dark Ariados"])
+        let neoDestinyCard18 = Card(value: [18, "Dark Magcargo"])
+        let neoDestinyCard19 = Card(value: [19, "Dark Omastar"])
+        let neoDestinyCard20 = Card(value: [20, "Dark Slowking"])
+        let neoDestinyCard21 = Card(value: [21, "Dark Ursaring"])
+        let neoDestinyCard22 = Card(value: [22, "Light Dragonair"])
+        let neoDestinyCard23 = Card(value: [23, "Light Lanturn"])
+        let neoDestinyCard24 = Card(value: [24, "Light Ledian"])
+        let neoDestinyCard25 = Card(value: [25, "Light Machamp"])
+        let neoDestinyCard26 = Card(value: [26, "Light Piloswine"])
+        let neoDestinyCard27 = Card(value: [27, "Unown G"])
+        let neoDestinyCard28 = Card(value: [28, "Unown H"])
+        let neoDestinyCard29 = Card(value: [29, "Unown W"])
+        let neoDestinyCard30 = Card(value: [30, "Unown X"])
+        let neoDestinyCard31 = Card(value: [31, "Chansey"])
+        let neoDestinyCard32 = Card(value: [32, "Dark Croconaw"])
+        let neoDestinyCard33 = Card(value: [33, "Dark Exeggutor"])
+        let neoDestinyCard34 = Card(value: [34, "Dark Flaaffy"])
+        let neoDestinyCard35 = Card(value: [35, "Dark Forretress"])
+        let neoDestinyCard36 = Card(value: [36, "Dark Haunter"])
+        let neoDestinyCard37 = Card(value: [37, "Dark Omanyte"])
+        let neoDestinyCard38 = Card(value: [38, "Dark Pupitar"])
+        let neoDestinyCard39 = Card(value: [39, "Dark Quilava"])
+        let neoDestinyCard40 = Card(value: [40, "Dark Wigglytuff"])
+        let neoDestinyCard41 = Card(value: [41, "Heracross"])
+        let neoDestinyCard42 = Card(value: [42, "Hitmonlee"])
+        let neoDestinyCard43 = Card(value: [43, "Houndour"])
+        let neoDestinyCard44 = Card(value: [44, "Jigglypuff"])
+        let neoDestinyCard45 = Card(value: [45, "Light Dewgong"])
+        let neoDestinyCard46 = Card(value: [46, "Light Flareon"])
+        let neoDestinyCard47 = Card(value: [47, "Light Golduck"])
+        let neoDestinyCard48 = Card(value: [48, "Light Jolteon"])
+        let neoDestinyCard49 = Card(value: [49, "Light Machoke"])
+        let neoDestinyCard50 = Card(value: [50, "Light Ninetales"])
+        let neoDestinyCard51 = Card(value: [51, "Light Slowbro"])
+        let neoDestinyCard52 = Card(value: [52, "Light Vaporeon"])
+        let neoDestinyCard53 = Card(value: [53, "Light Venomoth"])
+        let neoDestinyCard54 = Card(value: [54, "Light Wigglytuff"])
+        let neoDestinyCard55 = Card(value: [55, "Scyther"])
+        let neoDestinyCard56 = Card(value: [56, "Togepi"])
+        let neoDestinyCard57 = Card(value: [57, "Unown C"])
+        let neoDestinyCard58 = Card(value: [58, "Unown P"])
+        let neoDestinyCard59 = Card(value: [59, "Unown Q"])
+        let neoDestinyCard60 = Card(value: [60, "Unown Z"])
+        let neoDestinyCard61 = Card(value: [61, "Cyndaquil"])
+        let neoDestinyCard62 = Card(value: [62, "Dark Octillery"])
+        let neoDestinyCard63 = Card(value: [63, "Dratini"])
+        let neoDestinyCard64 = Card(value: [64, "Exeggcute"])
+        let neoDestinyCard65 = Card(value: [65, "Gastly"])
+        let neoDestinyCard66 = Card(value: [66, "Girafarig"])
+        let neoDestinyCard67 = Card(value: [67, "Gligar"])
+        let neoDestinyCard68 = Card(value: [68, "Growlithe"])
+        let neoDestinyCard69 = Card(value: [69, "Hitmonchan"])
+        let neoDestinyCard70 = Card(value: [70, "Larvitar"])
+        let neoDestinyCard71 = Card(value: [71, "Ledyba"])
+        let neoDestinyCard72 = Card(value: [72, "Light Sunflora"])
+        let neoDestinyCard73 = Card(value: [73, "Machop"])
+        let neoDestinyCard74 = Card(value: [74, "Mantine"])
+        let neoDestinyCard75 = Card(value: [75, "Mareep"])
+        let neoDestinyCard76 = Card(value: [76, "Phanpy"])
+        let neoDestinyCard77 = Card(value: [77, "Pineco"])
+        let neoDestinyCard78 = Card(value: [78, "Porygon"])
+        let neoDestinyCard79 = Card(value: [79, "Psyduck"])
+        let neoDestinyCard80 = Card(value: [80, "Remoraid"])
+        let neoDestinyCard81 = Card(value: [81, "Seel"])
+        let neoDestinyCard82 = Card(value: [82, "Slugma"])
+        let neoDestinyCard83 = Card(value: [83, "Sunkern"])
+        let neoDestinyCard84 = Card(value: [84, "Swinub"])
+        let neoDestinyCard85 = Card(value: [85, "Totodile"])
+        let neoDestinyCard86 = Card(value: [86, "Unown L"])
+        let neoDestinyCard87 = Card(value: [87, "Unown S"])
+        let neoDestinyCard88 = Card(value: [88, "Unown T"])
+        let neoDestinyCard89 = Card(value: [89, "Unown V"])
+        let neoDestinyCard90 = Card(value: [90, "Venonat"])
+        let neoDestinyCard91 = Card(value: [91, "Vulpix"])
+        let neoDestinyCard92 = Card(value: [92, "Broken Ground Gym"])
+        let neoDestinyCard93 = Card(value: [93, "EXP.ALL"])
+        let neoDestinyCard94 = Card(value: [94, "Impostor Professor Oak's Invention"])
+        let neoDestinyCard95 = Card(value: [95, "Radio Tower"])
+        let neoDestinyCard96 = Card(value: [96, "Thought Wave Machine"])
+        let neoDestinyCard97 = Card(value: [97, "Counterattack Claws"])
+        let neoDestinyCard98 = Card(value: [98, "Energy Amplifier"])
+        let neoDestinyCard99 = Card(value: [99, "Energy Stadium"])
+        let neoDestinyCard100 = Card(value: [100, "Lucky Stadium"])
+        let neoDestinyCard101 = Card(value: [101, "Magnifier"])
+        let neoDestinyCard102 = Card(value: [102, "Pokémon Personality Test"])
+        let neoDestinyCard103 = Card(value: [103, "Team Rocket's Evil Deeds"])
+        let neoDestinyCard104 = Card(value: [104, "Heal Powder"])
+        let neoDestinyCard105 = Card(value: [105, "Mail from Bill"])
+        let neoDestinyCard106 = Card(value: [5000, "Shining Celebi"])
+        let neoDestinyCard107 = Card(value: [5001, "Shining Charizard"])
+        let neoDestinyCard108 = Card(value: [5002, "Shining Kabutops"])
+        let neoDestinyCard109 = Card(value: [5003, "Shining Mewtwo"])
+        let neoDestinyCard110 = Card(value: [5004, "Shining Noctowl"])
+        let neoDestinyCard111 = Card(value: [5005, "Shining Raichu"])
+        let neoDestinyCard112 = Card(value: [5006, "Shining Steelix"])
+        let neoDestinyCard113 = Card(value: [5007, "Shining Tyranitar"])
+
+
+
+                neoDestiny.cards.append(objectsIn: [neoDestinyCard1, neoDestinyCard2, neoDestinyCard3, neoDestinyCard4, neoDestinyCard5, neoDestinyCard6, neoDestinyCard7, neoDestinyCard8, neoDestinyCard9, neoDestinyCard10, neoDestinyCard11, neoDestinyCard12, neoDestinyCard13, neoDestinyCard14, neoDestinyCard15, neoDestinyCard16, neoDestinyCard17, neoDestinyCard18, neoDestinyCard19, neoDestinyCard20, neoDestinyCard21, neoDestinyCard22, neoDestinyCard23, neoDestinyCard24, neoDestinyCard25, neoDestinyCard26, neoDestinyCard27, neoDestinyCard28, neoDestinyCard29, neoDestinyCard30, neoDestinyCard31, neoDestinyCard32, neoDestinyCard33, neoDestinyCard34, neoDestinyCard35, neoDestinyCard36, neoDestinyCard37, neoDestinyCard38, neoDestinyCard39, neoDestinyCard40, neoDestinyCard41, neoDestinyCard42, neoDestinyCard43, neoDestinyCard44, neoDestinyCard45, neoDestinyCard46, neoDestinyCard47, neoDestinyCard48, neoDestinyCard49, neoDestinyCard50, neoDestinyCard51, neoDestinyCard52, neoDestinyCard53, neoDestinyCard54, neoDestinyCard55, neoDestinyCard56, neoDestinyCard57, neoDestinyCard58, neoDestinyCard59, neoDestinyCard60, neoDestinyCard61, neoDestinyCard62, neoDestinyCard63, neoDestinyCard64, neoDestinyCard65, neoDestinyCard66, neoDestinyCard67, neoDestinyCard68, neoDestinyCard69, neoDestinyCard70, neoDestinyCard71, neoDestinyCard72, neoDestinyCard73, neoDestinyCard74, neoDestinyCard75, neoDestinyCard76, neoDestinyCard77, neoDestinyCard78, neoDestinyCard79, neoDestinyCard80, neoDestinyCard81, neoDestinyCard82, neoDestinyCard83, neoDestinyCard84, neoDestinyCard85, neoDestinyCard86, neoDestinyCard87, neoDestinyCard88, neoDestinyCard89, neoDestinyCard90, neoDestinyCard91, neoDestinyCard92, neoDestinyCard93, neoDestinyCard94, neoDestinyCard95, neoDestinyCard96, neoDestinyCard97, neoDestinyCard98, neoDestinyCard99, neoDestinyCard100, neoDestinyCard101, neoDestinyCard102, neoDestinyCard103, neoDestinyCard104, neoDestinyCard105, neoDestinyCard106, neoDestinyCard107, neoDestinyCard108, neoDestinyCard109, neoDestinyCard110, neoDestinyCard111, neoDestinyCard112, neoDestinyCard113])
+
+                        if realm.object(ofType: Series.self, forPrimaryKey: pokemonSeries.seriesID) == nil {
+                            do {
+                                try realm.write {
+                                    realm.add(pokemonSeries)
+                                    pokemonSeries.decks.append(neoDestiny)
+                                    }
+                                } catch {
+                                    print("error saving to realm \(error)")
+                            }
+                  
+                        } else {
+                            pokemonSeries = realm.object(ofType: Series.self, forPrimaryKey: "1")!
+                            
+                            if realm.object(ofType: Deck.self, forPrimaryKey: "neoDestiny") == nil {
+                                do {
+                                    try realm.write {
+                                        pokemonSeries.decks.append(neoDestiny)
+                                    }
+                            } catch {
+                                print("error saving to realm \(error)")
+                                }
+                            }
+                            else {
+                                appDelegate.deckExists = true
+                                UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+                                print(appDelegate.deckExists)
+                            }
+                        }
+
+
+    }
+    
+    
+    
+    //MARK: - Add Legendary
+    
+    func addLegendary() {
+        
+        appDelegate.deckExists = false
+                        UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+                        print(appDelegate.deckExists)
+                        
+        var pokemonSeries = Series()
+        pokemonSeries.seriesID = "1"
+        pokemonSeries.seriesName = "Pokemon"
+                        
+        let legendary = Deck()
+        legendary.deckName = "Legendary"
+        legendary.deckID = "legendary"
+
+        let legendaryCard1 = Card(value: [1, "Alakazam"])
+        let legendaryCard2 = Card(value: [2, "Articuno"])
+        let legendaryCard3 = Card(value: [3, "Charizard"])
+        let legendaryCard4 = Card(value: [4, "Dark Blastoise"])
+        let legendaryCard5 = Card(value: [5, "Dark Dragonite"])
+        let legendaryCard6 = Card(value: [6, "Dark Persian"])
+        let legendaryCard7 = Card(value: [7, "Dark Raichu"])
+        let legendaryCard8 = Card(value: [8, "Dark Slowbro"])
+        let legendaryCard9 = Card(value: [9, "Dark Vaporeon"])
+        let legendaryCard10 = Card(value: [10, "Flareon"])
+        let legendaryCard11 = Card(value: [11, "Gengar"])
+        let legendaryCard12 = Card(value: [12, "Gyarados"])
+        let legendaryCard13 = Card(value: [13, "Hitmonlee"])
+        let legendaryCard14 = Card(value: [14, "Jolteon"])
+        let legendaryCard15 = Card(value: [15, "Machamp"])
+        let legendaryCard16 = Card(value: [16, "Muk"])
+        let legendaryCard17 = Card(value: [17, "Ninetales"])
+        let legendaryCard18 = Card(value: [18, "Venusaur"])
+        let legendaryCard19 = Card(value: [19, "Zapdos"])
+        let legendaryCard20 = Card(value: [20, "Beedrill"])
+        let legendaryCard21 = Card(value: [21, "Butterfree"])
+        let legendaryCard22 = Card(value: [22, "Electrode"])
+        let legendaryCard23 = Card(value: [23, "Exeggutor"])
+        let legendaryCard24 = Card(value: [24, "Golem"])
+        let legendaryCard25 = Card(value: [25, "Hypno"])
+        let legendaryCard26 = Card(value: [26, "Jynx"])
+        let legendaryCard27 = Card(value: [27, "Kabutops"])
+        let legendaryCard28 = Card(value: [28, "Magneton"])
+        let legendaryCard29 = Card(value: [29, "Mewtwo"])
+        let legendaryCard30 = Card(value: [30, "Moltres"])
+        let legendaryCard31 = Card(value: [31, "Nidoking"])
+        let legendaryCard32 = Card(value: [32, "Nidoqueen"])
+        let legendaryCard33 = Card(value: [33, "Pidgeot"])
+        let legendaryCard34 = Card(value: [34, "Pidgeotto"])
+        let legendaryCard35 = Card(value: [35, "Rhydon"])
+        let legendaryCard36 = Card(value: [36, "Arcanine"])
+        let legendaryCard37 = Card(value: [37, "Charmeleon"])
+        let legendaryCard38 = Card(value: [38, "Dark Dragonair"])
+        let legendaryCard39 = Card(value: [39, "Dark Wartortle"])
+        let legendaryCard40 = Card(value: [40, "Dewgong"])
+        let legendaryCard41 = Card(value: [41, "Dodrio"])
+        let legendaryCard42 = Card(value: [42, "Fearow"])
+        let legendaryCard43 = Card(value: [43, "Golduck"])
+        let legendaryCard44 = Card(value: [44, "Graveler"])
+        let legendaryCard45 = Card(value: [45, "Growlithe"])
+        let legendaryCard46 = Card(value: [46, "Haunter"])
+        let legendaryCard47 = Card(value: [47, "Ivysaur"])
+        let legendaryCard48 = Card(value: [48, "Kabuto"])
+        let legendaryCard49 = Card(value: [49, "Kadabra"])
+        let legendaryCard50 = Card(value: [50, "Kakuna"])
+        let legendaryCard51 = Card(value: [51, "Machoke"])
+        let legendaryCard52 = Card(value: [52, "Magikarp"])
+        let legendaryCard53 = Card(value: [53, "Meowth"])
+        let legendaryCard54 = Card(value: [54, "Metapod"])
+        let legendaryCard55 = Card(value: [55, "Nidorina"])
+        let legendaryCard56 = Card(value: [56, "Nidorino"])
+        let legendaryCard57 = Card(value: [57, "Omanyte"])
+        let legendaryCard58 = Card(value: [58, "Omastar"])
+        let legendaryCard59 = Card(value: [59, "Primeape"])
+        let legendaryCard60 = Card(value: [60, "Rapidash"])
+        let legendaryCard61 = Card(value: [61, "Raticate"])
+        let legendaryCard62 = Card(value: [62, "Sandslash"])
+        let legendaryCard63 = Card(value: [63, "Seadra"])
+        let legendaryCard64 = Card(value: [64, "Snorlax"])
+        let legendaryCard65 = Card(value: [65, "Tauros"])
+        let legendaryCard66 = Card(value: [66, "Tentacruel"])
+        let legendaryCard67 = Card(value: [67, "Abra"])
+        let legendaryCard68 = Card(value: [68, "Bulbasaur"])
+        let legendaryCard69 = Card(value: [69, "Caterpie"])
+        let legendaryCard70 = Card(value: [70, "Charmander"])
+        let legendaryCard71 = Card(value: [71, "Doduo"])
+        let legendaryCard72 = Card(value: [72, "Dratini"])
+        let legendaryCard73 = Card(value: [73, "Drowzee"])
+        let legendaryCard74 = Card(value: [74, "Eevee"])
+        let legendaryCard75 = Card(value: [75, "Exeggcute"])
+        let legendaryCard76 = Card(value: [76, "Gastly"])
+        let legendaryCard77 = Card(value: [77, "Geodude"])
+        let legendaryCard78 = Card(value: [78, "Grimer"])
+        let legendaryCard79 = Card(value: [79, "Machop"])
+        let legendaryCard80 = Card(value: [80, "Magnemite"])
+        let legendaryCard81 = Card(value: [81, "Mankey"])
+        let legendaryCard82 = Card(value: [82, "Nidoran♀"])
+        let legendaryCard83 = Card(value: [83, "Nidoran♂"])
+        let legendaryCard84 = Card(value: [84, "Onix"])
+        let legendaryCard85 = Card(value: [85, "Pidgey"])
+        let legendaryCard86 = Card(value: [86, "Pikachu"])
+        let legendaryCard87 = Card(value: [87, "Ponyta"])
+        let legendaryCard88 = Card(value: [88, "Psyduck"])
+        let legendaryCard89 = Card(value: [89, "Rattata"])
+        let legendaryCard90 = Card(value: [90, "Rhyhorn"])
+        let legendaryCard91 = Card(value: [91, "Sandshrew"])
+        let legendaryCard92 = Card(value: [92, "Seel"])
+        let legendaryCard93 = Card(value: [93, "Slowpoke"])
+        let legendaryCard94 = Card(value: [94, "Spearow"])
+        let legendaryCard95 = Card(value: [95, "Squirtle"])
+        let legendaryCard96 = Card(value: [96, "Tentacool"])
+        let legendaryCard97 = Card(value: [97, "Voltorb"])
+        let legendaryCard98 = Card(value: [98, "Vulpix"])
+        let legendaryCard99 = Card(value: [99, "Weedle"])
+        let legendaryCard100 = Card(value: [100, "Full Heal Energy"])
+        let legendaryCard101 = Card(value: [101, "Potion Energy"])
+        let legendaryCard102 = Card(value: [102, "Pokémon Breeder"])
+        let legendaryCard103 = Card(value: [103, "Pokémon Trader"])
+        let legendaryCard104 = Card(value: [104, "Scoop Up"])
+        let legendaryCard105 = Card(value: [105, "The Boss's Way"])
+        let legendaryCard106 = Card(value: [106, "Challenge!"])
+        let legendaryCard107 = Card(value: [107, "Energy Retrieval"])
+        let legendaryCard108 = Card(value: [108, "Bill"])
+        let legendaryCard109 = Card(value: [109, "Mysterious Fossil"])
+        let legendaryCard110 = Card(value: [110, "Potion"])
+
+
+                legendary.cards.append(objectsIn: [legendaryCard1, legendaryCard2, legendaryCard3, legendaryCard4, legendaryCard5, legendaryCard6, legendaryCard7, legendaryCard8, legendaryCard9, legendaryCard10, legendaryCard11, legendaryCard12, legendaryCard13, legendaryCard14, legendaryCard15, legendaryCard16, legendaryCard17, legendaryCard18, legendaryCard19, legendaryCard20, legendaryCard21, legendaryCard22, legendaryCard23, legendaryCard24, legendaryCard25, legendaryCard26, legendaryCard27, legendaryCard28, legendaryCard29, legendaryCard30, legendaryCard31, legendaryCard32, legendaryCard33, legendaryCard34, legendaryCard35, legendaryCard36, legendaryCard37, legendaryCard38, legendaryCard39, legendaryCard40, legendaryCard41, legendaryCard42, legendaryCard43, legendaryCard44, legendaryCard45, legendaryCard46, legendaryCard47, legendaryCard48, legendaryCard49, legendaryCard50, legendaryCard51, legendaryCard52, legendaryCard53, legendaryCard54, legendaryCard55, legendaryCard56, legendaryCard57, legendaryCard58, legendaryCard59, legendaryCard60, legendaryCard61, legendaryCard62, legendaryCard63, legendaryCard64, legendaryCard65, legendaryCard66, legendaryCard67, legendaryCard68, legendaryCard69, legendaryCard70, legendaryCard71, legendaryCard72, legendaryCard73, legendaryCard74, legendaryCard75, legendaryCard76, legendaryCard77, legendaryCard78, legendaryCard79, legendaryCard80, legendaryCard81, legendaryCard82, legendaryCard83, legendaryCard84, legendaryCard85, legendaryCard86, legendaryCard87, legendaryCard88, legendaryCard89, legendaryCard90, legendaryCard91, legendaryCard92, legendaryCard93, legendaryCard94, legendaryCard95, legendaryCard96, legendaryCard97, legendaryCard98, legendaryCard99, legendaryCard100, legendaryCard101, legendaryCard102, legendaryCard103, legendaryCard104, legendaryCard105, legendaryCard106, legendaryCard107, legendaryCard108, legendaryCard109, legendaryCard110])
+
+                        if realm.object(ofType: Series.self, forPrimaryKey: pokemonSeries.seriesID) == nil {
+                            do {
+                                try realm.write {
+                                    realm.add(pokemonSeries)
+                                    pokemonSeries.decks.append(legendary)
+                                    }
+                                } catch {
+                                    print("error saving to realm \(error)")
+                            }
+                  
+                        } else {
+                            pokemonSeries = realm.object(ofType: Series.self, forPrimaryKey: "1")!
+                            
+                            if realm.object(ofType: Deck.self, forPrimaryKey: "legendary") == nil {
+                                do {
+                                    try realm.write {
+                                        pokemonSeries.decks.append(legendary)
+                                    }
+                            } catch {
+                                print("error saving to realm \(error)")
+                                }
+                            }
+                            else {
+                                appDelegate.deckExists = true
+                                UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+                                print(appDelegate.deckExists)
+                            }
+                        }
+
+    }
+    
+    
+    
+    //MARK: - Add Expedition Base Set
+    
+    func addExpeditionBaseSet() {
+        
+        appDelegate.deckExists = false
+                        UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+                        print(appDelegate.deckExists)
+                        
+        var pokemonSeries = Series()
+        pokemonSeries.seriesID = "1"
+        pokemonSeries.seriesName = "Pokemon"
+                        
+        let expeditionBaseSet = Deck()
+        expeditionBaseSet.deckName = "Expedition Base Set"
+        expeditionBaseSet.deckID = "expeditionBaseSet"
+
+        let expeditionBaseSetCard1 = Card(value: [1, "Alakazam"])
+        let expeditionBaseSetCard2 = Card(value: [2, "Ampharos"])
+        let expeditionBaseSetCard3 = Card(value: [3, "Arbok"])
+        let expeditionBaseSetCard4 = Card(value: [4, "Blastoise"])
+        let expeditionBaseSetCard5 = Card(value: [5, "Butterfree"])
+        let expeditionBaseSetCard6 = Card(value: [6, "Charizard"])
+        let expeditionBaseSetCard7 = Card(value: [7, "Clefable"])
+        let expeditionBaseSetCard8 = Card(value: [8, "Cloyster"])
+        let expeditionBaseSetCard9 = Card(value: [9, "Dragonite"])
+        let expeditionBaseSetCard10 = Card(value: [10, "Dugtrio"])
+        let expeditionBaseSetCard11 = Card(value: [11, "Fearow"])
+        let expeditionBaseSetCard12 = Card(value: [12, "Feraligatr"])
+        let expeditionBaseSetCard13 = Card(value: [13, "Gengar"])
+        let expeditionBaseSetCard14 = Card(value: [14, "Golem"])
+        let expeditionBaseSetCard15 = Card(value: [15, "Kingler"])
+        let expeditionBaseSetCard16 = Card(value: [16, "Machamp"])
+        let expeditionBaseSetCard17 = Card(value: [17, "Magby"])
+        let expeditionBaseSetCard18 = Card(value: [18, "Meganium"])
+        let expeditionBaseSetCard19 = Card(value: [19, "Mew"])
+        let expeditionBaseSetCard20 = Card(value: [20, "Mewtwo"])
+        let expeditionBaseSetCard21 = Card(value: [21, "Ninetales"])
+        let expeditionBaseSetCard22 = Card(value: [22, "Pichu"])
+        let expeditionBaseSetCard23 = Card(value: [23, "Pidgeot"])
+        let expeditionBaseSetCard24 = Card(value: [24, "Poliwrath"])
+        let expeditionBaseSetCard25 = Card(value: [25, "Raichu"])
+        let expeditionBaseSetCard26 = Card(value: [26, "Rapidash"])
+        let expeditionBaseSetCard27 = Card(value: [27, "Skarmory"])
+        let expeditionBaseSetCard28 = Card(value: [28, "Typhlosion"])
+        let expeditionBaseSetCard29 = Card(value: [29, "Tyranitar"])
+        let expeditionBaseSetCard30 = Card(value: [30, "Venusaur"])
+        let expeditionBaseSetCard31 = Card(value: [31, "Vileplume"])
+        let expeditionBaseSetCard32 = Card(value: [32, "Weezing"])
+        let expeditionBaseSetCard33 = Card(value: [33, "Alakazam"])
+        let expeditionBaseSetCard34 = Card(value: [34, "Ampharos"])
+        let expeditionBaseSetCard35 = Card(value: [35, "Arbok"])
+        let expeditionBaseSetCard36 = Card(value: [36, "Blastoise"])
+        let expeditionBaseSetCard37 = Card(value: [37, "Blastoise"])
+        let expeditionBaseSetCard38 = Card(value: [38, "Butterfree"])
+        let expeditionBaseSetCard39 = Card(value: [39, "Charizard"])
+        let expeditionBaseSetCard40 = Card(value: [40, "Charizard"])
+        let expeditionBaseSetCard41 = Card(value: [41, "Clefable"])
+        let expeditionBaseSetCard42 = Card(value: [42, "Cloyster"])
+        let expeditionBaseSetCard43 = Card(value: [43, "Dragonite"])
+        let expeditionBaseSetCard44 = Card(value: [44, "Dugtrio"])
+        let expeditionBaseSetCard45 = Card(value: [45, "Fearow"])
+        let expeditionBaseSetCard46 = Card(value: [46, "Feraligatr"])
+        let expeditionBaseSetCard47 = Card(value: [47, "Feraligatr"])
+        let expeditionBaseSetCard48 = Card(value: [48, "Gengar"])
+        let expeditionBaseSetCard49 = Card(value: [49, "Golem"])
+        let expeditionBaseSetCard50 = Card(value: [50, "Kingler"])
+        let expeditionBaseSetCard51 = Card(value: [51, "Machamp"])
+        let expeditionBaseSetCard52 = Card(value: [52, "Magby"])
+        let expeditionBaseSetCard53 = Card(value: [53, "Meganium"])
+        let expeditionBaseSetCard54 = Card(value: [54, "Meganium"])
+        let expeditionBaseSetCard55 = Card(value: [55, "Mew"])
+        let expeditionBaseSetCard56 = Card(value: [56, "Mewtwo"])
+        let expeditionBaseSetCard57 = Card(value: [57, "Ninetales"])
+        let expeditionBaseSetCard58 = Card(value: [58, "Pichu"])
+        let expeditionBaseSetCard59 = Card(value: [59, "Pidgeot"])
+        let expeditionBaseSetCard60 = Card(value: [60, "Poliwrath"])
+        let expeditionBaseSetCard61 = Card(value: [61, "Raichu"])
+        let expeditionBaseSetCard62 = Card(value: [62, "Rapidash"])
+        let expeditionBaseSetCard63 = Card(value: [63, "Skarmory"])
+        let expeditionBaseSetCard64 = Card(value: [64, "Typhlosion"])
+        let expeditionBaseSetCard65 = Card(value: [65, "Typhlosion"])
+        let expeditionBaseSetCard66 = Card(value: [66, "Tyranitar"])
+        let expeditionBaseSetCard67 = Card(value: [67, "Venusaur"])
+        let expeditionBaseSetCard68 = Card(value: [68, "Venusaur"])
+        let expeditionBaseSetCard69 = Card(value: [69, "Vileplume"])
+        let expeditionBaseSetCard70 = Card(value: [70, "Weezing"])
+        let expeditionBaseSetCard71 = Card(value: [71, "Bayleef"])
+        let expeditionBaseSetCard72 = Card(value: [72, "Chansey"])
+        let expeditionBaseSetCard73 = Card(value: [73, "Charmeleon"])
+        let expeditionBaseSetCard74 = Card(value: [74, "Croconaw"])
+        let expeditionBaseSetCard75 = Card(value: [75, "Dragonair"])
+        let expeditionBaseSetCard76 = Card(value: [76, "Electabuzz"])
+        let expeditionBaseSetCard77 = Card(value: [77, "Flaaffy"])
+        let expeditionBaseSetCard78 = Card(value: [78, "Gloom"])
+        let expeditionBaseSetCard79 = Card(value: [79, "Graveler"])
+        let expeditionBaseSetCard80 = Card(value: [80, "Haunter"])
+        let expeditionBaseSetCard81 = Card(value: [81, "Hitmonlee"])
+        let expeditionBaseSetCard82 = Card(value: [82, "Ivysaur"])
+        let expeditionBaseSetCard83 = Card(value: [83, "Jynx"])
+        let expeditionBaseSetCard84 = Card(value: [84, "Kadabra"])
+        let expeditionBaseSetCard85 = Card(value: [85, "Machoke"])
+        let expeditionBaseSetCard86 = Card(value: [86, "Magmar"])
+        let expeditionBaseSetCard87 = Card(value: [87, "Metapod"])
+        let expeditionBaseSetCard88 = Card(value: [88, "Pidgeotto"])
+        let expeditionBaseSetCard89 = Card(value: [89, "Poliwhirl"])
+        let expeditionBaseSetCard90 = Card(value: [90, "Pupitar"])
+        let expeditionBaseSetCard91 = Card(value: [91, "Quilava"])
+        let expeditionBaseSetCard92 = Card(value: [92, "Wartortle"])
+        let expeditionBaseSetCard93 = Card(value: [93, "Abra"])
+        let expeditionBaseSetCard94 = Card(value: [94, "Bulbasaur"])
+        let expeditionBaseSetCard95 = Card(value: [95, "Bulbasaur"])
+        let expeditionBaseSetCard96 = Card(value: [96, "Caterpie"])
+        let expeditionBaseSetCard97 = Card(value: [97, "Charmander"])
+        let expeditionBaseSetCard98 = Card(value: [98, "Charmander"])
+        let expeditionBaseSetCard99 = Card(value: [99, "Chikorita"])
+        let expeditionBaseSetCard100 = Card(value: [100, "Chikorita"])
+        let expeditionBaseSetCard101 = Card(value: [101, "Clefairy"])
+        let expeditionBaseSetCard102 = Card(value: [102, "Corsola"])
+        let expeditionBaseSetCard103 = Card(value: [103, "Cubone"])
+        let expeditionBaseSetCard104 = Card(value: [104, "Cyndaquil"])
+        let expeditionBaseSetCard105 = Card(value: [105, "Cyndaquil"])
+        let expeditionBaseSetCard106 = Card(value: [106, "Diglett"])
+        let expeditionBaseSetCard107 = Card(value: [107, "Dratini"])
+        let expeditionBaseSetCard108 = Card(value: [108, "Ekans"])
+        let expeditionBaseSetCard109 = Card(value: [109, "Gastly"])
+        let expeditionBaseSetCard110 = Card(value: [110, "Geodude"])
+        let expeditionBaseSetCard111 = Card(value: [111, "Goldeen"])
+        let expeditionBaseSetCard112 = Card(value: [112, "Hoppip"])
+        let expeditionBaseSetCard113 = Card(value: [113, "Houndour"])
+        let expeditionBaseSetCard114 = Card(value: [114, "Koffing"])
+        let expeditionBaseSetCard115 = Card(value: [115, "Krabby"])
+        let expeditionBaseSetCard116 = Card(value: [116, "Larvitar"])
+        let expeditionBaseSetCard117 = Card(value: [117, "Machop"])
+        let expeditionBaseSetCard118 = Card(value: [118, "Magikarp"])
+        let expeditionBaseSetCard119 = Card(value: [119, "Mareep"])
+        let expeditionBaseSetCard120 = Card(value: [120, "Marill"])
+        let expeditionBaseSetCard121 = Card(value: [121, "Meowth"])
+        let expeditionBaseSetCard122 = Card(value: [122, "Oddish"])
+        let expeditionBaseSetCard123 = Card(value: [123, "Pidgey"])
+        let expeditionBaseSetCard124 = Card(value: [124, "Pikachu"])
+        let expeditionBaseSetCard125 = Card(value: [125, "Poliwag"])
+        let expeditionBaseSetCard126 = Card(value: [126, "Ponyta"])
+        let expeditionBaseSetCard127 = Card(value: [127, "Qwilfish"])
+        let expeditionBaseSetCard128 = Card(value: [128, "Rattata"])
+        let expeditionBaseSetCard129 = Card(value: [129, "Shellder"])
+        let expeditionBaseSetCard130 = Card(value: [130, "Spearow"])
+        let expeditionBaseSetCard131 = Card(value: [131, "Squirtle"])
+        let expeditionBaseSetCard132 = Card(value: [132, "Squirtle"])
+        let expeditionBaseSetCard133 = Card(value: [133, "Tauros"])
+        let expeditionBaseSetCard134 = Card(value: [134, "Totodile"])
+        let expeditionBaseSetCard135 = Card(value: [135, "Totodile"])
+        let expeditionBaseSetCard136 = Card(value: [136, "Vulpix"])
+        let expeditionBaseSetCard137 = Card(value: [137, "Bill's Maintenance"])
+        let expeditionBaseSetCard138 = Card(value: [138, "Copycat"])
+        let expeditionBaseSetCard139 = Card(value: [139, "Dual Ball"])
+        let expeditionBaseSetCard140 = Card(value: [140, "Energy Removal 2"])
+        let expeditionBaseSetCard141 = Card(value: [141, "Energy Restore"])
+        let expeditionBaseSetCard142 = Card(value: [142, "Mary's Impulse"])
+        let expeditionBaseSetCard143 = Card(value: [143, "Master Ball"])
+        let expeditionBaseSetCard144 = Card(value: [144, "Multi Technical Machine 01"])
+        let expeditionBaseSetCard145 = Card(value: [145, "Pokémon Nurse"])
+        let expeditionBaseSetCard146 = Card(value: [146, "Pokémon Reversal"])
+        let expeditionBaseSetCard147 = Card(value: [147, "Power Charge"])
+        let expeditionBaseSetCard148 = Card(value: [148, "Professor Elm's Training Method"])
+        let expeditionBaseSetCard149 = Card(value: [149, "Professor Oak's Research"])
+        let expeditionBaseSetCard150 = Card(value: [150, "Strength Charm"])
+        let expeditionBaseSetCard151 = Card(value: [151, "Super Scoop Up"])
+        let expeditionBaseSetCard152 = Card(value: [152, "Warp Point"])
+        let expeditionBaseSetCard153 = Card(value: [153, "Energy Search"])
+        let expeditionBaseSetCard154 = Card(value: [154, "Full Heal"])
+        let expeditionBaseSetCard155 = Card(value: [155, "Moo-Moo Milk"])
+        let expeditionBaseSetCard156 = Card(value: [156, "Potion"])
+        let expeditionBaseSetCard157 = Card(value: [157, "Switch"])
+        let expeditionBaseSetCard158 = Card(value: [158, "Darkness Energy"])
+        let expeditionBaseSetCard159 = Card(value: [159, "Metal Energy"])
+        let expeditionBaseSetCard160 = Card(value: [160, "Fighting Energy"])
+        let expeditionBaseSetCard161 = Card(value: [161, "Fire Energy"])
+        let expeditionBaseSetCard162 = Card(value: [162, "Grass Energy"])
+        let expeditionBaseSetCard163 = Card(value: [163, "Lightning Energy"])
+        let expeditionBaseSetCard164 = Card(value: [164, "Psychic Energy"])
+        let expeditionBaseSetCard165 = Card(value: [165, "Water Energy"])
+
+
+                expeditionBaseSet.cards.append(objectsIn: [expeditionBaseSetCard1, expeditionBaseSetCard2, expeditionBaseSetCard3, expeditionBaseSetCard4, expeditionBaseSetCard5, expeditionBaseSetCard6, expeditionBaseSetCard7, expeditionBaseSetCard8, expeditionBaseSetCard9, expeditionBaseSetCard10, expeditionBaseSetCard11, expeditionBaseSetCard12, expeditionBaseSetCard13, expeditionBaseSetCard14, expeditionBaseSetCard15, expeditionBaseSetCard16, expeditionBaseSetCard17, expeditionBaseSetCard18, expeditionBaseSetCard19, expeditionBaseSetCard20, expeditionBaseSetCard21, expeditionBaseSetCard22, expeditionBaseSetCard23, expeditionBaseSetCard24, expeditionBaseSetCard25, expeditionBaseSetCard26, expeditionBaseSetCard27, expeditionBaseSetCard28, expeditionBaseSetCard29, expeditionBaseSetCard30, expeditionBaseSetCard31, expeditionBaseSetCard32, expeditionBaseSetCard33, expeditionBaseSetCard34, expeditionBaseSetCard35, expeditionBaseSetCard36, expeditionBaseSetCard37, expeditionBaseSetCard38, expeditionBaseSetCard39, expeditionBaseSetCard40, expeditionBaseSetCard41, expeditionBaseSetCard42, expeditionBaseSetCard43, expeditionBaseSetCard44, expeditionBaseSetCard45, expeditionBaseSetCard46, expeditionBaseSetCard47, expeditionBaseSetCard48, expeditionBaseSetCard49, expeditionBaseSetCard50, expeditionBaseSetCard51, expeditionBaseSetCard52, expeditionBaseSetCard53, expeditionBaseSetCard54, expeditionBaseSetCard55, expeditionBaseSetCard56, expeditionBaseSetCard57, expeditionBaseSetCard58, expeditionBaseSetCard59, expeditionBaseSetCard60, expeditionBaseSetCard61, expeditionBaseSetCard62, expeditionBaseSetCard63, expeditionBaseSetCard64, expeditionBaseSetCard65, expeditionBaseSetCard66, expeditionBaseSetCard67, expeditionBaseSetCard68, expeditionBaseSetCard69, expeditionBaseSetCard70, expeditionBaseSetCard71, expeditionBaseSetCard72, expeditionBaseSetCard73, expeditionBaseSetCard74, expeditionBaseSetCard75, expeditionBaseSetCard76, expeditionBaseSetCard77, expeditionBaseSetCard78, expeditionBaseSetCard79, expeditionBaseSetCard80, expeditionBaseSetCard81, expeditionBaseSetCard82, expeditionBaseSetCard83, expeditionBaseSetCard84, expeditionBaseSetCard85, expeditionBaseSetCard86, expeditionBaseSetCard87, expeditionBaseSetCard88, expeditionBaseSetCard89, expeditionBaseSetCard90, expeditionBaseSetCard91, expeditionBaseSetCard92, expeditionBaseSetCard93, expeditionBaseSetCard94, expeditionBaseSetCard95, expeditionBaseSetCard96, expeditionBaseSetCard97, expeditionBaseSetCard98, expeditionBaseSetCard99, expeditionBaseSetCard100, expeditionBaseSetCard101, expeditionBaseSetCard102, expeditionBaseSetCard103, expeditionBaseSetCard104, expeditionBaseSetCard105, expeditionBaseSetCard106, expeditionBaseSetCard107, expeditionBaseSetCard108, expeditionBaseSetCard109, expeditionBaseSetCard110, expeditionBaseSetCard111, expeditionBaseSetCard112, expeditionBaseSetCard113, expeditionBaseSetCard114, expeditionBaseSetCard115, expeditionBaseSetCard116, expeditionBaseSetCard117, expeditionBaseSetCard118, expeditionBaseSetCard119, expeditionBaseSetCard120, expeditionBaseSetCard121, expeditionBaseSetCard122, expeditionBaseSetCard123, expeditionBaseSetCard124, expeditionBaseSetCard125, expeditionBaseSetCard126, expeditionBaseSetCard127, expeditionBaseSetCard128, expeditionBaseSetCard129, expeditionBaseSetCard130, expeditionBaseSetCard131, expeditionBaseSetCard132, expeditionBaseSetCard133, expeditionBaseSetCard134, expeditionBaseSetCard135, expeditionBaseSetCard136, expeditionBaseSetCard137, expeditionBaseSetCard138, expeditionBaseSetCard139, expeditionBaseSetCard140, expeditionBaseSetCard141, expeditionBaseSetCard142, expeditionBaseSetCard143, expeditionBaseSetCard144, expeditionBaseSetCard145, expeditionBaseSetCard146, expeditionBaseSetCard147, expeditionBaseSetCard148, expeditionBaseSetCard149, expeditionBaseSetCard150, expeditionBaseSetCard151, expeditionBaseSetCard152, expeditionBaseSetCard153, expeditionBaseSetCard154, expeditionBaseSetCard155, expeditionBaseSetCard156, expeditionBaseSetCard157, expeditionBaseSetCard158, expeditionBaseSetCard159, expeditionBaseSetCard160, expeditionBaseSetCard161, expeditionBaseSetCard162, expeditionBaseSetCard163, expeditionBaseSetCard164, expeditionBaseSetCard165])
+
+                        if realm.object(ofType: Series.self, forPrimaryKey: pokemonSeries.seriesID) == nil {
+                            do {
+                                try realm.write {
+                                    realm.add(pokemonSeries)
+                                    pokemonSeries.decks.append(expeditionBaseSet)
+                                    }
+                                } catch {
+                                    print("error saving to realm \(error)")
+                            }
+                  
+                        } else {
+                            pokemonSeries = realm.object(ofType: Series.self, forPrimaryKey: "1")!
+                            
+                            if realm.object(ofType: Deck.self, forPrimaryKey: "expeditionBaseSet") == nil {
+                                do {
+                                    try realm.write {
+                                        pokemonSeries.decks.append(expeditionBaseSet)
+                                    }
+                            } catch {
+                                print("error saving to realm \(error)")
+                                }
+                            }
+                            else {
+                                appDelegate.deckExists = true
+                                UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+                                print(appDelegate.deckExists)
+                            }
+                        }
+
+    }
+    
+    
+    
+    //MARK: - Add Best of Game
+    
+    func addBestOfGame() {
+        
+        
+        appDelegate.deckExists = false
+                        UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+                        print(appDelegate.deckExists)
+                        
+        var pokemonSeries = Series()
+        pokemonSeries.seriesID = "1"
+        pokemonSeries.seriesName = "Pokemon"
+                        
+        let bestOf = Deck()
+        bestOf.deckName = "Best of Game"
+        bestOf.deckID = "bestOfGame"
+
+        let bestOfCard1 = Card(value: [1, "Electabuzz"])
+        let bestOfCard2 = Card(value: [2, "Hitmonchan"])
+        let bestOfCard3 = Card(value: [3, "Professor Elm"])
+        let bestOfCard4 = Card(value: [4, "Rocket's Scizor"])
+        let bestOfCard5 = Card(value: [5, "Rocket's Sneasel"])
+        let bestOfCard6 = Card(value: [6, "Dark Ivysaur"])
+        let bestOfCard7 = Card(value: [7, "Dark Venusaur"])
+        let bestOfCard8 = Card(value: [8, "Rocket's MewTwo"])
+        let bestOfCard9 = Card(value: [9, "Rocket's Hitmonchan"])
+        
+
+                bestOf.cards.append(objectsIn: [bestOfCard1, bestOfCard2, bestOfCard3, bestOfCard4, bestOfCard5, bestOfCard6, bestOfCard7, bestOfCard8, bestOfCard9])
+
+                        if realm.object(ofType: Series.self, forPrimaryKey: pokemonSeries.seriesID) == nil {
+                            do {
+                                try realm.write {
+                                    realm.add(pokemonSeries)
+                                    pokemonSeries.decks.append(bestOf)
+                                    }
+                                } catch {
+                                    print("error saving to realm \(error)")
+                            }
+                  
+                        } else {
+                            pokemonSeries = realm.object(ofType: Series.self, forPrimaryKey: "1")!
+                            
+                            if realm.object(ofType: Deck.self, forPrimaryKey: "bestOf") == nil {
+                                do {
+                                    try realm.write {
+                                        pokemonSeries.decks.append(bestOf)
+                                    }
+                            } catch {
+                                print("error saving to realm \(error)")
+                                }
+                            }
+                            else {
+                                appDelegate.deckExists = true
+                                UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+                                print(appDelegate.deckExists)
+                            }
+                        }
+
+    }
+    
+    
+    
+    //MARK: - Add Aquapolis
+    
+    func addAquapolis() {
+        
+        appDelegate.deckExists = false
+                        UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+                        print(appDelegate.deckExists)
+                        
+        var pokemonSeries = Series()
+        pokemonSeries.seriesID = "1"
+        pokemonSeries.seriesName = "Pokemon"
+                        
+        let aquapolis = Deck()
+        aquapolis.deckName = "Aquapolis"
+        aquapolis.deckID = "aquapolisGame"
+
+        let aquapolisCard1 = Card(value: [1, "Ampharos"])
+        let aquapolisCard2 = Card(value: [2, "Arcanine"])
+        let aquapolisCard3 = Card(value: [3, "Ariados"])
+        let aquapolisCard4 = Card(value: [4, "Azumarill"])
+        let aquapolisCard5 = Card(value: [5, "Bellossom"])
+        let aquapolisCard6 = Card(value: [6, "Blissey"])
+        let aquapolisCard7 = Card(value: [7, "Donphan"])
+        let aquapolisCard8 = Card(value: [8, "Electrode"])
+        let aquapolisCard9 = Card(value: [9, "Elekid"])
+        let aquapolisCard10 = Card(value: [10, "Entei"])
+        let aquapolisCard11 = Card(value: [11, "Espeon"])
+        let aquapolisCard12 = Card(value: [12, "Exeggutor"])
+        let aquapolisCard13 = Card(value: [13, "Exeggutor"])
+        let aquapolisCard14 = Card(value: [14, "Houndoom"])
+        let aquapolisCard15 = Card(value: [15, "Houndoom"])
+        let aquapolisCard16 = Card(value: [16, "Hypno"])
+        let aquapolisCard17 = Card(value: [17, "Jumpluff"])
+        let aquapolisCard18 = Card(value: [18, "Jynx"])
+        let aquapolisCard19 = Card(value: [19, "Kingdra"])
+        let aquapolisCard20 = Card(value: [20, "Lanturn"])
+        let aquapolisCard21 = Card(value: [21, "Lanturn"])
+        let aquapolisCard22 = Card(value: [22, "Magneton"])
+        let aquapolisCard23 = Card(value: [23, "Muk"])
+        let aquapolisCard24 = Card(value: [24, "Nidoking"])
+        let aquapolisCard25 = Card(value: [25, "Ninetales"])
+        let aquapolisCard26 = Card(value: [26, "Octillery"])
+        let aquapolisCard27 = Card(value: [27, "Parasect"])
+        let aquapolisCard28 = Card(value: [28, "Porygon2"])
+        let aquapolisCard29 = Card(value: [29, "Primeape"])
+        let aquapolisCard30 = Card(value: [30, "Quagsire"])
+        let aquapolisCard31 = Card(value: [31, "Rapidash"])
+        let aquapolisCard32 = Card(value: [32, "Scizor"])
+        let aquapolisCard33 = Card(value: [33, "Slowbro"])
+        let aquapolisCard34 = Card(value: [34, "Slowking"])
+        let aquapolisCard35 = Card(value: [35, "Steelix"])
+        let aquapolisCard36 = Card(value: [36, "Sudowoodo"])
+        let aquapolisCard37 = Card(value: [37, "Suicune"])
+        let aquapolisCard38 = Card(value: [38, "Tentacruel"])
+        let aquapolisCard39 = Card(value: [39, "Togetic"])
+        let aquapolisCard40 = Card(value: [40, "Tyranitar"])
+        let aquapolisCard41 = Card(value: [41, "Umbreon"])
+        let aquapolisCard42 = Card(value: [42, "Victreebel"])
+        let aquapolisCard43 = Card(value: [43, "Vileplume"])
+        let aquapolisCard44 = Card(value: [44, "Zapdos"])
+        let aquapolisCard45 = Card(value: [45, "Bellsprout"])
+        let aquapolisCard46 = Card(value: [46, "Dodrio"])
+        let aquapolisCard47 = Card(value: [47, "Flaaffy"])
+        let aquapolisCard48 = Card(value: [48, "Furret"])
+        let aquapolisCard49 = Card(value: [49, "Gloom"])
+        let aquapolisCard50 = Card(value: [50, "Golduck (a)"])
+        let aquapolisCard51 = Card(value: [50, "Golduck (b)"])
+        let aquapolisCard52 = Card(value: [51, "Growlithe"])
+        let aquapolisCard53 = Card(value: [52, "Magnemite"])
+        let aquapolisCard54 = Card(value: [53, "Marill"])
+        let aquapolisCard55 = Card(value: [54, "Marowak"])
+        let aquapolisCard56 = Card(value: [55, "Nidorino"])
+        let aquapolisCard57 = Card(value: [56, "Pupitar"])
+        let aquapolisCard58 = Card(value: [57, "Scyther"])
+        let aquapolisCard59 = Card(value: [58, "Seadra"])
+        let aquapolisCard60 = Card(value: [69, "Seaking"])
+        let aquapolisCard61 = Card(value: [60, "Skiploom"])
+        let aquapolisCard62 = Card(value: [61, "Smoochum"])
+        let aquapolisCard63 = Card(value: [62, "Spinarak"])
+        let aquapolisCard64 = Card(value: [63, "Tyrogue"])
+        let aquapolisCard65 = Card(value: [64, "Voltorb"])
+        let aquapolisCard66 = Card(value: [65, "Weepinbell"])
+        let aquapolisCard67 = Card(value: [66, "Wooper"])
+        let aquapolisCard68 = Card(value: [67, "Aipom"])
+        let aquapolisCard69 = Card(value: [68, "Bellsprout"])
+        let aquapolisCard70 = Card(value: [69, "Chansey"])
+        let aquapolisCard71 = Card(value: [70, "Chinchou"])
+        let aquapolisCard72 = Card(value: [71, "Chinchou"])
+        let aquapolisCard73 = Card(value: [72, "Cubone"])
+        let aquapolisCard74 = Card(value: [73, "Doduo"])
+        let aquapolisCard75 = Card(value: [74, "Drowzee (a)"])
+        let aquapolisCard76 = Card(value: [74, "Drowzee (b)"])
+        let aquapolisCard77 = Card(value: [75, "Eevee"])
+        let aquapolisCard78 = Card(value: [76, "Exeggcute"])
+        let aquapolisCard79 = Card(value: [77, "Exeggcute"])
+        let aquapolisCard80 = Card(value: [78, "Goldeen"])
+        let aquapolisCard81 = Card(value: [79, "Grimer"])
+        let aquapolisCard82 = Card(value: [80, "Growlithe"])
+        let aquapolisCard83 = Card(value: [81, "Hitmonchan"])
+        let aquapolisCard84 = Card(value: [82, "Hitmontop"])
+        let aquapolisCard85 = Card(value: [83, "Hoppip"])
+        let aquapolisCard86 = Card(value: [84, "Horsea"])
+        let aquapolisCard87 = Card(value: [85, "Horsea"])
+        let aquapolisCard88 = Card(value: [86, "Houndour"])
+        let aquapolisCard89 = Card(value: [87, "Houndour"])
+        let aquapolisCard90 = Card(value: [88, "Kangaskhan"])
+        let aquapolisCard91 = Card(value: [89, "Larvitar"])
+        let aquapolisCard92 = Card(value: [90, "Lickitung"])
+        let aquapolisCard93 = Card(value: [91, "Magnemite"])
+        let aquapolisCard94 = Card(value: [92, "Mankey"])
+        let aquapolisCard95 = Card(value: [93, "Mareep"])
+        let aquapolisCard96 = Card(value: [94, "Miltank"])
+        let aquapolisCard97 = Card(value: [95, "Mr. Mime (a"])
+        let aquapolisCard98 = Card(value: [95, "Mr. Mime (b)"])
+        let aquapolisCard99 = Card(value: [96, "Nidoran♂"])
+        let aquapolisCard100 = Card(value: [97, "Oddish"])
+        let aquapolisCard101 = Card(value: [98, "Onix"])
+        let aquapolisCard102 = Card(value: [99, "Paras"])
+        let aquapolisCard103 = Card(value: [100, "Phanpy"])
+        let aquapolisCard104 = Card(value: [101, "Pinsir"])
+        let aquapolisCard105 = Card(value: [102, "Ponyta"])
+        let aquapolisCard106 = Card(value: [103, "Porygon (a)"])
+        let aquapolisCard107 = Card(value: [103, "Porygon (b)"])
+        let aquapolisCard108 = Card(value: [104, "Psyduck"])
+        let aquapolisCard109 = Card(value: [105, "Remoraid"])
+        let aquapolisCard110 = Card(value: [106, "Scyther"])
+        let aquapolisCard111 = Card(value: [107, "Sentret"])
+        let aquapolisCard112 = Card(value: [108, "Slowpoke"])
+        let aquapolisCard113 = Card(value: [109, "Smeargle"])
+        let aquapolisCard114 = Card(value: [110, "Sneasel"])
+        let aquapolisCard115 = Card(value: [111, "Spinarak"])
+        let aquapolisCard116 = Card(value: [112, "Tangela"])
+        let aquapolisCard117 = Card(value: [113, "Tentacool"])
+        let aquapolisCard118 = Card(value: [114, "Togepi"])
+        let aquapolisCard119 = Card(value: [115, "Voltorb"])
+        let aquapolisCard120 = Card(value: [116, "Vulpix"])
+        let aquapolisCard121 = Card(value: [117, "Wooper"])
+        let aquapolisCard122 = Card(value: [118, "Apricorn Forest"])
+        let aquapolisCard123 = Card(value: [119, "Darkness Cube 01"])
+        let aquapolisCard124 = Card(value: [120, "Energy Switch"])
+        let aquapolisCard125 = Card(value: [121, "Fighting Cube 01"])
+        let aquapolisCard126 = Card(value: [122, "Fire Cube 01"])
+        let aquapolisCard127 = Card(value: [123, "Forest Guardian"])
+        let aquapolisCard128 = Card(value: [124, "Grass Cube 01"])
+        let aquapolisCard129 = Card(value: [125, "Healing Berry"])
+        let aquapolisCard130 = Card(value: [126, "Juggler"])
+        let aquapolisCard131 = Card(value: [127, "Lightning Cube 01"])
+        let aquapolisCard132 = Card(value: [128, "Memory Berry"])
+        let aquapolisCard133 = Card(value: [129, "Metal Cube 01"])
+        let aquapolisCard134 = Card(value: [130, "Pokémon Fan Club"])
+        let aquapolisCard135 = Card(value: [131, "Pokémon Park"])
+        let aquapolisCard136 = Card(value: [132, "Psychic Cube 01"])
+        let aquapolisCard137 = Card(value: [133, "Seer"])
+        let aquapolisCard138 = Card(value: [134, "Super Energy Removal 2"])
+        let aquapolisCard139 = Card(value: [135, "Time Shard"])
+        let aquapolisCard140 = Card(value: [136, "Town Volunteers"])
+        let aquapolisCard141 = Card(value: [137, "Traveling Salesman"])
+        let aquapolisCard142 = Card(value: [138, "Undersea Ruins"])
+        let aquapolisCard143 = Card(value: [139, "Power Plant"])
+        let aquapolisCard144 = Card(value: [140, "Water Cube 01"])
+        let aquapolisCard145 = Card(value: [141, "Weakness Guard"])
+        let aquapolisCard146 = Card(value: [142, "Darkness Energy"])
+        let aquapolisCard147 = Card(value: [143, "Metal Energy"])
+        let aquapolisCard148 = Card(value: [144, "Rainbow Energy"])
+        let aquapolisCard149 = Card(value: [145, "Boost Energy"])
+        let aquapolisCard150 = Card(value: [146, "Crystal Energy"])
+        let aquapolisCard151 = Card(value: [147, "Warp Energy"])
+        let aquapolisCard152 = Card(value: [148, "Kingdra"])
+        let aquapolisCard153 = Card(value: [149, "Lugia"])
+        let aquapolisCard154 = Card(value: [150, "Nidoking"])
+        let aquapolisCard155 = Card(value: [5000, "(H1) Ampharos"])
+        let aquapolisCard156 = Card(value: [5000, "(H2) Arcanine"])
+        let aquapolisCard157 = Card(value: [5000, "(H3) Ariados"])
+        let aquapolisCard158 = Card(value: [5000, "(H4) Azumarill"])
+        let aquapolisCard159 = Card(value: [5000, "(H5) Bellossom"])
+        let aquapolisCard160 = Card(value: [5000, "(H6) Blissey"])
+        let aquapolisCard161 = Card(value: [5000, "(H7) Electrode"])
+        let aquapolisCard162 = Card(value: [5000, "(H8) Entei"])
+        let aquapolisCard163 = Card(value: [5000, "(H9) Espeon"])
+        let aquapolisCard164 = Card(value: [5000, "(H10) Exeggutor"])
+        let aquapolisCard165 = Card(value: [5000, "(H11) Houndoom"])
+        let aquapolisCard166 = Card(value: [5000, "(H12) Hypno"])
+        let aquapolisCard167 = Card(value: [5000, "(H13) Jumpluff"])
+        let aquapolisCard168 = Card(value: [5000, "(H14) Kingdra"])
+        let aquapolisCard169 = Card(value: [5000, "(H15) Lanturn"])
+        let aquapolisCard170 = Card(value: [5000, "(H16) Magneton"])
+        let aquapolisCard171 = Card(value: [5000, "(H17) Muk"])
+        let aquapolisCard172 = Card(value: [5000, "(H18) Nidoking"])
+        let aquapolisCard173 = Card(value: [5000, "(H19) Ninetales"])
+        let aquapolisCard174 = Card(value: [5000, "(H20) Octillery"])
+        let aquapolisCard175 = Card(value: [5000, "(H21) Scizor"])
+        let aquapolisCard176 = Card(value: [5000, "(H22) Slowking"])
+        let aquapolisCard177 = Card(value: [5000, "(H23) Steelix"])
+        let aquapolisCard178 = Card(value: [5000, "(H24) Sudowoodo"])
+        let aquapolisCard179 = Card(value: [5000, "(H25) Suicune"])
+        let aquapolisCard180 = Card(value: [5000, "(H26) Tentacruel"])
+        let aquapolisCard181 = Card(value: [5000, "(H27) Togetic"])
+        let aquapolisCard182 = Card(value: [5000, "(H28) Tyranitar"])
+        let aquapolisCard183 = Card(value: [5000, "(H29) Umbreon"])
+        let aquapolisCard184 = Card(value: [5000, "(H30) Victreebel"])
+        let aquapolisCard185 = Card(value: [5000, "(H31) Vileplume"])
+        let aquapolisCard186 = Card(value: [5000, "(H32) Zapdos"])
+
+
+                aquapolis.cards.append(objectsIn: [aquapolisCard1, aquapolisCard2, aquapolisCard3, aquapolisCard4, aquapolisCard5, aquapolisCard6, aquapolisCard7, aquapolisCard8, aquapolisCard9, aquapolisCard10, aquapolisCard11, aquapolisCard12, aquapolisCard13, aquapolisCard14, aquapolisCard15, aquapolisCard16, aquapolisCard17, aquapolisCard18, aquapolisCard19, aquapolisCard20, aquapolisCard21, aquapolisCard22, aquapolisCard23, aquapolisCard24, aquapolisCard25, aquapolisCard26, aquapolisCard27, aquapolisCard28, aquapolisCard29, aquapolisCard30, aquapolisCard31, aquapolisCard32, aquapolisCard33, aquapolisCard34, aquapolisCard35, aquapolisCard36, aquapolisCard37, aquapolisCard38, aquapolisCard39, aquapolisCard40, aquapolisCard41, aquapolisCard42, aquapolisCard43, aquapolisCard44, aquapolisCard45, aquapolisCard46, aquapolisCard47, aquapolisCard48, aquapolisCard49, aquapolisCard50, aquapolisCard51, aquapolisCard52, aquapolisCard53, aquapolisCard54, aquapolisCard55, aquapolisCard56, aquapolisCard57, aquapolisCard58, aquapolisCard59, aquapolisCard60, aquapolisCard61, aquapolisCard62, aquapolisCard63, aquapolisCard64, aquapolisCard65, aquapolisCard66, aquapolisCard67, aquapolisCard68, aquapolisCard69, aquapolisCard70, aquapolisCard71, aquapolisCard72, aquapolisCard73, aquapolisCard74, aquapolisCard75, aquapolisCard76, aquapolisCard77, aquapolisCard78, aquapolisCard79, aquapolisCard80, aquapolisCard81, aquapolisCard82, aquapolisCard83, aquapolisCard84, aquapolisCard85, aquapolisCard86, aquapolisCard87, aquapolisCard88, aquapolisCard89, aquapolisCard90, aquapolisCard91, aquapolisCard92, aquapolisCard93, aquapolisCard94, aquapolisCard95, aquapolisCard96, aquapolisCard97, aquapolisCard98, aquapolisCard99, aquapolisCard100, aquapolisCard101, aquapolisCard102, aquapolisCard103, aquapolisCard104, aquapolisCard105, aquapolisCard106, aquapolisCard107, aquapolisCard108, aquapolisCard109, aquapolisCard110, aquapolisCard111, aquapolisCard112, aquapolisCard113, aquapolisCard114, aquapolisCard115, aquapolisCard116, aquapolisCard117, aquapolisCard118, aquapolisCard119, aquapolisCard120, aquapolisCard121, aquapolisCard122, aquapolisCard123, aquapolisCard124, aquapolisCard125, aquapolisCard126, aquapolisCard127, aquapolisCard128, aquapolisCard129, aquapolisCard130, aquapolisCard131, aquapolisCard132, aquapolisCard133, aquapolisCard134, aquapolisCard135, aquapolisCard136, aquapolisCard137, aquapolisCard138, aquapolisCard139, aquapolisCard140, aquapolisCard141, aquapolisCard142, aquapolisCard143, aquapolisCard144, aquapolisCard145, aquapolisCard146, aquapolisCard147, aquapolisCard148, aquapolisCard149, aquapolisCard150, aquapolisCard151, aquapolisCard152, aquapolisCard153, aquapolisCard154, aquapolisCard155, aquapolisCard156, aquapolisCard157, aquapolisCard158, aquapolisCard159, aquapolisCard160, aquapolisCard161, aquapolisCard162, aquapolisCard163, aquapolisCard164, aquapolisCard165, aquapolisCard166, aquapolisCard167, aquapolisCard168, aquapolisCard169, aquapolisCard170, aquapolisCard171, aquapolisCard172, aquapolisCard173, aquapolisCard174, aquapolisCard175, aquapolisCard176, aquapolisCard177, aquapolisCard178, aquapolisCard179, aquapolisCard180, aquapolisCard181, aquapolisCard182, aquapolisCard183, aquapolisCard184, aquapolisCard185, aquapolisCard186])
+
+                        if realm.object(ofType: Series.self, forPrimaryKey: pokemonSeries.seriesID) == nil {
+                            do {
+                                try realm.write {
+                                    realm.add(pokemonSeries)
+                                    pokemonSeries.decks.append(aquapolis)
+                                    }
+                                } catch {
+                                    print("error saving to realm \(error)")
+                            }
+                  
+                        } else {
+                            pokemonSeries = realm.object(ofType: Series.self, forPrimaryKey: "1")!
+                            
+                            if realm.object(ofType: Deck.self, forPrimaryKey: "aquapolis") == nil {
+                                do {
+                                    try realm.write {
+                                        pokemonSeries.decks.append(aquapolis)
+                                    }
+                            } catch {
+                                print("error saving to realm \(error)")
+                                }
+                            }
+                            else {
+                                appDelegate.deckExists = true
+                                UserDefaults.standard.set(appDelegate.deckExists, forKey: "deckExists")
+                                print(appDelegate.deckExists)
+                            }
+                        }
 
 
     }
