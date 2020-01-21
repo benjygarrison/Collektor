@@ -21,7 +21,7 @@ class DeckDownloadViewController : UITableViewController {
             
             //TODO - Update arrays as new decks added
             switch selectedSeries {
-            case "Pokemon": deckArray = ["Base Set", "Base Set 2", "Jungle", "Fossil", "Team Rocket", "WOTC Promos", "Gym Heroes",  "Gym Challenge", "Southern Islands", "Neo Genesis", "Neo Discovery", "Neo Revelation", "Neo Destiny", "Legendary", "Expedition Base Set", "Best of Game", "Aquapolis"]
+            case "Pokemon": deckArray = ["Base Set", "Base Set 2", "Jungle", "Fossil", "Team Rocket", "WOTC Promos", "Gym Heroes",  "Gym Challenge", "Southern Islands", "Neo Genesis", "Neo Discovery", "Neo Revelation", "Neo Destiny", "Legendary", "Expedition Base Set", "Best of Game", "Aquapolis", "Skyridge", "EX Ruby & Sapphire", "EX Sandstorm", "EX Dragon", "EX FireRed and LeafGreen", "EX Team Rocket Returns", "EX Deoxys", "EX Emerald", "EX Unseen Forces Unown Collection", "EX Unseen Forces", "EX Delta Species", "EX Legend Maker", "EX Holon Phantoms", "EX Crystal Guardians", "EX Dragon Frontiers", "EX Power Keepers", "Diamond And Pearl", "Diamond And Pearl Promos", "Diamond And Pearl Mysterious Treasures", "Diamond And Pearl Secret Wonders", "Diamond And Pearl Great Encounters", "Diamond And Pearl Majestic Dawn", "Diamond And Pearl Legends Awakened", "Diamond And Pearl Stormfront"]
             case "Magic, The Gathering": deckArray = ["Magic1", "Magic2"]
             case "Yu-Gi-Oh": deckArray = ["yugioh1", "yugioh2"]
             default: deckArray = ["Problem loading decks"]
@@ -100,10 +100,34 @@ class DeckDownloadViewController : UITableViewController {
         case "Southern Islands": PokemonDecks().addSouthernIslands(); addedAlert()
         case "Neo Revelation": PokemonDecks().addNeoRevelation(); addedAlert()
         case "Neo Destiny": PokemonDecks().addNeoDestiny(); addedAlert()
-        case "legendary": PokemonDecks().addLegendary(); addedAlert()
+        case "Legendary": PokemonDecks().addLegendary(); addedAlert()
         case "Expedition Base Set": PokemonDecks().addExpeditionBaseSet(); addedAlert()
         case "Aquapolis": PokemonDecks().addAquapolis(); addedAlert()
         case "Best of Game": PokemonDecks().addBestOfGame(); addedAlert()
+        case "Skyridge": PokemonDecks().addSkyridge(); addedAlert()
+        case "EX Ruby & Sapphire": PokemonDecks().addRubyAndSapphire(); addedAlert()
+        case "EX Sandstorm": PokemonDecks().addExSandstorm(); addedAlert()
+        case "EX Dragon": PokemonDecks().addExDragon(); addedAlert()
+        case "EX FireRed and LeafGreen": PokemonDecks().addFireRedAndLeafGreen(); addedAlert()
+        case "EX Team Rocket Returns": PokemonDecks().addTeamRocketReturns(); addedAlert()
+        case "EX Deoxys": PokemonDecks().addExDeoxys(); addedAlert()
+        case "EX Emerald": PokemonDecks().addExEmerald(); addedAlert()
+        case "EX Unseen Forces Unown Collection": PokemonDecks().addExUnseenForcesUnownCollection(); addedAlert()
+        case "EX Unseen Forces": PokemonDecks().addExUnseenForces(); addedAlert()
+        case "EX Delta Species": PokemonDecks().addExDeltaSpecies(); addedAlert()
+        case "EX Legend Maker": PokemonDecks().addLegendMaker(); addedAlert()
+        case "EX Holon Phantoms": PokemonDecks().addExHolonPhantoms(); addedAlert()
+        case "EX Crystal Guardians": PokemonDecks().addExCrystalGuardians(); addedAlert()
+        case "EX Dragon Frontiers": PokemonDecks().addExDragonFrontiers(); addedAlert()
+        case "EX Power Keepers": PokemonDecks().addExPowerKeepers(); addedAlert()
+        case "Diamond And Pearl": PokemonDecks().addDiamondAndPearl(); addedAlert()
+        case "Diamond And Pearl Promos": PokemonDecks().addDPBLackStarPromos(); addedAlert()
+        case "Diamond And Pearl Mysterious Treasures": PokemonDecks().addDPMysteriousTreasures(); addedAlert()
+        case "Diamond And Pearl Secret Wonders": PokemonDecks().addDPSecretWonders(); addedAlert()
+        case "Diamond And Pearl Great Encounters": PokemonDecks().addDPGreatEncounters(); addedAlert()
+        case "Diamond And Pearl Majestic Dawn": PokemonDecks().addDPMajesticDawn(); addedAlert()
+        case "Diamond And Pearl Legends Awakened": PokemonDecks().addDPLegendsAwakened(); addedAlert()
+        case "Diamond And Pearl Stormfront": PokemonDecks().addDPStormfront(); addedAlert()
         default: print("Something Else")
         }
 
@@ -112,3 +136,4 @@ class DeckDownloadViewController : UITableViewController {
     
     
 }
+
