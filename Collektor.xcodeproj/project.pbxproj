@@ -10,7 +10,18 @@
 		7B24F33B43966B20FF2B88E6 /* Pods_Collektor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB2EDD8810681B7753047D9 /* Pods_Collektor.framework */; };
 		AF406966238E24E900CC1E18 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF406965238E24E900CC1E18 /* DetailViewController.swift */; };
 		AF5175C723A9CFD90087DC73 /* SeriesDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5175C623A9CFD90087DC73 /* SeriesDownloadViewController.swift */; };
-		AFB059B023BC180400DFB00A /* PokemonDecks.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB059AF23BC180400DFB00A /* PokemonDecks.swift */; };
+		AFB059B023BC180400DFB00A /* PokemonDecks1999.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB059AF23BC180400DFB00A /* PokemonDecks1999.swift */; };
+		AFB3397D23D80FE100EC695A /* PokemonDecksGymHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3397C23D80FE100EC695A /* PokemonDecksGymHeroes.swift */; };
+		AFB3397F23D8100100EC695A /* PokemonDecksNeoGenesis.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3397E23D8100100EC695A /* PokemonDecksNeoGenesis.swift */; };
+		AFB3398123D8104900EC695A /* PokemonDecksLegendary&Ecard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3398023D8104900EC695A /* PokemonDecksLegendary&Ecard.swift */; };
+		AFB3398323D8106E00EC695A /* PokemonDecksRubySapphire.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3398223D8106E00EC695A /* PokemonDecksRubySapphire.swift */; };
+		AFB3398523D8108E00EC695A /* PokemonDecksDiamondPearl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3398423D8108E00EC695A /* PokemonDecksDiamondPearl.swift */; };
+		AFB3398723D810A500EC695A /* PokemonDecksNintendoPromos.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3398623D810A500EC695A /* PokemonDecksNintendoPromos.swift */; };
+		AFB3398923D810D200EC695A /* PokemonDecksPlatinum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3398823D810D200EC695A /* PokemonDecksPlatinum.swift */; };
+		AFB3398B23D810EC00EC695A /* PokemonDecksHeartGoldSoulSilver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3398A23D810EC00EC695A /* PokemonDecksHeartGoldSoulSilver.swift */; };
+		AFB3398D23D8111F00EC695A /* PokemonDecksCallOfLegends.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3398C23D8111F00EC695A /* PokemonDecksCallOfLegends.swift */; };
+		AFB3398F23D8113A00EC695A /* PokemonDecksBlack&White.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3398E23D8113A00EC695A /* PokemonDecksBlack&White.swift */; };
+		AFB3399123D8114E00EC695A /* PokemonDecksXY.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB3399023D8114E00EC695A /* PokemonDecksXY.swift */; };
 		AFC2C240238B447C0014BEA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C23F238B447C0014BEA2 /* AppDelegate.swift */; };
 		AFC2C244238B447C0014BEA2 /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC2C243238B447C0014BEA2 /* SeriesViewController.swift */; };
 		AFC2C247238B447C0014BEA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFC2C245238B447C0014BEA2 /* Main.storyboard */; };
@@ -30,7 +41,18 @@
 		6DB2EDD8810681B7753047D9 /* Pods_Collektor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Collektor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF406965238E24E900CC1E18 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Collektor/View/DetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		AF5175C623A9CFD90087DC73 /* SeriesDownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDownloadViewController.swift; sourceTree = "<group>"; };
-		AFB059AF23BC180400DFB00A /* PokemonDecks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PokemonDecks.swift; path = Collektor/Decks/PokemonDecks.swift; sourceTree = SOURCE_ROOT; };
+		AFB059AF23BC180400DFB00A /* PokemonDecks1999.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PokemonDecks1999.swift; path = Collektor/Decks/PokemonDecks1999.swift; sourceTree = SOURCE_ROOT; };
+		AFB3397C23D80FE100EC695A /* PokemonDecksGymHeroes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDecksGymHeroes.swift; sourceTree = "<group>"; };
+		AFB3397E23D8100100EC695A /* PokemonDecksNeoGenesis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDecksNeoGenesis.swift; sourceTree = "<group>"; };
+		AFB3398023D8104900EC695A /* PokemonDecksLegendary&Ecard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PokemonDecksLegendary&Ecard.swift"; sourceTree = "<group>"; };
+		AFB3398223D8106E00EC695A /* PokemonDecksRubySapphire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDecksRubySapphire.swift; sourceTree = "<group>"; };
+		AFB3398423D8108E00EC695A /* PokemonDecksDiamondPearl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDecksDiamondPearl.swift; sourceTree = "<group>"; };
+		AFB3398623D810A500EC695A /* PokemonDecksNintendoPromos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDecksNintendoPromos.swift; sourceTree = "<group>"; };
+		AFB3398823D810D200EC695A /* PokemonDecksPlatinum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDecksPlatinum.swift; sourceTree = "<group>"; };
+		AFB3398A23D810EC00EC695A /* PokemonDecksHeartGoldSoulSilver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDecksHeartGoldSoulSilver.swift; sourceTree = "<group>"; };
+		AFB3398C23D8111F00EC695A /* PokemonDecksCallOfLegends.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDecksCallOfLegends.swift; sourceTree = "<group>"; };
+		AFB3398E23D8113A00EC695A /* PokemonDecksBlack&White.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PokemonDecksBlack&White.swift"; sourceTree = "<group>"; };
+		AFB3399023D8114E00EC695A /* PokemonDecksXY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDecksXY.swift; sourceTree = "<group>"; };
 		AFC2C23C238B447C0014BEA2 /* Collektor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collektor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC2C23F238B447C0014BEA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFC2C243238B447C0014BEA2 /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +100,18 @@
 		AFB059B123BC180D00DFB00A /* Decks */ = {
 			isa = PBXGroup;
 			children = (
-				AFB059AF23BC180400DFB00A /* PokemonDecks.swift */,
+				AFB059AF23BC180400DFB00A /* PokemonDecks1999.swift */,
+				AFB3397C23D80FE100EC695A /* PokemonDecksGymHeroes.swift */,
+				AFB3397E23D8100100EC695A /* PokemonDecksNeoGenesis.swift */,
+				AFB3398023D8104900EC695A /* PokemonDecksLegendary&Ecard.swift */,
+				AFB3398223D8106E00EC695A /* PokemonDecksRubySapphire.swift */,
+				AFB3398423D8108E00EC695A /* PokemonDecksDiamondPearl.swift */,
+				AFB3398623D810A500EC695A /* PokemonDecksNintendoPromos.swift */,
+				AFB3398823D810D200EC695A /* PokemonDecksPlatinum.swift */,
+				AFB3398A23D810EC00EC695A /* PokemonDecksHeartGoldSoulSilver.swift */,
+				AFB3398C23D8111F00EC695A /* PokemonDecksCallOfLegends.swift */,
+				AFB3398E23D8113A00EC695A /* PokemonDecksBlack&White.swift */,
+				AFB3399023D8114E00EC695A /* PokemonDecksXY.swift */,
 			);
 			path = Decks;
 			sourceTree = "<group>";
@@ -272,15 +305,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF406966238E24E900CC1E18 /* DetailViewController.swift in Sources */,
+				AFB3398F23D8113A00EC695A /* PokemonDecksBlack&White.swift in Sources */,
 				AFC2C244238B447C0014BEA2 /* SeriesViewController.swift in Sources */,
-				AFB059B023BC180400DFB00A /* PokemonDecks.swift in Sources */,
+				AFB059B023BC180400DFB00A /* PokemonDecks1999.swift in Sources */,
 				AFC2C267238B9C780014BEA2 /* DeckViewController.swift in Sources */,
+				AFB3398923D810D200EC695A /* PokemonDecksPlatinum.swift in Sources */,
+				AFB3397D23D80FE100EC695A /* PokemonDecksGymHeroes.swift in Sources */,
 				AFC7339E23BC7AA500333AF9 /* DeckDownloadViewController.swift in Sources */,
+				AFB3398723D810A500EC695A /* PokemonDecksNintendoPromos.swift in Sources */,
 				AFF359FF239751C400A69B20 /* Card.swift in Sources */,
 				AFC2C240238B447C0014BEA2 /* AppDelegate.swift in Sources */,
 				AFF359FB2397519C00A69B20 /* Series.swift in Sources */,
+				AFB3398123D8104900EC695A /* PokemonDecksLegendary&Ecard.swift in Sources */,
+				AFB3398D23D8111F00EC695A /* PokemonDecksCallOfLegends.swift in Sources */,
 				AFF359FD239751B400A69B20 /* Deck.swift in Sources */,
+				AFB3397F23D8100100EC695A /* PokemonDecksNeoGenesis.swift in Sources */,
+				AFB3398523D8108E00EC695A /* PokemonDecksDiamondPearl.swift in Sources */,
+				AFB3399123D8114E00EC695A /* PokemonDecksXY.swift in Sources */,
 				AF5175C723A9CFD90087DC73 /* SeriesDownloadViewController.swift in Sources */,
+				AFB3398B23D810EC00EC695A /* PokemonDecksHeartGoldSoulSilver.swift in Sources */,
+				AFB3398323D8106E00EC695A /* PokemonDecksRubySapphire.swift in Sources */,
 				AFC2C271238C80A40014BEA2 /* CardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
