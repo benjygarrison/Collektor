@@ -22,7 +22,7 @@ class DeckDownloadViewController : UITableViewController {
             //TODO - Update arrays as new decks added
             switch selectedSeries {
                 
-            case "Pokemon": deckArray = ["Base Set", "Base Set 2", "Jungle", "Fossil", "Team Rocket", "WOTC Promos", "Gym Heroes",  "Gym Challenge", "Southern Islands", "Neo Genesis", "Neo Discovery", "Neo Revelation", "Neo Destiny", "Legendary", "Expedition Base Set", "Best of Game", "Aquapolis", "Skyridge", "EX Ruby & Sapphire", "EX Sandstorm", "EX Dragon", "EX FireRed and LeafGreen", "EX Team Rocket Returns", "EX Deoxys", "EX Emerald", "EX Unseen Forces Unown Collection", "EX Unseen Forces", "EX Delta Species", "EX Legend Maker", "EX Holon Phantoms", "EX Crystal Guardians", "EX Dragon Frontiers", "EX Power Keepers", "Diamond And Pearl", "Diamond And Pearl Promos", "Diamond And Pearl Mysterious Treasures", "Diamond And Pearl Secret Wonders", "Diamond And Pearl Great Encounters", "Diamond And Pearl Majestic Dawn", "Diamond And Pearl Legends Awakened", "Diamond And Pearl Stormfront", "Nintendo Promos", "POP Series 1", "POP Series 2", "POP Series 3", "POP Series 4", "POP Series 5", "POP Series 6", "POP Series 7", "POP Series 8", "POP Series 9", "Platinum", "Platinum - Rising Rivals", "Platinum - Supreme Victors", "Platinum - Arceus", "Pokemon Rumble", "HeartGold & SoulSilver", "HS Unleashed", "HS Undaunted", "HS Triumphant", "Call of Legends", "Black and White", "BW Emerging Powers", "BW Noble Victories", "BW Next Destinies", "BW Dark Explorers", "BW Dragons Exalted", "BW Dragon Vault", "BW Boundaries Crossed", "BW Plasma Storm", "BW Plasma Freeze", "BW Plasma Blast", "BW Radiant Collection", "Legendary Treasures"]
+            case "Pokemon": deckArray = ["Base Set", "Base Set 2", "Jungle", "Fossil", "Team Rocket", "WOTC Promos", "Gym Heroes",  "Gym Challenge", "Southern Islands", "Neo Genesis", "Neo Discovery", "Neo Revelation", "Neo Destiny", "Legendary", "Expedition Base Set", "Best of Game", "Aquapolis", "Skyridge", "EX Ruby & Sapphire", "EX Sandstorm", "EX Dragon", "EX FireRed and LeafGreen", "EX Team Rocket Returns", "EX Deoxys", "EX Emerald", "EX Unseen Forces Unown Collection", "EX Unseen Forces", "EX Delta Species", "EX Legend Maker", "EX Holon Phantoms", "EX Crystal Guardians", "EX Dragon Frontiers", "EX Power Keepers", "Diamond And Pearl", "Diamond And Pearl Promos", "Diamond And Pearl Mysterious Treasures", "Diamond And Pearl Secret Wonders", "Diamond And Pearl Great Encounters", "Diamond And Pearl Majestic Dawn", "Diamond And Pearl Legends Awakened", "Diamond And Pearl Stormfront", "Nintendo Promos", "POP Series 1", "POP Series 2", "POP Series 3", "POP Series 4", "POP Series 5", "POP Series 6", "POP Series 7", "POP Series 8", "POP Series 9", "Platinum", "Platinum - Rising Rivals", "Platinum - Supreme Victors", "Platinum - Arceus", "Pokemon Rumble", "HeartGold & SoulSilver", "HS Unleashed", "HS Undaunted", "HS Triumphant", "Call of Legends", "Black and White", "BW Emerging Powers", "BW Noble Victories", "BW Next Destinies", "BW Dark Explorers", "BW Dragons Exalted", "BW Dragon Vault", "BW Boundaries Crossed", "BW Plasma Storm", "BW Plasma Freeze", "BW Plasma Blast", "BW Radiant Collection", "Legendary Treasures", "XY", "XY Promos", "XY Flashfire", "XY Furious Fists", "XY Phantom Forces", "XY Primal Clash", "XY Double Crisis", "XY Roaring Skies", "XY Ancient Origins", "XY BREAKthrough", "XY BREAKpoint", "XY Generations", "XY Fates Collide", "XY Steam Siege", "XY Evolutions"]
                 
             case "Magic, The Gathering": deckArray = ["Magic1", "Magic2"]
                 
@@ -152,7 +152,6 @@ class DeckDownloadViewController : UITableViewController {
         case "HS Undaunted": PokemonDecks().addHsUndaunted(); addedAlert()
         case "HS Triumphant": PokemonDecks().addHsTriumphant(); addedAlert()
         case "Call of Legends": PokemonDecks().addCallOfLegends(); addedAlert()
-            
         case "Black and White": PokemonDecks().addBlackAndWhite(); addedAlert()
         case "BW Emerging Powers": PokemonDecks().addBWEmergingPowers(); addedAlert()
         case "BW Noble Victories": PokemonDecks().addBWNobleVictories(); addedAlert()
@@ -166,10 +165,26 @@ class DeckDownloadViewController : UITableViewController {
         case "BW Plasma Blast": PokemonDecks().addBWPlasmaBlast(); addedAlert()
         case "BW Radiant Collection": PokemonDecks().addBWRadiantCollection(); addedAlert()
         case "Legendary Treasures": PokemonDecks().addBWLegendaryTreasures(); addedAlert()
+        case "XY": PokemonDecks().addXY(); addedAlert()
+        case "XY Promos": PokemonDecks().addXYPromos(); addedAlert()
+        case "XY Flashfire": PokemonDecks().addXYFlashFire(); addedAlert()
+        case "XY Furious Fists": PokemonDecks().addXYFuriousFists(); addedAlert()
+        case "XY Phantom Forces": PokemonDecks().addXYPhantomForces(); addedAlert()
+        case "XY Primal Clash": PokemonDecks().addXYPrimalClash(); addedAlert()
+        case "XY Double Crisis": PokemonDecks().addXYDoubleCrisis(); addedAlert()
+        case "XY Roaring Skies": PokemonDecks().addXYRoaringSkies(); addedAlert()
+        case "XY Ancient Origins": PokemonDecks().addXYAncientOrigins(); addedAlert()
+        case "XY BREAKthrough": PokemonDecks().addXYBREAKThrough(); addedAlert()
+        case "XY BREAKpoint": PokemonDecks().addXYBREAKPoint(); addedAlert()
+        case "XY Generations": PokemonDecks().addXYGenerations(); addedAlert()
+        case "XY Fates Collide": PokemonDecks().addXYFatesCollide(); addedAlert()
+        case "XY Steam Siege": PokemonDecks().addXYSteamSiege(); addedAlert()
+        case "XY Evolutions": PokemonDecks().addXYEvolutions(); addedAlert()
+            
         default: print("Something Else")
         }
 
     }
- 
+
 }
 
