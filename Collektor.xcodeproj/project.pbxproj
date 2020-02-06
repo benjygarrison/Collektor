@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B24F33B43966B20FF2B88E6 /* Pods_Collektor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB2EDD8810681B7753047D9 /* Pods_Collektor.framework */; };
+		A4591AFE1C872519C4BBF250 /* libPods-Collektor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F8C7CF4A2841BC87FFF966 /* libPods-Collektor.a */; };
 		AF406966238E24E900CC1E18 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF406965238E24E900CC1E18 /* DetailViewController.swift */; };
 		AF5175C723A9CFD90087DC73 /* SeriesDownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5175C623A9CFD90087DC73 /* SeriesDownloadViewController.swift */; };
 		AFB059B023BC180400DFB00A /* PokemonDecks1999.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB059AF23BC180400DFB00A /* PokemonDecks1999.swift */; };
@@ -36,9 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		00B4CE15377EC57FA3CC6D59 /* Pods-Collektor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collektor.release.xcconfig"; path = "Target Support Files/Pods-Collektor/Pods-Collektor.release.xcconfig"; sourceTree = "<group>"; };
-		605C39E8618D4E26012775DB /* Pods-Collektor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collektor.debug.xcconfig"; path = "Target Support Files/Pods-Collektor/Pods-Collektor.debug.xcconfig"; sourceTree = "<group>"; };
-		6DB2EDD8810681B7753047D9 /* Pods_Collektor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Collektor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		201547DCE09C6053FA3A7070 /* Pods-Collektor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collektor.release.xcconfig"; path = "Target Support Files/Pods-Collektor/Pods-Collektor.release.xcconfig"; sourceTree = "<group>"; };
+		30F8C7CF4A2841BC87FFF966 /* libPods-Collektor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Collektor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF406965238E24E900CC1E18 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = Collektor/View/DetailViewController.swift; sourceTree = SOURCE_ROOT; };
 		AF5175C623A9CFD90087DC73 /* SeriesDownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDownloadViewController.swift; sourceTree = "<group>"; };
 		AFB059AF23BC180400DFB00A /* PokemonDecks1999.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PokemonDecks1999.swift; path = Collektor/Decks/PokemonDecks1999.swift; sourceTree = SOURCE_ROOT; };
@@ -66,6 +65,7 @@
 		AFF359FA2397519C00A69B20 /* Series.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Series.swift; sourceTree = SOURCE_ROOT; };
 		AFF359FC239751B400A69B20 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		AFF359FE239751C400A69B20 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		E7194034F588C6128E918A7B /* Pods-Collektor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Collektor.debug.xcconfig"; path = "Target Support Files/Pods-Collektor/Pods-Collektor.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,26 +73,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B24F33B43966B20FF2B88E6 /* Pods_Collektor.framework in Frameworks */,
+				A4591AFE1C872519C4BBF250 /* libPods-Collektor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		515D201C23566BF76401F9D1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6DB2EDD8810681B7753047D9 /* Pods_Collektor.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		7F22ED3CA0DCF319CFC42366 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				605C39E8618D4E26012775DB /* Pods-Collektor.debug.xcconfig */,
-				00B4CE15377EC57FA3CC6D59 /* Pods-Collektor.release.xcconfig */,
+				E7194034F588C6128E918A7B /* Pods-Collektor.debug.xcconfig */,
+				201547DCE09C6053FA3A7070 /* Pods-Collektor.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -122,7 +114,7 @@
 				AFC2C23E238B447C0014BEA2 /* Collektor */,
 				AFC2C23D238B447C0014BEA2 /* Products */,
 				7F22ED3CA0DCF319CFC42366 /* Pods */,
-				515D201C23566BF76401F9D1 /* Frameworks */,
+				BF0077D1BDB1406952F575A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,6 +180,14 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		BF0077D1BDB1406952F575A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30F8C7CF4A2841BC87FFF966 /* libPods-Collektor.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,11 +195,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFC2C253238B447E0014BEA2 /* Build configuration list for PBXNativeTarget "Collektor" */;
 			buildPhases = (
-				94D20CF669BA28FA4B3B2F1F /* [CP] Check Pods Manifest.lock */,
+				820117B32D6A5A8014FC8EE1 /* [CP] Check Pods Manifest.lock */,
 				AFC2C238238B447C0014BEA2 /* Sources */,
 				AFC2C239238B447C0014BEA2 /* Frameworks */,
 				AFC2C23A238B447C0014BEA2 /* Resources */,
-				3AD336A4F22329E60D7350D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,24 +257,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3AD336A4F22329E60D7350D5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Collektor/Pods-Collektor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Collektor/Pods-Collektor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Collektor/Pods-Collektor-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		94D20CF669BA28FA4B3B2F1F /* [CP] Check Pods Manifest.lock */ = {
+		820117B32D6A5A8014FC8EE1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -467,18 +449,18 @@
 		};
 		AFC2C254238B447E0014BEA2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 605C39E8618D4E26012775DB /* Pods-Collektor.debug.xcconfig */;
+			baseConfigurationReference = E7194034F588C6128E918A7B /* Pods-Collektor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J8HRFYT9P7;
+				DEVELOPMENT_TEAM = UC8QT6XYPN;
 				INFOPLIST_FILE = Collektor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.benjiGarrison.Collektor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benjaminGarrison.Collektor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -487,18 +469,18 @@
 		};
 		AFC2C255238B447E0014BEA2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 00B4CE15377EC57FA3CC6D59 /* Pods-Collektor.release.xcconfig */;
+			baseConfigurationReference = 201547DCE09C6053FA3A7070 /* Pods-Collektor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J8HRFYT9P7;
+				DEVELOPMENT_TEAM = UC8QT6XYPN;
 				INFOPLIST_FILE = Collektor/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.benjiGarrison.Collektor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.benjaminGarrison.Collektor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

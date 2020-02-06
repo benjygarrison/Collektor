@@ -24,6 +24,12 @@ class SeriesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+        
+        //tableView.backgroundView = UIImageView(image: UIImage(named: "desaturated"))
+        //tableView.backgroundView?.contentMode = .scaleAspectFill
+        
+        //tableView.backgroundColor = UIColor.clear
         
         var legalButton = [UIBarButtonItem]()
 

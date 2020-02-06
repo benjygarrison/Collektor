@@ -59,7 +59,7 @@ class DetailViewController : UITableViewController, UIPickerViewDelegate, UIPick
         deletePhotoButton.layer.cornerRadius = 5
     
         imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
         
             
