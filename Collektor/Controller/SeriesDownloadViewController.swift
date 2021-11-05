@@ -16,16 +16,29 @@ class SeriesDownloadViewController: UITableViewController {
     
     //var seriesArray = [Series]()
     
-    var seriesArray = ["Pokemon", "Magic, The Gathering", "Yu-Gi-Oh"]
+    var seriesArray = ["Preloaded Pokemon Decks"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var purchaseButton = [UIBarButtonItem]()
+
+        let plainButton = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(purchaseButtonPressed))
+        purchaseButton.append(plainButton)
+
+        self.toolbarItems = purchaseButton
+        self.navigationController?.isToolbarHidden = false
         
         tableView.dataSource = self
         tableView.delegate = self
         
     }
     
+    @objc func purchaseButtonPressed() {
+        
+    print("Purchase Button Pressed")
+        
+    }
     
     
     //MARK: - tableview methods

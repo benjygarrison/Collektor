@@ -89,6 +89,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AF1E36FA23EBBA6300087668 /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Purchases;
+			sourceTree = "<group>";
+		};
 		AFB059B123BC180D00DFB00A /* Decks */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				AFC2C23F238B447C0014BEA2 /* AppDelegate.swift */,
+				AF1E36FA23EBBA6300087668 /* Purchases */,
 				AFB059B123BC180D00DFB00A /* Decks */,
 				AFC2C258238B5B380014BEA2 /* Model */,
 				AFC2C259238B5C300014BEA2 /* Controller */,
@@ -216,12 +224,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = "Benji Garrison";
 				TargetAttributes = {
 					AFC2C23B238B447C0014BEA2 = {
 						CreatedOnToolsVersion = 11.0;
-						LastSwiftMigration = 1130;
+						LastSwiftMigration = 1310;
 					};
 				};
 			};
@@ -359,6 +367,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -419,6 +428,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -462,7 +472,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.benjaminGarrison.Collektor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -482,7 +492,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.benjaminGarrison.Collektor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
